@@ -1,1 +1,41 @@
-/* You can add global styles to this file, and also import other style files */
+@import 'styles-variables';
+
+@import '../node_modules/@angular/material/theming';
+
+@include mat-core();
+
+@import 'themes/default-theme.scss';
+@import 'themes/light-theme.scss';
+@import 'themes/black-theme.scss';
+@import '../src/app/app.component.scss-theme.scss';
+
+
+@mixin custom-components-theme($theme) {
+  @include got-basic-theme($theme);
+//   @include spmb-app-component-theme($theme);
+//   @include spmb-big-input-component-theme($theme);
+//   @include spmb-login-component-theme($spmb-black-theme);
+//   @include spmb-userpage-component-theme($theme);
+//   @include spmb-event-component-theme($theme);
+//   @include spmb-page-title-component-theme($theme);
+//   @include spmb-card-booking-component-theme($theme);
+//   @include spmb-card-booking-voted-component-theme($theme);
+//   @include spmb-booking-confirm-modal-component-theme($theme);
+//   @include spmb-booking-delete-modal-component-theme($theme);
+
+ }
+
+
+.black-theme {
+  @include angular-material-theme($got-black-theme);
+  @include custom-components-theme($got-black-theme);
+}
+@font-face {
+    font-family: gotFont;
+    src: url(./assets/fonts/GameOfThrones.ttf);
+  }
+
+body {
+  font-family: gotFont;
+  margin: 0px;
+}

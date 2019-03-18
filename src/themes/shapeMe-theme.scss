@@ -1,0 +1,90 @@
+@import '~@angular/material/theming';
+
+// Be sure that you only ever include 'mat-core' mixin once!
+// it should not be included for each theme.
+@include mat-core();
+
+$md-greenblue: (
+  50: #e1faf9,
+  100: #a0efea,
+  200: #70e6e0,
+  300: #33dcd3,
+  400: #24cdc4,
+  500: #1fb3ab,
+  600: #1a9992,
+  700: #167f79,
+  800: #116560,
+  900: #0d4b47,
+  A100: #d2fffd,
+  A200: #6cfff7,
+  A400: #18ede1,
+  A700: #1dcfc5,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #000000,
+    400: #000000,
+    500: #000000,
+    600: #ffffff,
+    700: #ffffff,
+    800: #ffffff,
+    900: #ffffff,
+    A100: #000000,
+    A200: #000000,
+    A400: #000000,
+    A700: #000000
+  )
+);
+$md-orange: (
+  50: #ffffff,
+  100: #ffcfb6,
+  200: #ffab7e,
+  300: #ff7d36,
+  400: #ff6918,
+  500: #f85700,
+  600: #d94c00,
+  700: #bb4200,
+  800: #9c3700,
+  900: #7e2c00,
+  A100: #fffaf8,
+  A200: #ffb892,
+  A400: #ff762c,
+  A700: #ff6512,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #000000,
+    400: #000000,
+    500: #ffffff,
+    600: #ffffff,
+    700: #ffffff,
+    800: #ffffff,
+    900: #ffffff,
+    A100: #000000,
+    A200: #000000,
+    A400: #000000,
+    A700: #000000
+  )
+);
+
+$spmb-shapeme-primary: mat-palette($md-greenblue, 200, 500, 300);
+$spmb-shapeme-accent: mat-palette($md-orange, 200);
+$spmb-shapeme-warn: mat-palette($mat-deep-orange, 200);
+
+$spmb-light-theme: mat-light-theme(
+  $spmb-light-primary,
+  $spmb-light-accent,
+  $spmb-light-warn
+);
+
+// include the custom theme components into a theme object
+$spmb-shapeme-theme: mat-light-theme(
+  $spmb-shapeme-primary,
+  $spmb-shapeme-accent,
+  $spmb-shapeme-warn
+);
+
+// include the custom theme object into the angular material theme
+@include angular-material-theme($spmb-shapeme-theme);

@@ -1,0 +1,73 @@
+@import '~@angular/material/theming';
+
+@include mat-core();
+
+$md-shapemegreen: (
+  50: #e1faf9,
+  100: #a0efea,
+  200: #70e6e0,
+  300: #33dcd3,
+  400: #24cdc4,
+  500: #1fb3ab,
+  600: #1a9992,
+  700: #167f79,
+  800: #116560,
+  900: #0d4b47,
+  A100: #d2fffd,
+  A200: #6cfff7,
+  A400: #18ede1,
+  A700: #1dcfc5,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #000000,
+    400: #000000,
+    500: #000000,
+    600: #ffffff,
+    700: #ffffff,
+    800: #ffffff,
+    900: #ffffff,
+    A100: #000000,
+    A200: #000000,
+    A400: #000000,
+    A700: #000000
+  )
+);
+$md-shapemeorange: (
+  50: #ffffff,
+  100: #fce3d6,
+  200: #f7bfa2,
+  300: #f29260,
+  400: #ef7e44,
+  500: #ed6b28,
+  600: #e35a13,
+  700: #c74f11,
+  800: #ab440e,
+  900: #8f380c,
+  A100: #ffffff,
+  A200: #ffcaaf,
+  A400: #ff8749,
+  A700: #f47a3a,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #000000,
+    400: #000000,
+    500: #000000,
+    600: #ffffff,
+    700: #ffffff,
+    800: #ffffff,
+    900: #ffffff,
+    A100: #000000,
+    A200: #000000,
+    A400: #000000,
+    A700: #000000
+  )
+);
+$spmb-primary: mat-palette($mat-gray, 900, 600, 900);
+$spmb-accent: mat-palette($md-shapemegreen, 500);
+$spmb-warn: mat-palette($md-shapemeorange, 500);
+$spmb-foreground: mat-palette($mat-amber, 900);
+$spmb-theme: mat-light-theme($spmb-primary, $spmb-accent, $spmb-warn);

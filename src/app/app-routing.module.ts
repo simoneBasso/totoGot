@@ -1,10 +1,18 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { RankingComponent } from './ranking/ranking.component';
 
-const routes: Routes = [];
+const appRoutes: Routes = [
+  { path: 'ranking', component: RankingComponent },
+  { path: '',
+    redirectTo: '/ranking',
+    pathMatch: 'full'
+  },
+  { path: '**', component: RankingComponent }
+];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(appRoutes)],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

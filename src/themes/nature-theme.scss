@@ -1,0 +1,9 @@
+$spmb-nature-primary: mat-palette($mat-brown, 700, 300, 900);
+$spmb-nature-accent: mat-palette($mat-deep-purple, 300);
+$spmb-nature-warn: mat-palette($mat-red, 600);
+
+$spmb-nature-theme: mat-light-theme(
+  $spmb-nature-primary,
+  $spmb-nature-accent,
+  $spmb-nature-warn
+);

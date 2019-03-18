@@ -1,0 +1,9 @@
+$spmb-light-primary: mat-palette($mat-grey, 200, 500, 300);
+$spmb-light-accent: mat-palette($mat-brown, 200);
+$spmb-light-warn: mat-palette($mat-deep-orange, 200);
+
+$spmb-light-theme: mat-light-theme(
+  $spmb-light-primary,
+  $spmb-light-accent,
+  $spmb-light-warn
+);
