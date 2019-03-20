@@ -54,11 +54,7 @@ export function getAnswers():User{
         responseQuestion: [
             createQuestionResponse(Types.Question.KillNightKing, Types.Characters.DAARIO),
             createQuestionResponse(Types.Question.KingOfThrone, Types.Characters.DAARIO),
-
         ]
-        
-       
-
     }
 }
 

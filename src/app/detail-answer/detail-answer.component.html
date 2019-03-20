@@ -1,0 +1,110 @@
+
+  <div fxLayout="row wrap" fxLayoutAlign="center stretch" fxLayoutGap="10%">
+    <div fxFlex="100%" fxFlex.sm="100%">
+      <h2>RISPOSTE</h2>
+      <p class="puntata">Seleziona l'utente per visualizzare le risposte date</p>
+    </div>
+  </div>
+
+  <div fxLayout="column" fxLayoutAlign="space-around stretch" fxLayoutGap="2%">
+      <mat-card fxFlex="100%" fxLayout="row" fxLayoutAlign="start center"  fxLayoutGap="2%">
+          <mat-form-field fxFlex="30%">
+              <mat-label>Giocatore</mat-label>
+              <mat-select [(ngModel)]="selectedUser" (selectionChange)="selectUser($event)">
+                <mat-option *ngFor="let name of usersNameList" [value]="name" [ngStyle]="{'background':'#2f2e2e'}">
+                  {{name}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+            <mat-checkbox fxFlex="20%" [(ngModel)]="showAnswers" >Mostra corrette</mat-checkbox>
+      </mat-card>
+        <table mat-table [dataSource]="charactersRow" class="mat-elevation-z8" fxFlex="100%">
+  
+            <!--- Note that these columns can be defined in any order.
+                    The actual rendered columns are set as a property on the row definition" -->
+        
+            <!-- Position Column -->
+            <ng-container matColumnDef="name">
+                <th mat-header-cell *matHeaderCellDef> </th>
+                <td mat-cell *matCellDef="let char">
+                 {{getCharName(char.name)}}
+                </td>
+              </ng-container>
+        <!--ALIVE/-->
+            <ng-container matColumnDef="situation" class="centred">
+              <th mat-header-cell *matHeaderCellDef class="centred">Situazione </th>
+              <td mat-cell *matCellDef="let char, let i = index" class="centred icon-table" >
+                <div [hidden]="!showAnswers" [ngStyle]="{'padding.px':8}">
+                    <fa-icon icon="fist-raised" *ngIf="char.alive === true"></fa-icon>
+                    <fa-icon icon="skull-crossbones" *ngIf="char.alive === false"></fa-icon>
+                    <fa-icon icon="minus" *ngIf="char.alive !== false && char.alive !== true"></fa-icon>
+                </div>
+                <div [ngStyle]="{'padding.px':8}"
+                [ngClass]="{ 'success' : char.alive === userCharAnswer[i].alive,
+                                  'error': char.alive !== userCharAnswer[i].alive,
+                                  'unde' : ( userCharAnswer[i].alive !== true && userCharAnswer[i].alive !== false) || 
+                (char.alive !== false && char.alive !== true)}">
+                    <fa-icon icon="fist-raised" *ngIf="userCharAnswer[i].alive === true"></fa-icon>
+                    <fa-icon icon="skull-crossbones" *ngIf="userCharAnswer[i].alive === false"></fa-icon>
+                    <fa-icon icon="minus" *ngIf="userCharAnswer[i].alive !== true && userCharAnswer[i].alive !== false"></fa-icon>
+                </div>
+               
+              </td>
+            </ng-container>
+        
+            <!-- becameNight -->
+            <ng-container matColumnDef="became" class="centred">
+              <th mat-header-cell *matHeaderCellDef class="centred">Estraneo </th>
+              <td mat-cell *matCellDef="let char, let i = index" class="centred icon-table" >
+                  <div [hidden]="!showAnswers" [ngStyle]="{'padding.px':8}">
+                      <fa-icon icon="skull" *ngIf="char.becameNight === true"></fa-icon>
+                      <fa-icon icon="cross" *ngIf="char.becameNight === false"></fa-icon>
+                      <fa-icon icon="minus" *ngIf="char.becameNight !== false && char.becameNight !== true"></fa-icon>
+                  </div>
+                  <div [ngStyle]="{'padding.px':8}"
+                  [ngClass]="{ 'success' : char.becameNight === userCharAnswer[i].becameNight,
+                                    'error': char.becameNight !== userCharAnswer[i].becameNight,
+                                    'unde' : ( userCharAnswer[i].becameNight !== true && userCharAnswer[i].becameNight !== false) || 
+                            (char.becameNight !== false && char.becameNight !== true)}">
+                      <fa-icon icon="fist-raised" *ngIf="userCharAnswer[i].becameNight === true"></fa-icon>
+                      <fa-icon icon="skull-crossbones" *ngIf="userCharAnswer[i].becameNight === false"></fa-icon>
+                      <fa-icon icon="minus" *ngIf="userCharAnswer[i].becameNight !== true && userCharAnswer[i].becameNight !== false"></fa-icon>
+                  </div>
+                 
+                </td>
+
+            </ng-container>
+        
+            <!-- Weight Column -->
+            <ng-container matColumnDef="killedBy" class="centred">
+              <th mat-header-cell *matHeaderCellDef class="centred">Ucciso da </th>
+              <td mat-cell *matCellDef="let char, let i = index" class="centred icon-table" >
+                  <div [hidden]="!showAnswers" [ngStyle]="{'padding.px':8}">
+                      <span *ngIf="char.killedBy">{{getCharName(char.killedBy)}}</span>
+                      <span *ngIf="!char.killedBy" class="icon-table">
+                        <fa-icon icon="minus"></fa-icon>
+                      </span>
+                  </div>
+                  <div [ngStyle]="{'padding.px':8}"
+                  [ngClass]="{ 'success' : char.killedBy === userCharAnswer[i].killedBy,
+                                'error': char.killedBy !== userCharAnswer[i].killedBy,
+                                'unde' : ( userCharAnswer[i].killedBy === undefined || char.killedBy === undefined )}">
+                  <span *ngIf="userCharAnswer[i].killedBy">{{getCharName(userCharAnswer[i].killedBy)}}</span>
+                  <span *ngIf="!userCharAnswer[i].killedBy" class="icon-table">
+                      <fa-icon icon="minus"></fa-icon>
+                    </span>
+                  </div>
+                 
+                </td>
+              <td mat-cell *matCellDef="let char" class="centred">
+                
+              </td>
+            </ng-container>
+        
+        
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+          </table>
+
+
+  </div>

@@ -11,14 +11,23 @@ import { GotMaps } from '../shared/calculate/maps';
 @Component({
   selector: 'app-ranking',
   templateUrl: './ranking.component.html',
-  styleUrls: ['./ranking.component.scss']
+  styleUrls: ['../app.component.scss','./ranking.component.scss']
 })
 export class RankingComponent implements OnInit {
 
   answers: User;
   users:User[];
+  showTimer = true;
   allResults:ResultCalculatedResponse[] = [];
   maps:GotMaps = new GotMaps();
+
+  text:any = {
+    Days: "Giorni",
+    Hours: "Ore",
+    Minutes: "Minuti",
+    Seconds: "Secondi",
+  };
+  
   displayedColumns: string[] = ['position', 'name', 'points'];
   constructor() { 
 
@@ -31,7 +40,7 @@ export class RankingComponent implements OnInit {
      this.users.forEach( x => this.allResults.push(
        this.calculateUser(x,this.maps))
        );
-
+  this.allResults = _.sortBy(this.allResults, x => x.points);
        console.log(this.answers);
        console.log(this.users);
        console.log(this.allResults);
@@ -102,4 +111,7 @@ export class RankingComponent implements OnInit {
     return _.findWhere(resp, {type: type});
   }
 
+  isTheTime(){
+    this.showTimer = false;
+  }
 }

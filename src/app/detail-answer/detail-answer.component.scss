@@ -1,0 +1,31 @@
+table {
+    width: 100%;
+    font-family: gotFont;
+  }
+
+.centred{
+    text-align: center;
+}
+
+.icon-table{
+    fa-icon{
+        font-size: 2em;
+    }
+   
+}
+
+.success{
+    color:green;
+}
+.error{
+    color:#f44336;
+}
+.icon-alive {
+    font-size: 2em;
+    color: green;
+}
+
+.icon-dead {
+    font-size: 2em;
+    color: green;
+}

@@ -7,7 +7,7 @@ var charMap = new Map();
 
 charMap.set(CHAR.ARYA_STARK, "ARYA STARK");
 charMap.set(CHAR.BERIC_DONDARRION, "BERIC DONDARRION");
-charMap.set(CHAR.BRAN_STRAK, "BRAN STRAK");
+charMap.set(CHAR.BRAN_STRAK, "BRAN STARK");
 charMap.set(CHAR.BRIENNE_DI_TARTH, "BRIENNE DI TARTH");
 charMap.set(CHAR.BRONN, "BRONN");
 charMap.set(CHAR.CERSEI_LANNISTER, "CERSEI LANNISTER");
@@ -20,6 +20,7 @@ charMap.set(CHAR.GENDRY, "GENDRY");
 charMap.set(CHAR.GHOST, "GHOST");
 charMap.set(CHAR.GILLY, "GILLY");
 charMap.set(CHAR.IL_MASTINO, "IL MASTINO");
+charMap.set(CHAR.LA_MONTAGNA, "LA MONTAGNA");
 charMap.set(CHAR.JAIME_LANNISTER, "JAIME LANNISTER");
 charMap.set(CHAR.JAQUEN_H_GHAR, "JAQUEN H GHAR");
 charMap.set(CHAR.JON_SNOW, "JON SNOW");

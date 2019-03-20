@@ -19,21 +19,50 @@
 
     <div class="wrapper">
 
-      <div class="toolbar">
-        <mat-toolbar color="primary">
-
-          <span routerLink="" class="branding spacer center d-inline d-sm-none title">
-            TOTO GOT
-          </span>
-          <span class="d-none d-md-inline">
-            <button mat-button class="nav-button" routerLinkActive="active">
-              RANKING
-            </button>
-          </span>
-
-          <button mat-icon-button routerLink="settings" class="d-none d-sm-inline">
+      <div class="toolbar" [style.position]="'inherit'">
+        <!--left-->
+        <section class="stendardo arr">
+            <span class="house icon-got-house-startk"></span>
+        </section>
+        <section class="stendardo bar" [ngStyle]="{'margin-left.em':5}">
             <fa-icon icon="cog"></fa-icon>
+        </section>
+        <section class="stendardo gry" [ngStyle]="{'margin-left.em':10}">
+            <fa-icon icon="cog"></fa-icon>
+        </section>
+        <section class="stendardo lan" [ngStyle]="{'margin-left.em':15}">
+            <fa-icon icon="cog"></fa-icon>
+        </section>
+        <section class="title">
+            <span>TOTO GOT</span>
+          </section>
+        <!--rigth-->
+        <section class="stendardo mar" [ngStyle]="{'right':'0%'}">
+            <fa-icon icon="cog"></fa-icon>
+        </section>
+        <section class="stendardo tul" [ngStyle]="{'right':'0%','margin-right.em':5}">
+            <fa-icon icon="cog"></fa-icon>
+        </section>
+        <section class="stendardo tar" [ngStyle]="{'right':'0%','margin-right.em':10}">
+            <fa-icon icon="cog"></fa-icon>
+        </section>
+        <section class="stendardo sta" [ngStyle]="{'right':'0%','margin-right.em':15}">
+            <fa-icon icon="cog"></fa-icon>
+        </section>
+      
+        <mat-toolbar [ngStyle]="{'background':'transparent'}">
+          <button mat-icon-button routerLink="ranking" class="d-none d-sm-inline ranking-button">
+            <fa-icon icon="list-ol"></fa-icon>
           </button>
+          <button mat-icon-button routerLink="details" class="d-none d-sm-inline details-button">
+              <fa-icon icon="book-dead"></fa-icon>
+            </button>
+            <button mat-icon-button routerLink="statistic" class="d-none d-sm-inline statistic-button">
+                <fa-icon icon="chart-bar"></fa-icon>
+              </button>
+            <button mat-icon-button routerLink="statistic" class="d-none d-sm-inline info-button">
+                <fa-icon icon="question-circle"></fa-icon>
+              </button>
         </mat-toolbar>
       </div>
       <div class="content">
@@ -49,22 +78,22 @@
       <div class="footer">
         <div class="row">
           <div class="col-sm-12 links">
-            <!-- <a href="https://www.github.com/tomastrajan" target="_blank">
-                <fa-icon [icon]="['fab','github']"></fa-icon>
-                <span>Github</span>
-              </a>
-              <a href="https://www.instagram.com/tomastrajan" target="_blank">
-                <fa-icon [icon]="['fab','instagram']"></fa-icon>
-                <span>Instagram</span>
-              </a> -->
+            <a href="https://www.facebook.com/simone.basso.79" target="_blank">
+              <fa-icon [icon]="['fab','facebook-square']"></fa-icon>
+              <span>Facebook</span>
+            </a>
+            <a href="https://www.instagram.com/basso7" target="_blank">
+              <fa-icon [icon]="['fab','instagram']"></fa-icon>
+              <span>Instagram</span>
+            </a>
           </div>
         </div>
         <div class="row">
           <div class="col-12 signature">
-            &#169; <span class="year" data-testid="footer-year">2019</span> - Basso
+            &#169; <span class="year" data-testid="footer-year">2019</span> - puntata 8x01
             <br class="d-block d-sm-none">
-            <a>
-              <!--<fa-icon icon="rocket"></fa-icon>-->
+            <a href="https://www.hbo.com/game-of-thrones" target="_blank">
+              <fa-icon icon="rocket"></fa-icon>
               <span>totoGoto</span>
             </a>
           </div>
@@ -74,3 +103,5 @@
     </div>
 
   </mat-sidenav-container>
+
+  </div>

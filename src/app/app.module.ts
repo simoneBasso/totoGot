@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import {
   MatButtonModule,
@@ -19,46 +20,45 @@ import {
   MatTooltipModule,
   MatSnackBarModule,
   MatSlideToggleModule,
-  MatDividerModule,} from '@angular/material';
+  MatDividerModule,
+  MatExpansionModule} from '@angular/material';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RankingComponent } from './ranking/ranking.component';
+import { CountDown } from "ng2-date-countdown";
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import {
-  faBars,
   faUserCircle,
   faPowerOff,
   faCog,
-  faPlayCircle,
   faRocket,
-  faPlus,
-  faEdit,
-  faTrash,
-  faTimes,
-  faCaretUp,
-  faCaretDown,
-  faExclamationTriangle,
-  faFilter,
-  faTasks,
-  faCheck,
-  faSquare,
-  faLanguage,
-  faPaintBrush,
-  faLightbulb,
-  faWindowMaximize,
-  faStream,
-  faBook
+  faPlayCircle,
+  faBars,
+  faSkull,
+  faSkullCrossbones,
+  faSmile,
+  faMinus,
+  faCross,
+  faFistRaised,
+  faChartBar,
+  faBookDead,
+  faQuestionCircle,
+  faListOl
 } from '@fortawesome/free-solid-svg-icons';
 import {
   faGithub,
-  faMediumM,
+  faFacebookSquare,
   faTwitter,
   faInstagram,
   faYoutube
 } from '@fortawesome/free-brands-svg-icons';
+import { TableResponseComponent } from './table-response/table-response.component';
+import { DetailAnswerComponent } from './detail-answer/detail-answer.component';
+import { StatisticComponent } from './statistic/statistic.component';
+import { RulesComponent } from './rules/rules.component';
 
 library.add(
   faBars,
@@ -68,37 +68,36 @@ library.add(
   faRocket,
   faPlayCircle,
   faGithub,
-  faMediumM,
+  faFacebookSquare,
   faTwitter,
   faInstagram,
   faYoutube,
-  faPlus,
-  faEdit,
-  faTrash,
-  faTimes,
-  faCaretUp,
-  faCaretDown,
-  faExclamationTriangle,
-  faFilter,
-  faTasks,
-  faCheck,
-  faSquare,
-  faLanguage,
-  faPaintBrush,
-  faLightbulb,
-  faWindowMaximize,
-  faStream,
-  faBook
+  faSkull,
+  faSkullCrossbones,
+  faSmile,
+  faMinus,
+  faCross,
+  faFistRaised,
+  faChartBar,
+  faBookDead,
+  faQuestionCircle,
+  faListOl
 );
 
 @NgModule({
   declarations: [
     AppComponent,
-    RankingComponent
+    CountDown,
+    RankingComponent,
+    TableResponseComponent,
+    DetailAnswerComponent,
+    StatisticComponent,
+    RulesComponent,
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    FormsModule,
     FontAwesomeModule,
     MatButtonModule,
     MatToolbarModule,
@@ -113,6 +112,7 @@ library.add(
     MatListModule,
     MatMenuModule,
     MatIconModule,
+    MatExpansionModule,
     MatTableModule,
     MatTooltipModule,
     MatSnackBarModule,

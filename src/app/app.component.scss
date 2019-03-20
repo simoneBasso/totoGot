@@ -1,14 +1,18 @@
 @import '../styles-variables.scss';
+@import '../styles-icon.scss';
 @font-face {
   font-family: gotFont;
   src: url(../assets/fonts/GameOfThrones.ttf);
 }
 
 
+
+
+
 .theme-wrapper {
     height: 100%;
     width: 100%;
-    font-family: gotFont !important; 
+    font-family: gotFont !important;
   }
   
   mat-sidenav-container {
@@ -113,7 +117,7 @@
   
               span {
                 display: inline-block;
-                width: 75px;
+                width: 120px;
                 padding: 0 0 0 3px;
                 overflow: hidden;
                 text-align: left;
@@ -240,8 +244,8 @@
       left: 0;
       bottom: 0;
       right: 0;
-      background: url('../assets/images/background.jpg') no-repeat center top;
-      background-size: cover;
+      background: url('../assets/images/background.jpg') repeat center top;
+      background-size: contain;
       opacity: 0.7;
       content: '';
       z-index: 0;
@@ -266,9 +270,107 @@
     }
   }
   
+  .stendardo {
+    background: red;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 70%, 50% 100%, 0 70%);
+    clip-path: polygon(0 0, 100% 0, 100% 70%, 50% 100%, 0 70%);
+    position: absolute;
+    height: 6em;
+    width: 5em;
+
+    fa-icon {
+      position: relative;
+      margin: 28%;
+      top: 10%;
+      font-size: 2.5em !important;
+    }
+    .house {
+      font-size: 4em;
+      top: 10%;
+      left: 10%;
+      position: relative;
+    }
+    &.arr{
+      background-color: $h-arr;
+      color:$h-arr-i;
+    }
+    &.bar{
+      background-color: $h-bar;
+      color:$h-bar-i;
+    }
+    &.gry{
+      background-color: $h-gry;
+      color:$h-gry-i;
+    }
+    &.lan{
+      background-color: $h-lan;
+      color:$h-lan-i;
+    }
+    
+    &.sta{
+      background-color: $h-sta;
+      color:$h-sta-i;
+    }
+    &.tar{
+      background-color: $h-tar;
+      color:$h-tar-i;
+    }
+    &.tul{
+      background-color: $h-tul;
+      color:$h-gry-i;
+    }
+    &.mar{
+      background-color: $h-mar;
+      color:$h-mar-i;
+    }
+    &.tyr{
+      background-color: $h-tyr;
+      color:$h-tyr-i;
+    }
+    &.nig{
+      background-color: $h-nig;
+      color:$h-nig-i;
+    }
+
+  }
+  .title {
+    background:transparent;
+    position: absolute;
+    text-align: center;
+    margin-left: 40%;
+    padding-top: 0.5em;
+    text-transform: uppercase;
+    top: 15%;
+    span {
+      height: 100%;
+      width: 100%;
+      font-size: 2.5em;
+    }
+    
+
+  }
+
+  .ranking-button{
+    padding-top: 9em;
+    right: 0%;
+    padding-left: 84%;
+  }
+  .details-button{
+    padding-top: 9em;
+    right: 0%;
+    padding-left: 4%;
+  }
+  .statistic-button{
+    padding-top: 9em;
+    right: 0%;
+    padding-left: 4%;
+  }
+  .info-button{
+    padding-top: 9em;
+    right: 0%;
+    padding-left: 4%;
+  }
   
 
-  
 
 
-// __________________________

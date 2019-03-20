@@ -1,0 +1,65 @@
+@import '../styles-variables.scss';
+
+@font-face {
+    font-family: '#{$icomoon-font-family}';
+    src:  url('#{$icomoon-font-path}/#{$icomoon-font-family}.eot?rx4hdd');
+    src:  url('#{$icomoon-font-path}/#{$icomoon-font-family}.eot?rx4hdd#iefix') format('embedded-opentype'),
+      url('#{$icomoon-font-path}/#{$icomoon-font-family}.ttf?rx4hdd') format('truetype'),
+      url('#{$icomoon-font-path}/#{$icomoon-font-family}.woff?rx4hdd') format('woff'),
+      url('#{$icomoon-font-path}/#{$icomoon-font-family}.svg?rx4hdd##{$icomoon-font-family}') format('svg');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  [class^="icon-got-"], [class*=" icon-got-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: '#{$icomoon-font-family}' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+  
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+// __________________________
+.icon-got-house-lannister .path1 {
+    &:before {
+      content: $icon-got-house-lannister-path1;  
+      color: rgb(0, 0, 0);
+    }
+  }
+  .icon-got-house-lannister .path2 {
+    &:before {
+      content: $icon-got-house-lannister-path2;  
+      margin-left: -1em;  
+      color: rgb(255, 255, 255);
+    }
+  }
+  .icon-got-house-lannister .path3 {
+    &:before {
+      content: $icon-got-house-lannister-path3;  
+      margin-left: -1em;  
+      color: rgb(255, 255, 255);
+    }
+  }
+  .icon-got-house-startk {
+    &:before {
+      content: $icon-got-house-startk; 
+    }
+  }
+  .icon-got-handsOfKing {
+    &:before {
+      content: $icon-got-handsOfKing;     
+      color: #d5a940;
+    }
+  }
+  .icon-got-home {
+    &:before {
+      content: $icon-got-home; 
+    }
+  }

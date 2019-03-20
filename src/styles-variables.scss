@@ -3,6 +3,7 @@
 $toolbar-breakpoint: 600px;
 
 $fa-font-path: '../node_modules/@fortawesome/fontawesome-free-webfonts/webfonts';
+$icomoon-font-path: '../assets/fonts';
 
 $link-hover-decoration: none;
 $label-margin-bottom: 0;
@@ -26,11 +27,35 @@ $dark-grey: mat-color($mat-grey, 800);
 $sm-orange: unquote('#ed6b28');
 $sm-green: unquote('#1fb3ab');
 //material
-$cat-red: unquote('#BB5771');
-$cat-pink: unquote('#e91e63');
-$cat-purple: unquote('#9c27b0');
-$cat-violet: unquote('#673ab7');
-$cat-blue: unquote('#3f51b5');
-$cat-azure: unquote('#2196f3');
-$cat-green: unquote('#4caf50');
-$cat-grey: unquote('#607d8b');
+$h-arr: unquote('#002b4d');
+$h-bar: unquote('#ffb200');
+$h-gry: unquote('#101106');
+$h-lan: unquote('#af002c');
+$h-sta: unquote('#f5f4f3');
+$h-tar: unquote('#101106');
+$h-tul: unquote('#002b4d');
+$h-mar: unquote('#ff8700');
+$h-tyr: unquote('#92b691');
+$h-nig: unquote('#f5f4f3');
+
+$h-arr-i: unquote('#f6efbe');
+$h-bar-i: unquote('#101106');
+$h-gry-i: unquote('#ffb200');
+$h-lan-i: unquote('#ffb200');
+$h-sta-i: unquote('#8a8e8d');
+$h-tar-i: unquote('#af002c');
+$h-tul-i: unquote('#f6efbe');
+$h-mar-i: unquote('#af002c');
+$h-tyr-i: unquote('#ffb200');
+$h-nig-i: unquote('#00c2ff');
+
+
+$icomoon-font-family: "icongot" !default;
+
+
+$icon-got-house-lannister-path1: "\1f42f";
+$icon-got-house-lannister-path2: "\1f430";
+$icon-got-house-lannister-path3: "\1f431";
+$icon-got-house-startk: "\1f43a";
+$icon-got-handsOfKing: "\e900";
+$icon-got-home: "\e901";

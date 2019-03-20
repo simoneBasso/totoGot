@@ -1,6 +1,5 @@
 
 import { Types } from '../enum/types'
-import { Type } from '@angular/compiler';
 export class ResponseCharacter
 {
     name:Types.Characters;

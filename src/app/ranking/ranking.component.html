@@ -1,6 +1,11 @@
-<div fxLayout="row wrap" fxLayoutAlign="space-around center" fxLayoutGap="10%">
-  <div fxFlex="45%" fxFlex.sm="98%">
-    <h2>CLASSIFICA</h2>
+<div class="timer-container" *ngIf="showTimer">
+  <img src="../../assets/images/timer.png">
+    <countdown (reached)="isTheTime($event)" [text]="text" units="Days | Hours | Minutes | Seconds"  end="April 14, 2019"></countdown>
+</div>
+
+<div fxLayout="row wrap" fxLayoutAlign="center stretch" fxLayoutGap="10%">
+  <div fxFlex="30%" fxFlex.sm="100%">
+    <h2 class="inline">CLASSIFICA</h2> &nbsp;&nbsp;<span class="puntata">8x01</span>
     <table mat-table [dataSource]="allResults" class="mat-elevation-z8">
 
       <!--- Note that these columns can be defined in any order.
@@ -9,19 +14,27 @@
       <!-- Position Column -->
       <ng-container matColumnDef="position">
         <th mat-header-cell *matHeaderCellDef> No. </th>
-        <td mat-cell *matCellDef="let element, let i = index"> {{i}} </td>
+        <td mat-cell *matCellDef="let element, let i = index">
+          <span *ngIf="i>2">{{i + 1}}</span>
+          <span class="icon-table" *ngIf="i<2">
+              <fa-icon icon="skull" *ngIf="i === 0"></fa-icon>
+              <span class="icon icon-got-handsOfKing" *ngIf="i === 1"></span>
+              <fa-icon icon="minus" *ngIf="i === 2"></fa-icon> 
+          </span>
+           
+        </td>
       </ng-container>
 
       <!-- Name Column -->
       <ng-container matColumnDef="name">
-        <th mat-header-cell *matHeaderCellDef> Nome </th>
-        <td mat-cell *matCellDef="let row"> {{row.name}} </td>
+        <th mat-header-cell *matHeaderCellDef class="centred"> Nome </th>
+        <td mat-cell *matCellDef="let row" class="centred"> {{row.name}} </td>
       </ng-container>
 
       <!-- Weight Column -->
       <ng-container matColumnDef="points">
-        <th mat-header-cell *matHeaderCellDef> Punti </th>
-        <td mat-cell *matCellDef="let row"> {{row.totalPoints}} </td>
+        <th mat-header-cell *matHeaderCellDef class="centred"> Punti </th>
+        <td mat-cell *matCellDef="let row" class="centred"> {{row.totalPoints}} </td>
       </ng-container>
 
 
@@ -29,34 +42,8 @@
       <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
     </table>
   </div>
-  <div fxFlex="45%" fxFlex.sm="98%">
+  <div fxFlex="60%" fxFlex.sm="100%">
       <h2>SITUAZIONE ATTUALE</h2>
-      <table mat-table [dataSource]="allResults" class="mat-elevation-z8">
-  
-        <!--- Note that these columns can be defined in any order.
-                The actual rendered columns are set as a property on the row definition" -->
-  
-        <!-- Position Column -->
-        <ng-container matColumnDef="position">
-          <th mat-header-cell *matHeaderCellDef> No. </th>
-          <td mat-cell *matCellDef="let element, let i = index"> {{i}} </td>
-        </ng-container>
-  
-        <!-- Name Column -->
-        <ng-container matColumnDef="name">
-          <th mat-header-cell *matHeaderCellDef> Nome </th>
-          <td mat-cell *matCellDef="let row"> {{row.name}} </td>
-        </ng-container>
-  
-        <!-- Weight Column -->
-        <ng-container matColumnDef="points">
-          <th mat-header-cell *matHeaderCellDef> Punti </th>
-          <td mat-cell *matCellDef="let row"> {{row.totalPoints}} </td>
-        </ng-container>
-  
-  
-        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-      </table>
+      <app-table-response [answers]="answers"></app-table-response>
     </div>
 </div>
