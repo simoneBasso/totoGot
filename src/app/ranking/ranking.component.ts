@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { User } from '../shared/models/user.model';
 import * as utils from '../allResponse';
 import { calculateCharacter, calculatePregnantQuestion, calculateQuestion } from '../shared/calculate/calculateCharacter';
@@ -11,25 +11,30 @@ import { GotMaps } from '../shared/calculate/maps';
 @Component({
   selector: 'app-ranking',
   templateUrl: './ranking.component.html',
-  styleUrls: ['../app.component.scss','./ranking.component.scss']
+  styleUrls: ['../app.component.scss','./ranking.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class RankingComponent implements OnInit {
 
+  readyTime = false;
   answers: User;
   users:User[];
   showTimer = true;
   allResults:ResultCalculatedResponse[] = [];
   maps:GotMaps = new GotMaps();
+  a = new Date();
+  b = new Date('2019-04-19');
 
-  text:any = {
-    Days: "Giorni",
-    Hours: "Ore",
-    Minutes: "Minuti",
-    Seconds: "Secondi",
-  };
-  
+    config = {}
   displayedColumns: string[] = ['position', 'name', 'points'];
+
   constructor() { 
+    const time = this.getTime()
+ this.config  = {
+  leftTime: time,
+  template:"$!d! $!h! $!m! $!s! "
+}
+    
 
     this.answers = utils.getAnswers();
     this.users = utils.getAll();
@@ -37,6 +42,7 @@ export class RankingComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.readyTime = true;
      this.users.forEach( x => this.allResults.push(
        this.calculateUser(x,this.maps))
        );
@@ -47,6 +53,11 @@ export class RankingComponent implements OnInit {
 
   }
 
+  getTime(){
+    const a = new Date();
+    const b = new Date('2019-04-19');
+    return (+b-+a)/1000;
+  }
 
   calculateUser(user:User,gotMap:GotMaps):ResultCalculatedResponse{
     var res = {

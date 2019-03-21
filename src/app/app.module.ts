@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { CountdownModule } from 'ngx-countdown';
 import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import {
@@ -26,7 +27,6 @@ import {FlexLayoutModule} from '@angular/flex-layout';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RankingComponent } from './ranking/ranking.component';
-import { CountDown } from "ng2-date-countdown";
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
@@ -87,7 +87,6 @@ library.add(
 @NgModule({
   declarations: [
     AppComponent,
-    CountDown,
     RankingComponent,
     TableResponseComponent,
     DetailAnswerComponent,
@@ -97,6 +96,7 @@ library.add(
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    CountdownModule,
     FormsModule,
     FontAwesomeModule,
     MatButtonModule,

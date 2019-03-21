@@ -65,8 +65,23 @@ img{
 
 
 countdown {
+  text-align: center;
   top: 0px;
   position: absolute;
-  width: 100%;
+  display: inline;
+  align-items: center;
+  align-content: center;
+  align-self: center;
+  left: 31%;
+  top: 0%;
+  .time{
+    display: inline-block;
+    font-size: 30px;
+    padding:20px;
+  }
+  .label{
+    padding-top: 20px;
+    font-size: 20px;
+  }
   }
 }
