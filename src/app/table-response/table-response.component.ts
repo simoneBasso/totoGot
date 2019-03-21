@@ -15,7 +15,7 @@ export class TableResponseComponent implements OnInit {
   @Input()
   answers: User;
 
-  imgSource = "../../assets/images/avatar/";
+  imgSource = "assets/images/avatar/";
 
   maps:GotMaps = new GotMaps();
 
