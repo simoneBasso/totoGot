@@ -21,33 +21,52 @@
 
       <div class="toolbar" [style.position]="'inherit'">
         <!--left-->
-        <section class="stendardo arr">
-            <span class="house icon-got-house-startk"></span>
+        <section class="stendardo arr" fxHide.xs fxHide.sm>
+            <span class="house icon-got-house-arryn">
+              <span class="path1"></span>
+              <span class="path2"></span>
+            </span>
         </section>
-        <section class="stendardo bar" [ngStyle]="{'margin-left.em':5}">
-            <fa-icon icon="cog"></fa-icon>
+        <section class="stendardo bar" [ngStyle]="{'margin-left.em':5}" fxHide.xs fxHide.sm>
+            <span class="house icon-got-house-barathion">
+              <span class="path1"></span>
+              <span class="path2"></span>
+              <span class="path3"></span>
+            </span>
         </section>
-        <section class="stendardo gry" [ngStyle]="{'margin-left.em':10}">
-            <fa-icon icon="cog"></fa-icon>
+        <section class="stendardo gry" [ngStyle]="{'margin-left.em':10}" fxHide.xs fxHide.sm>
+            <span class="house icon-got-house-greyjoy">
+              <span class="path1"></span>
+              <span class="path2"></span>
+              <span class="path3"></span>
+              <span class="path4"></span>
+              <span class="path5"></span>
+            </span>
         </section>
-        <section class="stendardo lan" [ngStyle]="{'margin-left.em':15}">
-            <fa-icon icon="cog"></fa-icon>
+        <section class="stendardo lan"
+        [ngStyle.xs]="{ 'margin-left.em':0 }"
+        [ngStyle.sm]="{ 'margin-left.em':0 }"
+        [ngStyle]="{'margin-left.em':15}">
+        <span class="house icon-got-house-lannister"> </span>
         </section>
         <section class="title">
             <span>TOTO GOT</span>
           </section>
         <!--rigth-->
-        <section class="stendardo mar" [ngStyle]="{'right':'0%'}">
-            <fa-icon icon="cog"></fa-icon>
+        <section fxHide.xs fxHide.sm class="stendardo mar" [ngStyle]="{'right':'0%'}">
+            <span class="house icon-got-house-martell"></span>
         </section>
-        <section class="stendardo tul" [ngStyle]="{'right':'0%','margin-right.em':5}">
-            <fa-icon icon="cog"></fa-icon>
+        <section fxHide.xs fxHide.sm class="stendardo tul" [ngStyle]="{'right':'0%','margin-right.em':5}">
+            <span class="house icon-got-house-tully"></span>
         </section>
-        <section class="stendardo tar" [ngStyle]="{'right':'0%','margin-right.em':10}">
-            <fa-icon icon="cog"></fa-icon>
+        <section fxHide.xs fxHide.sm class="stendardo tar" [ngStyle]="{'right':'0%','margin-right.em':10}">
+            <span class="house icon-got-house-targaryen"></span>
         </section>
-        <section class="stendardo sta" [ngStyle]="{'right':'0%','margin-right.em':15}">
-            <fa-icon icon="cog"></fa-icon>
+        <section class="stendardo sta"
+        [ngStyle.xs]="{ 'right':0 }"
+        [ngStyle.sm]="{ 'right':0 }"
+        [ngStyle]="{'right':'0%','margin-right.em':15}">
+        <span class="house icon-got-house-startk"></span>
         </section>
       
         <mat-toolbar [ngStyle]="{'background':'transparent'}">

@@ -27,39 +27,1291 @@
   }
 
 // __________________________
-.icon-got-house-lannister .path1 {
-    &:before {
-      content: $icon-got-house-lannister-path1;  
-      color: rgb(0, 0, 0);
-    }
+
+
+.icon-got-house-tully {
+  &:before {
+    content: $icon-got-house-tully; 
   }
-  .icon-got-house-lannister .path2 {
-    &:before {
-      content: $icon-got-house-lannister-path2;  
-      margin-left: -1em;  
-      color: rgb(255, 255, 255);
-    }
+}
+.icon-got-guard .path1 {
+  &:before {
+    content: $icon-got-guard-path1;  
+    color: rgb(254, 214, 0);
   }
-  .icon-got-house-lannister .path3 {
-    &:before {
-      content: $icon-got-house-lannister-path3;  
-      margin-left: -1em;  
-      color: rgb(255, 255, 255);
-    }
+}
+.icon-got-guard .path2 {
+  &:before {
+    content: $icon-got-guard-path2;  
+    margin-left: -1em;  
+    color: rgb(212, 135, 0);
   }
-  .icon-got-house-startk {
-    &:before {
-      content: $icon-got-house-startk; 
-    }
+}
+.icon-got-guard .path3 {
+  &:before {
+    content: $icon-got-guard-path3;  
+    margin-left: -1em;  
+    color: rgb(211, 135, 0);
   }
-  .icon-got-handsOfKing {
-    &:before {
-      content: $icon-got-handsOfKing;     
-      color: #d5a940;
-    }
+}
+.icon-got-guard .path4 {
+  &:before {
+    content: $icon-got-guard-path4;  
+    margin-left: -1em;  
+    color: rgb(211, 134, 0);
   }
-  .icon-got-home {
-    &:before {
-      content: $icon-got-home; 
-    }
+}
+.icon-got-guard .path5 {
+  &:before {
+    content: $icon-got-guard-path5;  
+    margin-left: -1em;  
+    color: rgb(211, 134, 0);
   }
+}
+.icon-got-guard .path6 {
+  &:before {
+    content: $icon-got-guard-path6;  
+    margin-left: -1em;  
+    color: rgb(211, 135, 0);
+  }
+}
+.icon-got-guard .path7 {
+  &:before {
+    content: $icon-got-guard-path7;  
+    margin-left: -1em;  
+    color: rgb(211, 135, 0);
+  }
+}
+.icon-got-guard .path8 {
+  &:before {
+    content: $icon-got-guard-path8;  
+    margin-left: -1em;  
+    color: rgb(211, 135, 0);
+  }
+}
+.icon-got-guard .path9 {
+  &:before {
+    content: $icon-got-guard-path9;  
+    margin-left: -1em;  
+    color: rgb(211, 135, 0);
+  }
+}
+.icon-got-guard .path10 {
+  &:before {
+    content: $icon-got-guard-path10;  
+    margin-left: -1em;  
+    color: rgb(211, 135, 0);
+  }
+}
+.icon-got-guard .path11 {
+  &:before {
+    content: $icon-got-guard-path11;  
+    margin-left: -1em;  
+    color: rgb(254, 214, 1);
+  }
+}
+.icon-got-guard .path12 {
+  &:before {
+    content: $icon-got-guard-path12;  
+    margin-left: -1em;  
+    color: rgb(224, 155, 3);
+  }
+}
+.icon-got-guard .path13 {
+  &:before {
+    content: $icon-got-guard-path13;  
+    margin-left: -1em;  
+    color: rgb(228, 162, 5);
+  }
+}
+.icon-got-guard .path14 {
+  &:before {
+    content: $icon-got-guard-path14;  
+    margin-left: -1em;  
+    color: rgb(228, 162, 5);
+  }
+}
+.icon-got-guard .path15 {
+  &:before {
+    content: $icon-got-guard-path15;  
+    margin-left: -1em;  
+    color: rgb(254, 254, 252);
+  }
+}
+.icon-got-guard .path16 {
+  &:before {
+    content: $icon-got-guard-path16;  
+    margin-left: -1em;  
+    color: rgb(254, 254, 252);
+  }
+}
+.icon-got-throne .path1 {
+  &:before {
+    content: $icon-got-throne-path1;  
+    color: rgb(32, 28, 26);
+  }
+}
+.icon-got-throne .path2 {
+  &:before {
+    content: $icon-got-throne-path2;  
+    margin-left: -1em;  
+    color: rgb(41, 37, 31);
+  }
+}
+.icon-got-throne .path3 {
+  &:before {
+    content: $icon-got-throne-path3;  
+    margin-left: -1em;  
+    color: rgb(26, 24, 15);
+  }
+}
+.icon-got-throne .path4 {
+  &:before {
+    content: $icon-got-throne-path4;  
+    margin-left: -1em;  
+    color: rgb(47, 41, 36);
+  }
+}
+.icon-got-throne .path5 {
+  &:before {
+    content: $icon-got-throne-path5;  
+    margin-left: -1em;  
+    color: rgb(47, 41, 36);
+  }
+}
+.icon-got-throne .path6 {
+  &:before {
+    content: $icon-got-throne-path6;  
+    margin-left: -1em;  
+    color: rgb(18, 16, 13);
+  }
+}
+.icon-got-throne .path7 {
+  &:before {
+    content: $icon-got-throne-path7;  
+    margin-left: -1em;  
+    color: rgb(26, 24, 15);
+  }
+}
+.icon-got-throne .path8 {
+  &:before {
+    content: $icon-got-throne-path8;  
+    margin-left: -1em;  
+    color: rgb(15, 11, 10);
+  }
+}
+.icon-got-throne .path9 {
+  &:before {
+    content: $icon-got-throne-path9;  
+    margin-left: -1em;  
+    color: rgb(47, 41, 36);
+  }
+}
+.icon-got-throne .path10 {
+  &:before {
+    content: $icon-got-throne-path10;  
+    margin-left: -1em;  
+    color: rgb(18, 16, 13);
+  }
+}
+.icon-got-throne .path11 {
+  &:before {
+    content: $icon-got-throne-path11;  
+    margin-left: -1em;  
+    color: rgb(32, 28, 26);
+  }
+}
+.icon-got-throne .path12 {
+  &:before {
+    content: $icon-got-throne-path12;  
+    margin-left: -1em;  
+    color: rgb(18, 16, 13);
+  }
+}
+.icon-got-throne .path13 {
+  &:before {
+    content: $icon-got-throne-path13;  
+    margin-left: -1em;  
+    color: rgb(18, 16, 13);
+  }
+}
+.icon-got-throne .path14 {
+  &:before {
+    content: $icon-got-throne-path14;  
+    margin-left: -1em;  
+    color: rgb(21, 21, 21);
+  }
+}
+.icon-got-throne .path15 {
+  &:before {
+    content: $icon-got-throne-path15;  
+    margin-left: -1em;  
+    color: rgb(18, 16, 13);
+  }
+}
+.icon-got-throne .path16 {
+  &:before {
+    content: $icon-got-throne-path16;  
+    margin-left: -1em;  
+    color: rgb(21, 21, 21);
+  }
+}
+.icon-got-throne .path17 {
+  &:before {
+    content: $icon-got-throne-path17;  
+    margin-left: -1em;  
+    color: rgb(18, 16, 13);
+  }
+}
+.icon-got-throne .path18 {
+  &:before {
+    content: $icon-got-throne-path18;  
+    margin-left: -1em;  
+    color: rgb(18, 16, 13);
+  }
+}
+.icon-got-throne .path19 {
+  &:before {
+    content: $icon-got-throne-path19;  
+    margin-left: -1em;  
+    color: rgb(41, 37, 31);
+  }
+}
+.icon-got-throne .path20 {
+  &:before {
+    content: $icon-got-throne-path20;  
+    margin-left: -1em;  
+    color: rgb(41, 37, 31);
+  }
+}
+.icon-got-throne .path21 {
+  &:before {
+    content: $icon-got-throne-path21;  
+    margin-left: -1em;  
+    color: rgb(41, 37, 31);
+  }
+}
+.icon-got-throne .path22 {
+  &:before {
+    content: $icon-got-throne-path22;  
+    margin-left: -1em;  
+    color: rgb(41, 37, 31);
+  }
+}
+.icon-got-throne .path23 {
+  &:before {
+    content: $icon-got-throne-path23;  
+    margin-left: -1em;  
+    color: rgb(26, 24, 15);
+  }
+}
+.icon-got-throne .path24 {
+  &:before {
+    content: $icon-got-throne-path24;  
+    margin-left: -1em;  
+    color: rgb(16, 12, 11);
+  }
+}
+.icon-got-throne .path25 {
+  &:before {
+    content: $icon-got-throne-path25;  
+    margin-left: -1em;  
+    color: rgb(16, 12, 11);
+  }
+}
+.icon-got-throne .path26 {
+  &:before {
+    content: $icon-got-throne-path26;  
+    margin-left: -1em;  
+    color: rgb(86, 85, 83);
+  }
+}
+.icon-got-throne .path27 {
+  &:before {
+    content: $icon-got-throne-path27;  
+    margin-left: -1em;  
+    color: rgb(88, 88, 87);
+  }
+}
+.icon-got-throne .path28 {
+  &:before {
+    content: $icon-got-throne-path28;  
+    margin-left: -1em;  
+    color: rgb(16, 12, 11);
+  }
+}
+.icon-got-throne .path29 {
+  &:before {
+    content: $icon-got-throne-path29;  
+    margin-left: -1em;  
+    color: rgb(88, 88, 87);
+  }
+}
+.icon-got-throne .path30 {
+  &:before {
+    content: $icon-got-throne-path30;  
+    margin-left: -1em;  
+    color: rgb(85, 84, 83);
+  }
+}
+.icon-got-throne .path31 {
+  &:before {
+    content: $icon-got-throne-path31;  
+    margin-left: -1em;  
+    color: rgb(47, 41, 35);
+  }
+}
+.icon-got-throne .path32 {
+  &:before {
+    content: $icon-got-throne-path32;  
+    margin-left: -1em;  
+    color: rgb(96, 95, 93);
+  }
+}
+.icon-got-throne .path33 {
+  &:before {
+    content: $icon-got-throne-path33;  
+    margin-left: -1em;  
+    color: rgb(84, 83, 82);
+  }
+}
+.icon-got-throne .path34 {
+  &:before {
+    content: $icon-got-throne-path34;  
+    margin-left: -1em;  
+    color: rgb(86, 85, 84);
+  }
+}
+.icon-got-throne .path35 {
+  &:before {
+    content: $icon-got-throne-path35;  
+    margin-left: -1em;  
+    color: rgb(46, 40, 34);
+  }
+}
+.icon-got-throne .path36 {
+  &:before {
+    content: $icon-got-throne-path36;  
+    margin-left: -1em;  
+    color: rgb(85, 84, 82);
+  }
+}
+.icon-got-throne .path37 {
+  &:before {
+    content: $icon-got-throne-path37;  
+    margin-left: -1em;  
+    color: rgb(48, 44, 39);
+  }
+}
+.icon-got-throne .path38 {
+  &:before {
+    content: $icon-got-throne-path38;  
+    margin-left: -1em;  
+    color: rgb(84, 83, 82);
+  }
+}
+.icon-got-throne .path39 {
+  &:before {
+    content: $icon-got-throne-path39;  
+    margin-left: -1em;  
+    color: rgb(83, 82, 81);
+  }
+}
+.icon-got-throne .path40 {
+  &:before {
+    content: $icon-got-throne-path40;  
+    margin-left: -1em;  
+    color: rgb(41, 37, 31);
+  }
+}
+.icon-got-throne .path41 {
+  &:before {
+    content: $icon-got-throne-path41;  
+    margin-left: -1em;  
+    color: rgb(51, 47, 42);
+  }
+}
+.icon-got-throne .path42 {
+  &:before {
+    content: $icon-got-throne-path42;  
+    margin-left: -1em;  
+    color: rgb(51, 48, 42);
+  }
+}
+.icon-got-throne .path43 {
+  &:before {
+    content: $icon-got-throne-path43;  
+    margin-left: -1em;  
+    color: rgb(85, 84, 83);
+  }
+}
+.icon-got-throne .path44 {
+  &:before {
+    content: $icon-got-throne-path44;  
+    margin-left: -1em;  
+    color: rgb(58, 55, 51);
+  }
+}
+.icon-got-throne .path45 {
+  &:before {
+    content: $icon-got-throne-path45;  
+    margin-left: -1em;  
+    color: rgb(86, 85, 83);
+  }
+}
+.icon-got-throne .path46 {
+  &:before {
+    content: $icon-got-throne-path46;  
+    margin-left: -1em;  
+    color: rgb(55, 51, 46);
+  }
+}
+.icon-got-throne .path47 {
+  &:before {
+    content: $icon-got-throne-path47;  
+    margin-left: -1em;  
+    color: rgb(124, 123, 121);
+  }
+}
+.icon-got-throne .path48 {
+  &:before {
+    content: $icon-got-throne-path48;  
+    margin-left: -1em;  
+    color: rgb(81, 80, 78);
+  }
+}
+.icon-got-throne .path49 {
+  &:before {
+    content: $icon-got-throne-path49;  
+    margin-left: -1em;  
+    color: rgb(54, 51, 46);
+  }
+}
+.icon-got-throne .path50 {
+  &:before {
+    content: $icon-got-throne-path50;  
+    margin-left: -1em;  
+    color: rgb(41, 37, 31);
+  }
+}
+.icon-got-throne .path51 {
+  &:before {
+    content: $icon-got-throne-path51;  
+    margin-left: -1em;  
+    color: rgb(41, 37, 31);
+  }
+}
+.icon-got-throne .path52 {
+  &:before {
+    content: $icon-got-throne-path52;  
+    margin-left: -1em;  
+    color: rgb(47, 41, 37);
+  }
+}
+.icon-got-throne .path53 {
+  &:before {
+    content: $icon-got-throne-path53;  
+    margin-left: -1em;  
+    color: rgb(41, 37, 31);
+  }
+}
+.icon-got-throne .path54 {
+  &:before {
+    content: $icon-got-throne-path54;  
+    margin-left: -1em;  
+    color: rgb(49, 43, 38);
+  }
+}
+.icon-got-throne .path55 {
+  &:before {
+    content: $icon-got-throne-path55;  
+    margin-left: -1em;  
+    color: rgb(19, 17, 14);
+  }
+}
+.icon-got-throne .path56 {
+  &:before {
+    content: $icon-got-throne-path56;  
+    margin-left: -1em;  
+    color: rgb(51, 45, 40);
+  }
+}
+.icon-got-throne .path57 {
+  &:before {
+    content: $icon-got-throne-path57;  
+    margin-left: -1em;  
+    color: rgb(48, 42, 37);
+  }
+}
+.icon-got-throne .path58 {
+  &:before {
+    content: $icon-got-throne-path58;  
+    margin-left: -1em;  
+    color: rgb(86, 86, 84);
+  }
+}
+.icon-got-throne .path59 {
+  &:before {
+    content: $icon-got-throne-path59;  
+    margin-left: -1em;  
+    color: rgb(87, 86, 85);
+  }
+}
+.icon-got-throne .path60 {
+  &:before {
+    content: $icon-got-throne-path60;  
+    margin-left: -1em;  
+    color: rgb(43, 39, 33);
+  }
+}
+.icon-got-throne .path61 {
+  &:before {
+    content: $icon-got-throne-path61;  
+    margin-left: -1em;  
+    color: rgb(72, 67, 65);
+  }
+}
+.icon-got-throne .path62 {
+  &:before {
+    content: $icon-got-throne-path62;  
+    margin-left: -1em;  
+    color: rgb(35, 31, 29);
+  }
+}
+.icon-got-throne .path63 {
+  &:before {
+    content: $icon-got-throne-path63;  
+    margin-left: -1em;  
+    color: rgb(35, 33, 27);
+  }
+}
+.icon-got-throne .path64 {
+  &:before {
+    content: $icon-got-throne-path64;  
+    margin-left: -1em;  
+    color: rgb(15, 11, 10);
+  }
+}
+.icon-got-throne .path65 {
+  &:before {
+    content: $icon-got-throne-path65;  
+    margin-left: -1em;  
+    color: rgb(24, 20, 18);
+  }
+}
+.icon-got-throne .path66 {
+  &:before {
+    content: $icon-got-throne-path66;  
+    margin-left: -1em;  
+    color: rgb(41, 37, 31);
+  }
+}
+.icon-got-throne .path67 {
+  &:before {
+    content: $icon-got-throne-path67;  
+    margin-left: -1em;  
+    color: rgb(57, 51, 46);
+  }
+}
+.icon-got-throne .path68 {
+  &:before {
+    content: $icon-got-throne-path68;  
+    margin-left: -1em;  
+    color: rgb(99, 97, 96);
+  }
+}
+.icon-got-throne .path69 {
+  &:before {
+    content: $icon-got-throne-path69;  
+    margin-left: -1em;  
+    color: rgb(41, 37, 31);
+  }
+}
+.icon-got-throne .path70 {
+  &:before {
+    content: $icon-got-throne-path70;  
+    margin-left: -1em;  
+    color: rgb(15, 11, 10);
+  }
+}
+.icon-got-throne .path71 {
+  &:before {
+    content: $icon-got-throne-path71;  
+    margin-left: -1em;  
+    color: rgb(21, 21, 21);
+  }
+}
+.icon-got-throne .path72 {
+  &:before {
+    content: $icon-got-throne-path72;  
+    margin-left: -1em;  
+    color: rgb(18, 16, 13);
+  }
+}
+.icon-got-throne .path73 {
+  &:before {
+    content: $icon-got-throne-path73;  
+    margin-left: -1em;  
+    color: rgb(71, 66, 64);
+  }
+}
+.icon-got-throne .path74 {
+  &:before {
+    content: $icon-got-throne-path74;  
+    margin-left: -1em;  
+    color: rgb(18, 16, 13);
+  }
+}
+.icon-got-throne .path75 {
+  &:before {
+    content: $icon-got-throne-path75;  
+    margin-left: -1em;  
+    color: rgb(21, 21, 21);
+  }
+}
+.icon-got-throne .path76 {
+  &:before {
+    content: $icon-got-throne-path76;  
+    margin-left: -1em;  
+    color: rgb(46, 40, 34);
+  }
+}
+.icon-got-throne .path77 {
+  &:before {
+    content: $icon-got-throne-path77;  
+    margin-left: -1em;  
+    color: rgb(81, 70, 69);
+  }
+}
+.icon-got-throne .path78 {
+  &:before {
+    content: $icon-got-throne-path78;  
+    margin-left: -1em;  
+    color: rgb(81, 70, 69);
+  }
+}
+.icon-got-throne .path79 {
+  &:before {
+    content: $icon-got-throne-path79;  
+    margin-left: -1em;  
+    color: rgb(24, 20, 18);
+  }
+}
+.icon-got-throne .path80 {
+  &:before {
+    content: $icon-got-throne-path80;  
+    margin-left: -1em;  
+    color: rgb(21, 21, 21);
+  }
+}
+.icon-got-throne .path81 {
+  &:before {
+    content: $icon-got-throne-path81;  
+    margin-left: -1em;  
+    color: rgb(18, 16, 13);
+  }
+}
+.icon-got-throne .path82 {
+  &:before {
+    content: $icon-got-throne-path82;  
+    margin-left: -1em;  
+    color: rgb(19, 15, 15);
+  }
+}
+.icon-got-throne .path83 {
+  &:before {
+    content: $icon-got-throne-path83;  
+    margin-left: -1em;  
+    color: rgb(41, 37, 32);
+  }
+}
+.icon-got-throne .path84 {
+  &:before {
+    content: $icon-got-throne-path84;  
+    margin-left: -1em;  
+    color: rgb(51, 50, 48);
+  }
+}
+.icon-got-throne .path85 {
+  &:before {
+    content: $icon-got-throne-path85;  
+    margin-left: -1em;  
+    color: rgb(70, 65, 63);
+  }
+}
+.icon-got-throne .path86 {
+  &:before {
+    content: $icon-got-throne-path86;  
+    margin-left: -1em;  
+    color: rgb(46, 44, 44);
+  }
+}
+.icon-got-throne .path87 {
+  &:before {
+    content: $icon-got-throne-path87;  
+    margin-left: -1em;  
+    color: rgb(21, 21, 21);
+  }
+}
+.icon-got-throne .path88 {
+  &:before {
+    content: $icon-got-throne-path88;  
+    margin-left: -1em;  
+    color: rgb(41, 37, 31);
+  }
+}
+.icon-got-throne .path89 {
+  &:before {
+    content: $icon-got-throne-path89;  
+    margin-left: -1em;  
+    color: rgb(75, 74, 73);
+  }
+}
+.icon-got-throne .path90 {
+  &:before {
+    content: $icon-got-throne-path90;  
+    margin-left: -1em;  
+    color: rgb(71, 66, 64);
+  }
+}
+.icon-got-throne .path91 {
+  &:before {
+    content: $icon-got-throne-path91;  
+    margin-left: -1em;  
+    color: rgb(49, 47, 47);
+  }
+}
+.icon-got-throne .path92 {
+  &:before {
+    content: $icon-got-throne-path92;  
+    margin-left: -1em;  
+    color: rgb(22, 22, 22);
+  }
+}
+.icon-got-throne .path93 {
+  &:before {
+    content: $icon-got-throne-path93;  
+    margin-left: -1em;  
+    color: rgb(79, 77, 76);
+  }
+}
+.icon-got-throne .path94 {
+  &:before {
+    content: $icon-got-throne-path94;  
+    margin-left: -1em;  
+    color: rgb(22, 22, 22);
+  }
+}
+.icon-got-throne .path95 {
+  &:before {
+    content: $icon-got-throne-path95;  
+    margin-left: -1em;  
+    color: rgb(70, 70, 70);
+  }
+}
+.icon-got-throne .path96 {
+  &:before {
+    content: $icon-got-throne-path96;  
+    margin-left: -1em;  
+    color: rgb(90, 85, 84);
+  }
+}
+.icon-got-throne .path97 {
+  &:before {
+    content: $icon-got-throne-path97;  
+    margin-left: -1em;  
+    color: rgb(72, 65, 61);
+  }
+}
+.icon-got-throne .path98 {
+  &:before {
+    content: $icon-got-throne-path98;  
+    margin-left: -1em;  
+    color: rgb(26, 24, 21);
+  }
+}
+.icon-got-throne .path99 {
+  &:before {
+    content: $icon-got-throne-path99;  
+    margin-left: -1em;  
+    color: rgb(54, 48, 43);
+  }
+}
+.icon-got-throne .path100 {
+  &:before {
+    content: $icon-got-throne-path100;  
+    margin-left: -1em;  
+    color: rgb(32, 28, 29);
+  }
+}
+.icon-got-throne .path101 {
+  &:before {
+    content: $icon-got-throne-path101;  
+    margin-left: -1em;  
+    color: rgb(54, 48, 43);
+  }
+}
+.icon-got-throne .path102 {
+  &:before {
+    content: $icon-got-throne-path102;  
+    margin-left: -1em;  
+    color: rgb(32, 28, 29);
+  }
+}
+.icon-got-throne .path103 {
+  &:before {
+    content: $icon-got-throne-path103;  
+    margin-left: -1em;  
+    color: rgb(92, 90, 89);
+  }
+}
+.icon-got-throne .path104 {
+  &:before {
+    content: $icon-got-throne-path104;  
+    margin-left: -1em;  
+    color: rgb(47, 41, 36);
+  }
+}
+.icon-got-throne .path105 {
+  &:before {
+    content: $icon-got-throne-path105;  
+    margin-left: -1em;  
+    color: rgb(15, 11, 10);
+  }
+}
+.icon-got-throne .path106 {
+  &:before {
+    content: $icon-got-throne-path106;  
+    margin-left: -1em;  
+    color: rgb(41, 37, 31);
+  }
+}
+.icon-got-throne .path107 {
+  &:before {
+    content: $icon-got-throne-path107;  
+    margin-left: -1em;  
+    color: rgb(47, 46, 45);
+  }
+}
+.icon-got-throne .path108 {
+  &:before {
+    content: $icon-got-throne-path108;  
+    margin-left: -1em;  
+    color: rgb(40, 37, 31);
+  }
+}
+.icon-got-throne .path109 {
+  &:before {
+    content: $icon-got-throne-path109;  
+    margin-left: -1em;  
+    color: rgb(32, 28, 26);
+  }
+}
+.icon-got-throne .path110 {
+  &:before {
+    content: $icon-got-throne-path110;  
+    margin-left: -1em;  
+    color: rgb(32, 28, 26);
+  }
+}
+.icon-got-throne .path111 {
+  &:before {
+    content: $icon-got-throne-path111;  
+    margin-left: -1em;  
+    color: rgb(18, 16, 13);
+  }
+}
+.icon-got-throne .path112 {
+  &:before {
+    content: $icon-got-throne-path112;  
+    margin-left: -1em;  
+    color: rgb(26, 24, 21);
+  }
+}
+.icon-got-throne .path113 {
+  &:before {
+    content: $icon-got-throne-path113;  
+    margin-left: -1em;  
+    color: rgb(29, 25, 23);
+  }
+}
+.icon-got-throne .path114 {
+  &:before {
+    content: $icon-got-throne-path114;  
+    margin-left: -1em;  
+    color: rgb(54, 48, 43);
+  }
+}
+.icon-got-throne .path115 {
+  &:before {
+    content: $icon-got-throne-path115;  
+    margin-left: -1em;  
+    color: rgb(54, 48, 43);
+  }
+}
+.icon-got-throne .path116 {
+  &:before {
+    content: $icon-got-throne-path116;  
+    margin-left: -1em;  
+    color: rgb(26, 24, 21);
+  }
+}
+.icon-got-throne .path117 {
+  &:before {
+    content: $icon-got-throne-path117;  
+    margin-left: -1em;  
+    color: rgb(54, 48, 43);
+  }
+}
+.icon-got-throne .path118 {
+  &:before {
+    content: $icon-got-throne-path118;  
+    margin-left: -1em;  
+    color: rgb(32, 28, 29);
+  }
+}
+.icon-got-throne .path119 {
+  &:before {
+    content: $icon-got-throne-path119;  
+    margin-left: -1em;  
+    color: rgb(32, 28, 29);
+  }
+}
+.icon-got-throne .path120 {
+  &:before {
+    content: $icon-got-throne-path120;  
+    margin-left: -1em;  
+    color: rgb(32, 28, 29);
+  }
+}
+.icon-got-throne .path121 {
+  &:before {
+    content: $icon-got-throne-path121;  
+    margin-left: -1em;  
+    color: rgb(26, 24, 21);
+  }
+}
+.icon-got-throne .path122 {
+  &:before {
+    content: $icon-got-throne-path122;  
+    margin-left: -1em;  
+    color: rgb(26, 24, 21);
+  }
+}
+.icon-got-throne .path123 {
+  &:before {
+    content: $icon-got-throne-path123;  
+    margin-left: -1em;  
+    color: rgb(32, 28, 29);
+  }
+}
+.icon-got-throne .path124 {
+  &:before {
+    content: $icon-got-throne-path124;  
+    margin-left: -1em;  
+    color: rgb(54, 48, 43);
+  }
+}
+.icon-got-throne .path125 {
+  &:before {
+    content: $icon-got-throne-path125;  
+    margin-left: -1em;  
+    color: rgb(32, 28, 29);
+  }
+}
+.icon-got-throne .path126 {
+  &:before {
+    content: $icon-got-throne-path126;  
+    margin-left: -1em;  
+    color: rgb(32, 28, 29);
+  }
+}
+.icon-got-throne .path127 {
+  &:before {
+    content: $icon-got-throne-path127;  
+    margin-left: -1em;  
+    color: rgb(54, 48, 43);
+  }
+}
+.icon-got-throne .path128 {
+  &:before {
+    content: $icon-got-throne-path128;  
+    margin-left: -1em;  
+    color: rgb(87, 86, 85);
+  }
+}
+.icon-got-throne .path129 {
+  &:before {
+    content: $icon-got-throne-path129;  
+    margin-left: -1em;  
+    color: rgb(82, 81, 80);
+  }
+}
+.icon-got-throne .path130 {
+  &:before {
+    content: $icon-got-throne-path130;  
+    margin-left: -1em;  
+    color: rgb(105, 104, 104);
+  }
+}
+.icon-got-throne .path131 {
+  &:before {
+    content: $icon-got-throne-path131;  
+    margin-left: -1em;  
+    color: rgb(93, 91, 90);
+  }
+}
+.icon-got-throne .path132 {
+  &:before {
+    content: $icon-got-throne-path132;  
+    margin-left: -1em;  
+    color: rgb(79, 79, 78);
+  }
+}
+.icon-got-throne .path133 {
+  &:before {
+    content: $icon-got-throne-path133;  
+    margin-left: -1em;  
+    color: rgb(54, 48, 43);
+  }
+}
+.icon-got-throne .path134 {
+  &:before {
+    content: $icon-got-throne-path134;  
+    margin-left: -1em;  
+    color: rgb(54, 48, 43);
+  }
+}
+.icon-got-throne .path135 {
+  &:before {
+    content: $icon-got-throne-path135;  
+    margin-left: -1em;  
+    color: rgb(32, 28, 29);
+  }
+}
+.icon-got-throne .path136 {
+  &:before {
+    content: $icon-got-throne-path136;  
+    margin-left: -1em;  
+    color: rgb(54, 48, 43);
+  }
+}
+.icon-got-throne .path137 {
+  &:before {
+    content: $icon-got-throne-path137;  
+    margin-left: -1em;  
+    color: rgb(32, 28, 29);
+  }
+}
+.icon-got-throne .path138 {
+  &:before {
+    content: $icon-got-throne-path138;  
+    margin-left: -1em;  
+    color: rgb(32, 28, 29);
+  }
+}
+.icon-got-throne .path139 {
+  &:before {
+    content: $icon-got-throne-path139;  
+    margin-left: -1em;  
+    color: rgb(18, 14, 14);
+  }
+}
+.icon-got-throne .path140 {
+  &:before {
+    content: $icon-got-throne-path140;  
+    margin-left: -1em;  
+    color: rgb(32, 28, 29);
+  }
+}
+.icon-got-throne .path141 {
+  &:before {
+    content: $icon-got-throne-path141;  
+    margin-left: -1em;  
+    color: rgb(41, 37, 31);
+  }
+}
+.icon-got-throne .path142 {
+  &:before {
+    content: $icon-got-throne-path142;  
+    margin-left: -1em;  
+    color: rgb(54, 48, 43);
+  }
+}
+.icon-got-throne .path143 {
+  &:before {
+    content: $icon-got-throne-path143;  
+    margin-left: -1em;  
+    color: rgb(41, 37, 31);
+  }
+}
+.icon-got-throne .path144 {
+  &:before {
+    content: $icon-got-throne-path144;  
+    margin-left: -1em;  
+    color: rgb(41, 37, 31);
+  }
+}
+.icon-got-throne .path145 {
+  &:before {
+    content: $icon-got-throne-path145;  
+    margin-left: -1em;  
+    color: rgb(41, 37, 31);
+  }
+}
+.icon-got-throne .path146 {
+  &:before {
+    content: $icon-got-throne-path146;  
+    margin-left: -1em;  
+    color: rgb(79, 79, 78);
+  }
+}
+.icon-got-throne .path147 {
+  &:before {
+    content: $icon-got-throne-path147;  
+    margin-left: -1em;  
+    color: rgb(41, 37, 31);
+  }
+}
+.icon-got-throne .path148 {
+  &:before {
+    content: $icon-got-throne-path148;  
+    margin-left: -1em;  
+    color: rgb(41, 37, 31);
+  }
+}
+.icon-got-throne .path149 {
+  &:before {
+    content: $icon-got-throne-path149;  
+    margin-left: -1em;  
+    color: rgb(80, 80, 80);
+  }
+}
+.icon-got-throne .path150 {
+  &:before {
+    content: $icon-got-throne-path150;  
+    margin-left: -1em;  
+    color: rgb(31, 29, 25);
+  }
+}
+.icon-got-throne .path151 {
+  &:before {
+    content: $icon-got-throne-path151;  
+    margin-left: -1em;  
+    color: rgb(41, 37, 31);
+  }
+}
+.icon-got-throne .path152 {
+  &:before {
+    content: $icon-got-throne-path152;  
+    margin-left: -1em;  
+    color: rgb(41, 37, 31);
+  }
+}
+.icon-got-throne .path153 {
+  &:before {
+    content: $icon-got-throne-path153;  
+    margin-left: -1em;  
+    color: rgb(27, 25, 22);
+  }
+}
+.icon-got-throne .path154 {
+  &:before {
+    content: $icon-got-throne-path154;  
+    margin-left: -1em;  
+    color: rgb(95, 94, 93);
+  }
+}
+.icon-got-throne .path155 {
+  &:before {
+    content: $icon-got-throne-path155;  
+    margin-left: -1em;  
+    color: rgb(74, 74, 73);
+  }
+}
+.icon-got-throne .path156 {
+  &:before {
+    content: $icon-got-throne-path156;  
+    margin-left: -1em;  
+    color: rgb(75, 75, 74);
+  }
+}
+.icon-got-throne .path157 {
+  &:before {
+    content: $icon-got-throne-path157;  
+    margin-left: -1em;  
+    color: rgb(73, 73, 73);
+  }
+}
+.icon-got-house-martell {
+  &:before {
+    content: $icon-got-house-martell; 
+  }
+}
+.icon-got-house-arryn .path1 {
+  &:before {
+    content: $icon-got-house-arryn-path1;  
+  }
+}
+.icon-got-house-arryn .path2 {
+  &:before {
+    content: $icon-got-house-arryn-path2;  
+    margin-left: -1em;  
+  }
+}
+.icon-got-house-greyjoy {
+  &:before {
+    content: $icon-got-house-greyjoy-path1;  
+  }
+}
+
+.icon-got-house-targaryen {
+  &:before {
+    content: $icon-got-house-targaryen; 
+  }
+}
+.icon-got-house-barathion .path1 {
+  &:before {
+    content: $icon-got-house-barathion-path1;  
+  }
+}
+.icon-got-house-barathion .path2 {
+  &:before {
+    content: $icon-got-house-barathion-path2;  
+    margin-left: -1em;  
+  }
+}
+.icon-got-house-barathion .path3 {
+  &:before {
+    content: $icon-got-house-barathion-path3;  
+    margin-left: -1em;  
+  }
+}
+.icon-got-house-barathion .path4 {
+  &:before {
+    content: $icon-got-house-barathion-path4;  
+    margin-left: -1em;  
+  }
+}
+
+
+
+
+.icon-got-house-lannister{
+  &:before {
+    content: $icon-got-house-lannister-path1;  
+  }
+}
+
+.icon-got-house-startk {
+  &:before {
+    content: $icon-got-house-startk; 
+  }
+}
+.icon-got-handsOfKing {
+  &:before {
+    content: $icon-got-handsOfKing;     
+    color: #d5a940;
+  }
+}
+
