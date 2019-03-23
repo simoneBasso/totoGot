@@ -1,6 +1,7 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div [class]="'theme-wrapper black-theme'" id="main">
   <mat-toolbar color="primary" class="house-toolbar">
+    <div [ngStyle]="{'textAlign':'center','width':'100%','fontFamily':'gotFont'}">TOTOGOT</div>
     <!--left-->
     <section class="stendardo arr" fxHide.xs fxHide.sm>
       <span class="house icon-got-house-arryn">
@@ -28,9 +29,7 @@
       [ngStyle]="{'margin-left.em':15}">
       <span class="house icon-got-house-lannister"> </span>
     </section>
-    <div class="title">
-      <span>TOTO GOT</span>
-    </div>
+  
     <!--rigth-->
     <section fxHide.xs fxHide.sm class="stendardo mar" [ngStyle]="{'right':'0%'}">
       <span class="house icon-got-house-martell"></span>
@@ -68,7 +67,6 @@
           <div class="gradient">
             <div class="container">
               <mat-toolbar class=transparent>
-                <span class="spacer"></span>
                 <button mat-icon-button routerLink="ranking" class="d-none d-sm-inline menu-button">
                   <fa-icon icon="list-ol"></fa-icon>
                 </button>
