@@ -1,0 +1,14 @@
+<div [ngStyle]="{'textAlign':'center'}">
+    <img src="assets/images/avatar/RE_DELLA_NOTTE.png" class="image-king">
+</div>
+<h1 mat-dialog-title class="gotTitle">ATTENZIONE</h1>
+<div mat-dialog-content class="normal-text">
+  Il sito può contenere tantissimi spoiler su Game Of Thrones!
+  <br>
+  Attualmente tutte le informazioni presenti si basano sulla fine della 7° serie.
+  <br>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Errore mio, scusa</button>
+  <button mat-button (click)="onWinterClick()" class="azure" cdkFocusInitial>Voglio fare come l'inverno.</button>
+</div>

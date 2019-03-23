@@ -1,10 +1,17 @@
 
-
+.cdk-overlay-dark-backdrop {
+  background: rgba(51, 41, 41, 0.96);
+}
 
 
 table {
   width: 100%;
-  font-family: gotFont;
+  font-family: gotFont !important;
+}
+
+.td-number{
+  font-family: fantasy;
+  font-size: 18px;
 }
 
 .centred{
@@ -25,6 +32,18 @@ table {
   .puntata {
     font-size: 23px;
     font-family: 'Franklin Gothic Medium', fantasy;
+  }
+
+  .panel-title {
+    font-family: gotFont
+  }
+  .info-legend{
+    padding-right: 8px;
+    padding-left: 8px;
+    fa-icon{
+    font-size: 25px;
+    padding-right: 8px;
+  }
   }
 
 
@@ -55,7 +74,7 @@ table {
 }
 .timer-container{
 padding-bottom: 15%;
-
+ 
 img{
   left: 28%;
     top: -3%;
@@ -85,3 +104,28 @@ countdown {
   }
   }
 }
+
+.timer-container-xs{
+  padding-bottom: 15%;
+  text-align: center;
+  countdown {
+    text-align: center;
+    top: 0px;
+    display: inline;
+    align-items: center;
+    align-content: center;
+    align-self: center;
+    left: 31%;
+    top: 0%;
+    .time{
+      background-color: black;
+      display: inline-block;
+      font-size: 20px;
+      padding:6px;
+    }
+    .label{
+      padding-top: 16px;
+      font-size: 11px;
+    }
+    }
+  }

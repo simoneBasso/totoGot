@@ -2,8 +2,23 @@
 import { Types } from './shared/enum/types';
 import { ResponseCharacter, ResponsePregnantQuestion, ResponseQuestion } from './shared/models/response_characters.model';
 import { User } from './shared/models/user.model';
+import _ from 'underscore';
+import { GotMaps } from './shared/calculate/maps';
 
-
+export function getListChar(){
+    const res = [];
+    const map = new GotMaps().charMap;
+    const keys = Object.keys(Types.Characters).filter(k => typeof Types.Characters[k as any] === "number");
+    var t =  keys.map(k => Types.Characters[k as any]);
+    _.values(t).forEach(char => {
+        if(char != 34)
+        res.push({
+            name:map.get(char),
+            value:char
+        })
+    });
+    return res;
+}
 
 
 export function getAnswers():User{

@@ -1,12 +1,16 @@
 import { BrowserModule } from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {OverlayContainer} from '@angular/cdk/overlay';
 import { CountdownModule } from 'ngx-countdown';
 import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
+import {NgxChartsModule} from '@swimlane/ngx-charts';
+
 import {
   MatButtonModule,
   MatSelectModule,
   MatTabsModule,
+  MatDialogModule,
   MatInputModule,
   MatProgressSpinnerModule,
   MatChipsModule,
@@ -46,7 +50,9 @@ import {
   faChartBar,
   faBookDead,
   faQuestionCircle,
-  faListOl
+  faListOl,
+  faPaperPlane,
+  faDownload
 } from '@fortawesome/free-solid-svg-icons';
 import {
   faGithub,
@@ -59,6 +65,8 @@ import { TableResponseComponent } from './table-response/table-response.componen
 import { DetailAnswerComponent } from './detail-answer/detail-answer.component';
 import { StatisticComponent } from './statistic/statistic.component';
 import { RulesComponent } from './rules/rules.component';
+import { AlertDialogComponent } from './alert-dialog/alert-dialog.component';
+import { ImNightKingComponent } from './im-night-king/im-night-king.component';
 
 library.add(
   faBars,
@@ -81,7 +89,9 @@ library.add(
   faChartBar,
   faBookDead,
   faQuestionCircle,
-  faListOl
+  faListOl,
+  faPaperPlane,
+  faDownload
 );
 
 @NgModule({
@@ -92,6 +102,8 @@ library.add(
     DetailAnswerComponent,
     StatisticComponent,
     RulesComponent,
+    AlertDialogComponent,
+    ImNightKingComponent
   ],
   imports: [
     BrowserModule,
@@ -112,16 +124,24 @@ library.add(
     MatListModule,
     MatMenuModule,
     MatIconModule,
+    MatDialogModule,
     MatExpansionModule,
     MatTableModule,
     MatTooltipModule,
     MatSnackBarModule,
     MatSlideToggleModule,
     MatDividerModule,
+    NgxChartsModule,
     FlexLayoutModule,
     AppRoutingModule
   ],
+  entryComponents: [AlertDialogComponent],
   providers: [],
   bootstrap: [AppComponent]
+  
 })
-export class AppModule { }
+export class AppModule  {
+  constructor(overlayContainer: OverlayContainer) {
+    overlayContainer.getContainerElement().classList.add('black-theme');
+  }
+}

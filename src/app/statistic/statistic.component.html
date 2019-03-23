@@ -1,3 +1,153 @@
-<p>
-  statistic works!
-</p>
+<div fxLayout="row wrap" fxLayoutAlign="center stretch" fxLayoutGap="10%">
+  <div fxFlex="100%" fxFlex.sm="100%">
+    <h2>RISPOSTE</h2>
+  </div>
+</div>
+
+<div fxLayout="column" fxLayoutAlign="space-between stretch" fxLayoutGap="2%">
+  <mat-card fxFlex="100%" fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="2%">
+      <div fxFlex="10%"  fxShow.sm="false" fxShow.xs="false">
+          <img [src]="'assets/images/avatar/' + getImageName() + '.png'" class="image-avatar" >
+      </div>
+    <mat-form-field fxFlex="30%" fxFlex.sm="100%" fxFlex.sm="100%">
+      <mat-label>Personaggio</mat-label>
+      <mat-select [(ngModel)]="selectedChar" (selectionChange)="selectedNewChar($event)">
+        <mat-option *ngFor="let char of allChar" [value]="char.value">
+          {{char.name}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+   
+  </mat-card>
+
+  <div fxFlex="100%" fxLayout="row wrap" fxLayoutAlign="space-between  stretch" fxLayoutGap="2%">
+    <div fxFlex="30%" fxFlex.sm="100%" fxFlex.xs="100%" fxShow.sm="false" fxShow.xs="false">
+      <mat-card class="img-char-container">
+          <img [src]="'assets/images/chars/' + getImageName() + '.png'" class="image-card" >
+          <br>
+        <span>{{getName()}}</span>
+      </mat-card>
+    </div>
+    <div fxFlex="30%" fxFlex.sm="100%" fxFlex.xs="100%">
+      <mat-card>
+        <div fxLayout="column" fxLayoutAlign="center">
+            <mat-card-title class="panel-title"><h4>Sopravissuto</h4></mat-card-title>
+          <div fxFlex="100%">
+            <ngx-charts-pie-chart [view]="view" [scheme]="colorSchemeAlive" [results]="dataGraph.aliveData"
+              [legend]="false" [explodeSlices]="false" [labels]="true" [doughnut]="false" [gradient]="false"
+              (select)="onSelect($event)">
+            </ngx-charts-pie-chart>
+          </div>
+          <div fxFlex="100%">
+            <mat-expansion-panel>
+              <mat-expansion-panel-header>
+                <mat-panel-title class="panel-title">
+                  <h4>Dettagli</h4>
+                </mat-panel-title>
+              </mat-expansion-panel-header>
+              <div>
+                <div>
+                  <span class="spanAliveTrueDett">SI:</span>
+                    <span *ngFor="let res of aliveTrueUserAnswer">
+                      {{res}},
+                    </span>
+                   <br><br>
+                   <span class="spanAliveFalseDett">NO:</span>
+                    <span *ngFor="let res of aliveFalseUserAnswer">
+                      {{res}},
+                    </span>
+                   <br><br>
+                   <span class="spanAliveUndefDett">NC:</span>
+                    <span *ngFor="let res of aliveUndefinedUserAnswer">
+                      {{res}},
+                    </span>
+                   <br>
+                </div>
+              </div>
+            </mat-expansion-panel>
+          </div>
+        </div>
+      </mat-card>
+    </div>
+
+    <div fxFlex="30%"  fxFlex.sm="100%" fxFlex.xs="100%" >
+      <mat-card>
+        <div fxLayout="column" fxLayoutAlign="center" fxLayoutGap="2%">
+            <mat-card-title class="panel-title"><h4>Estraneo</h4></mat-card-title>
+          <div fxFlex="100%">
+            <ngx-charts-pie-chart [view]="view" [scheme]="colorSchemeBecame" [results]="dataGraph.becameData"
+              [legend]="false" [explodeSlices]="false" [labels]="true" [doughnut]="false" [gradient]="false"
+              (select)="onSelect($event)">
+            </ngx-charts-pie-chart>
+          </div>
+          <div fxFlex="100%">
+            <mat-expansion-panel fxFlex="100%">
+              <mat-expansion-panel-header>
+                  <mat-panel-title class="panel-title">
+                      <h4>Dettagli</h4>
+                    </mat-panel-title>
+              </mat-expansion-panel-header>
+              <div>
+                  <div>
+                    <span class="spanBecameTrueDett">SI:</span>
+                      <span *ngFor="let res of becameTrueUserAnswer">
+                        {{res}},
+                      </span>
+                     <br><br>
+                     <span class="spanBecameFalseDett">NO:</span>
+                      <span *ngFor="let res of becameFalseUserAnswer">
+                        {{res}},
+                      </span>
+                     <br><br>
+                     <span class="spanBecameUndefDett">NC:</span>
+                      <span *ngFor="let res of becameUndefinedUserAnswer">
+                        {{res}},
+                      </span>
+                     <br><br>
+                  </div>
+              </div>
+            </mat-expansion-panel>
+          </div>
+        </div>
+      </mat-card>
+    </div>
+
+  </div>
+
+
+  <div fxFlex="100%" fxLayout="row wrap" fxLayoutAlign="center" fxLayoutGap="2% ">
+    <mat-card fxFlex="100%" fxLayoutGap="2%" fxFlex.sm="100%" fxFlex.xs="100%">
+      <div fxLayout="column" fxLayoutAlign="center" fxLayoutGap="2%">
+          <mat-card-title class="panel-title"><h4>Ucciso da</h4></mat-card-title>
+        <div fxFlex="100%">
+            <ngx-charts-pie-grid
+            [results]="dataGraph.killedByData"
+            (select)="onSelect($event)">
+          </ngx-charts-pie-grid>
+        </div>
+        <div fxFlex="100%">
+          <mat-expansion-panel fxFlex="100%">
+            <mat-expansion-panel-header>
+                <mat-panel-title class="panel-title">
+                    <h4>Dettagli</h4>
+                  </mat-panel-title>
+            </mat-expansion-panel-header>
+            <div>
+                <div>
+                    <span *ngFor="let res of killedByDescri">
+                      <span class="panel-title">{{res.name}}: &nbsp;&nbsp;</span>
+                      <span *ngFor="let us of res.value">{{us.user}},&nbsp; </span>
+                      <br><br>
+                    </span>
+                </div>
+            </div>
+          </mat-expansion-panel>
+        </div>
+      </div>
+
+
+
+
+    </mat-card>
+
+  </div>

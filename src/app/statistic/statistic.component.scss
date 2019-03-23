@@ -1,0 +1,62 @@
+.panel-title {
+    font-family: gotFont;
+    h4{
+        font-weight: normal;
+    }
+    
+  }
+
+.selectedChar{
+    width: 250px;
+}
+
+.image-avatar{
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    padding: 8px;
+}
+.image-card{
+    width: 350px;
+}
+
+.img-char-container{
+    text-align: center;
+    span{
+        font-family: gotFont;
+        font-size: 30px;
+    }
+}
+
+.spanAliveTrueDett{
+    font-size: 20px;
+    font-family: gotFont;
+    color: #8bc34a
+}
+.spanAliveFalseDett{
+    font-size: 20px;
+    font-family: gotFont;
+    color: #f44336
+}
+.spanAliveUndefDett{
+    font-size: 20px;
+    font-family: gotFont;
+    color: #9e9e9e
+}
+.spanBecameTrueDett{
+    font-size: 20px;
+    font-family: gotFont;
+    color: #0095cd
+}
+.spanBecameFalseDett{
+    font-size: 20px;
+    font-family: gotFont;
+    color: #5d7985
+}
+.spanBecameUndefDett{
+    font-size: 20px;
+    font-family: gotFont;
+    color: #9e9e9e
+}
+
+::ng-deep .ngx-charts { text { fill: #fff !important; } }

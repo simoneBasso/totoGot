@@ -5,7 +5,9 @@
   src: url(../assets/fonts/GameOfThrones.ttf);
 }
 
-
+.house-toolbar{
+  padding: 0;
+}
 
 
 
@@ -88,7 +90,7 @@
   
       .content {
         flex: 1 0 auto;
-        margin-top: 64px;
+        margin-top: 0px;
         overflow: hidden;
       }
   
@@ -166,7 +168,7 @@
   
     @media (max-width: $toolbar-breakpoint) {
       .content {
-        margin-top: 56px !important;
+       
       }
     }
   }
@@ -266,12 +268,14 @@
   
     .container {
       position: relative;
+      padding-top: 0px;
       padding: 36px;
     }
   }
   
   .stendardo {
-    background: red;
+    top: 0;
+    z-index: 3;
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 70%, 50% 100%, 0 70%);
     clip-path: polygon(0 0, 100% 0, 100% 70%, 50% 100%, 0 70%);
     position: absolute;
@@ -340,20 +344,24 @@
     margin-left: 40%;
     padding-top: 0.5em;
     text-transform: uppercase;
-    top: 15%;
     span {
+      font-family: gotFont;
       height: 100%;
       width: 100%;
-      font-size: 2.5em;
+      font-size: 2em;
     }
     
 
   }
-
-  .ranking-button{
-    padding-top: 9em;
-    right: 0%;
-    padding-left: 84%;
+  .transparent{
+    background: transparent !important;
+  }
+  .spacer{
+    padding-right: 80%;
+  }
+  .menu-button{
+    font-size: 40px;
+    padding-right: 6%;
   }
   .details-button{
     padding-top: 9em;
@@ -371,6 +379,10 @@
     padding-left: 4%;
   }
   
+  .medico{
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+  }
 
 
 

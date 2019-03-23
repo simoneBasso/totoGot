@@ -1,49 +1,80 @@
-<table mat-table [dataSource]="charactersRow" class="mat-elevation-z8">
-  
-    <!--- Note that these columns can be defined in any order.
+<table mat-table [dataSource]="charactersRow" class="mat-elevation-z8" fxShow.sm="false" fxShow.xs="false">
+
+  <!--- Note that these columns can be defined in any order.
             The actual rendered columns are set as a property on the row definition" -->
 
-    <!-- Position Column -->
-    <ng-container matColumnDef="name">
-        <th mat-header-cell *matHeaderCellDef> </th>
-        <td mat-cell *matCellDef="let char" fxLayout="row wrap" fxLayoutAlign="start center" >
-         <img [src]="imgSource + getImageName(char.name) + '.png'" 
-         class="image-avatar" alt="no img">
-         <span class="title-char">{{getCharName(char.name)}}</span>
-        </td>
-      </ng-container>
+  <!-- Position Column -->
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef> </th>
+    <td mat-cell *matCellDef="let char" fxLayout="row wrap" fxLayoutAlign="start center">
+      <img [src]="imgSource + getImageName(char.name) + '.png'" class="image-avatar" alt="no img">
+      <span class="title-char">{{getCharName(char.name)}}</span>
+    </td>
+  </ng-container>
 
-    <ng-container matColumnDef="situation" class="centred">
-      <th mat-header-cell *matHeaderCellDef class="centred">Situazione </th>
-      <td mat-cell *matCellDef="let char" class="centred icon-table">
+  <ng-container matColumnDef="situation" class="centred">
+    <th mat-header-cell *matHeaderCellDef class="centred">Situazione </th>
+    <td mat-cell *matCellDef="let char" class="centred icon-table">
+      <fa-icon icon="fist-raised" *ngIf="char.alive === true"></fa-icon>
+      <fa-icon icon="skull-crossbones" *ngIf="char.alive === false"></fa-icon>
+      <fa-icon icon="minus" *ngIf="char.alive !== false && char.alive !== true"></fa-icon>
+    </td>
+  </ng-container>
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="became" class="centred">
+    <th mat-header-cell *matHeaderCellDef class="centred">Estraneo </th>
+    <td mat-cell *matCellDef="let char" class="centred icon-table">
+      <fa-icon icon="skull" *ngIf="char.becameNight === true"></fa-icon>
+      <fa-icon icon="cross" *ngIf="char.becameNight === false"></fa-icon>
+      <fa-icon icon="minus" *ngIf="char.becameNight !== false && char.becameNight !== true"></fa-icon>
+    </td>
+  </ng-container>
+
+  <!-- Weight Column -->
+  <ng-container matColumnDef="killedBy" class="centred">
+    <th mat-header-cell *matHeaderCellDef class="centred">Ucciso da </th>
+    <td mat-cell *matCellDef="let char" class="centred">
+      <span *ngIf="char.killedBy">{{getCharName(char.killedBy)}}</span>
+      <span *ngIf="!char.killedBy" class="icon-table">
+        <fa-icon icon="minus"></fa-icon>
+      </span>
+    </td>
+  </ng-container>
+
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+
+<div fxLayout="column" fxFlex="100%" fxLayoutAlign="center center" fxLayoutGap="3%" fxShow.lg="false" fxShow.md="false">
+  <mat-card fxFlex="100%" fxLayout="row wrap" fxLayoutAlign="center center" *ngFor="let char of charactersRow">
+    <div fxLayoutAlign="start center" fxFlex="100%">
+      <img [src]="imgSource + getImageName(char.name) + '.png'" class="image-avatar">
+      <span class="title-char">{{getCharName(char.name)}}</span>
+    </div>
+    <div fxLayout="row wrap" fxLayoutAlign="center center" fxFlex="100%" fxLayoutGap="1%">
+      <div fxFlex="32%" class="icon-table" fxLayoutAlign="center center">
         <fa-icon icon="fist-raised" *ngIf="char.alive === true"></fa-icon>
         <fa-icon icon="skull-crossbones" *ngIf="char.alive === false"></fa-icon>
         <fa-icon icon="minus" *ngIf="char.alive !== false && char.alive !== true"></fa-icon>
-      </td>
-    </ng-container>
-
-    <!-- Name Column -->
-    <ng-container matColumnDef="became" class="centred">
-      <th mat-header-cell *matHeaderCellDef class="centred">Estraneo </th>
-      <td mat-cell *matCellDef="let char" class="centred icon-table">
-          <fa-icon icon="skull" *ngIf="char.becameNight === true"></fa-icon>
-          <fa-icon icon="cross" *ngIf="char.becameNight === false"></fa-icon>
-          <fa-icon icon="minus" *ngIf="char.becameNight !== false && char.becameNight !== true"></fa-icon>  
-      </td>
-    </ng-container>
-
-    <!-- Weight Column -->
-    <ng-container matColumnDef="killedBy" class="centred">
-      <th mat-header-cell *matHeaderCellDef class="centred">Ucciso da </th>
-      <td mat-cell *matCellDef="let char" class="centred">
-        <span *ngIf="char.killedBy">{{getCharName(char.killedBy)}}</span>
-        <span *ngIf="!char.killedBy" class="icon-table">
-            <fa-icon icon="minus"></fa-icon>
-        </span>
-      </td>
-    </ng-container>
-
-
-    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-  </table>
+      </div>
+      <div fxFlex="32%" class="icon-table"fxLayoutAlign="center center" >
+        <fa-icon icon="skull" *ngIf="char.becameNight === true"></fa-icon>
+        <fa-icon icon="cross" *ngIf="char.becameNight === false"></fa-icon>
+        <fa-icon icon="minus" *ngIf="char.becameNight !== false && char.becameNight !== true"></fa-icon>
+      </div>
+      <div fxFlex="32%" class="icon-table" fxLayoutAlign="center center">
+        <fa-icon icon="skull" *ngIf="char.becameNight === true"></fa-icon>
+        <fa-icon icon="cross" *ngIf="char.becameNight === false"></fa-icon>
+        <fa-icon icon="minus" *ngIf="char.becameNight !== false && char.becameNight !== true"></fa-icon>
+      </div>
+    </div>
+    <div fxFlex="100%" fxLayoutAlign="center center" >
+      <span *ngIf="char.killedBy">{{getCharName(char.killedBy)}}</span>
+      <span *ngIf="!char.killedBy" class="icon-table">
+        <fa-icon icon="minus"></fa-icon>
+      </span>
+    </div>
+</mat-card>
+</div>

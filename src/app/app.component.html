@@ -1,6 +1,51 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div [class]="'theme-wrapper black-theme'">
-
+<div [class]="'theme-wrapper black-theme'" id="main">
+  <mat-toolbar color="primary" class="house-toolbar">
+    <!--left-->
+    <section class="stendardo arr" fxHide.xs fxHide.sm>
+      <span class="house icon-got-house-arryn">
+        <span class="path1"></span>
+        <span class="path2"></span>
+      </span>
+    </section>
+    <section class="stendardo bar" [ngStyle]="{'margin-left.em':5}" fxHide.xs fxHide.sm>
+      <span class="house icon-got-house-barathion">
+        <span class="path1"></span>
+        <span class="path2"></span>
+        <span class="path3"></span>
+      </span>
+    </section>
+    <section class="stendardo gry" [ngStyle]="{'margin-left.em':10}" fxHide.xs fxHide.sm>
+      <span class="house icon-got-house-greyjoy">
+        <span class="path1"></span>
+        <span class="path2"></span>
+        <span class="path3"></span>
+        <span class="path4"></span>
+        <span class="path5"></span>
+      </span>
+    </section>
+    <section class="stendardo lan" [ngStyle.xs]="{ 'margin-left.em':0 }" [ngStyle.sm]="{ 'margin-left.em':0 }"
+      [ngStyle]="{'margin-left.em':15}">
+      <span class="house icon-got-house-lannister"> </span>
+    </section>
+    <div class="title">
+      <span>TOTO GOT</span>
+    </div>
+    <!--rigth-->
+    <section fxHide.xs fxHide.sm class="stendardo mar" [ngStyle]="{'right':'0%'}">
+      <span class="house icon-got-house-martell"></span>
+    </section>
+    <section fxHide.xs fxHide.sm class="stendardo tul" [ngStyle]="{'right':'0%','margin-right.em':5}">
+      <span class="house icon-got-house-tully"></span>
+    </section>
+    <section fxHide.xs fxHide.sm class="stendardo tar" [ngStyle]="{'right':'0%','margin-right.em':10}">
+      <span class="house icon-got-house-targaryen"></span>
+    </section>
+    <section class="stendardo sta" [ngStyle.xs]="{ 'right':0 }" [ngStyle.sm]="{ 'right':0 }"
+      [ngStyle]="{'right':'0%','margin-right.em':15}">
+      <span class="house icon-got-house-startk"></span>
+    </section>
+  </mat-toolbar>
   <mat-sidenav-container>
 
     <!-- <mat-sidenav #sidenav mode="push">
@@ -18,76 +63,25 @@
       </mat-sidenav> -->
 
     <div class="wrapper">
-
-      <div class="toolbar" [style.position]="'inherit'">
-        <!--left-->
-        <section class="stendardo arr" fxHide.xs fxHide.sm>
-            <span class="house icon-got-house-arryn">
-              <span class="path1"></span>
-              <span class="path2"></span>
-            </span>
-        </section>
-        <section class="stendardo bar" [ngStyle]="{'margin-left.em':5}" fxHide.xs fxHide.sm>
-            <span class="house icon-got-house-barathion">
-              <span class="path1"></span>
-              <span class="path2"></span>
-              <span class="path3"></span>
-            </span>
-        </section>
-        <section class="stendardo gry" [ngStyle]="{'margin-left.em':10}" fxHide.xs fxHide.sm>
-            <span class="house icon-got-house-greyjoy">
-              <span class="path1"></span>
-              <span class="path2"></span>
-              <span class="path3"></span>
-              <span class="path4"></span>
-              <span class="path5"></span>
-            </span>
-        </section>
-        <section class="stendardo lan"
-        [ngStyle.xs]="{ 'margin-left.em':0 }"
-        [ngStyle.sm]="{ 'margin-left.em':0 }"
-        [ngStyle]="{'margin-left.em':15}">
-        <span class="house icon-got-house-lannister"> </span>
-        </section>
-        <section class="title">
-            <span>TOTO GOT</span>
-          </section>
-        <!--rigth-->
-        <section fxHide.xs fxHide.sm class="stendardo mar" [ngStyle]="{'right':'0%'}">
-            <span class="house icon-got-house-martell"></span>
-        </section>
-        <section fxHide.xs fxHide.sm class="stendardo tul" [ngStyle]="{'right':'0%','margin-right.em':5}">
-            <span class="house icon-got-house-tully"></span>
-        </section>
-        <section fxHide.xs fxHide.sm class="stendardo tar" [ngStyle]="{'right':'0%','margin-right.em':10}">
-            <span class="house icon-got-house-targaryen"></span>
-        </section>
-        <section class="stendardo sta"
-        [ngStyle.xs]="{ 'right':0 }"
-        [ngStyle.sm]="{ 'right':0 }"
-        [ngStyle]="{'right':'0%','margin-right.em':15}">
-        <span class="house icon-got-house-startk"></span>
-        </section>
-      
-        <mat-toolbar [ngStyle]="{'background':'transparent'}">
-          <button mat-icon-button routerLink="ranking" class="d-none d-sm-inline ranking-button">
-            <fa-icon icon="list-ol"></fa-icon>
-          </button>
-          <button mat-icon-button routerLink="details" class="d-none d-sm-inline details-button">
-              <fa-icon icon="book-dead"></fa-icon>
-            </button>
-            <button mat-icon-button routerLink="statistic" class="d-none d-sm-inline statistic-button">
-                <fa-icon icon="chart-bar"></fa-icon>
-              </button>
-            <button mat-icon-button routerLink="statistic" class="d-none d-sm-inline info-button">
-                <fa-icon icon="question-circle"></fa-icon>
-              </button>
-        </mat-toolbar>
-      </div>
       <div class="content">
         <div class="background">
           <div class="gradient">
             <div class="container">
+              <mat-toolbar class=transparent>
+                <span class="spacer"></span>
+                <button mat-icon-button routerLink="ranking" class="d-none d-sm-inline menu-button">
+                  <fa-icon icon="list-ol"></fa-icon>
+                </button>
+                <button mat-icon-button routerLink="details" class="d-none d-sm-inline menu-button">
+                  <fa-icon icon="book-dead"></fa-icon>
+                </button>
+                <button mat-icon-button routerLink="statistic" class="d-none d-sm-inline menu-button">
+                  <fa-icon icon="chart-bar"></fa-icon>
+                </button>
+                <button mat-icon-button routerLink="rules" class="d-none d-sm-inline menu-button">
+                  <fa-icon icon="question-circle"></fa-icon>
+                </button>
+              </mat-toolbar>
               <router-outlet #o="outlet"></router-outlet>
             </div>
           </div>
@@ -123,4 +117,10 @@
 
   </mat-sidenav-container>
 
-  </div>
+</div>
+<div id="medico" [ngStyle]="{'display':'none'}" class="medico">
+<h1>Buona visione!</h1>
+<h3>Ecco un consiglio per altre serie tv che possono soddisfare i tuoi gusti!</h3>
+  <img src="assets/images/medico.jpg">
+    <h6>Per tornare indietro, ricaricare la pagina...</h6>
+</div>
