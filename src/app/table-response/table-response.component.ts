@@ -26,7 +26,8 @@ export class TableResponseComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.charactersRow = _.sortBy(this.answers.responseCharacters, x => x.name);
+    
+    this.charactersRow = _.sortBy(_.filter(this.answers.responseCharacters, x => x.name <= Types.Characters.NYMERIA), x => x.name);
   }
 
   getCharName(char:Types.Characters){

@@ -10,6 +10,7 @@ import { GotMaps } from '../shared/calculate/maps';
 import { MatDialog } from '@angular/material';
 import { AlertDialogComponent } from '../alert-dialog/alert-dialog.component';
 import { Router } from '@angular/router';
+import { TypeScriptEmitter } from '@angular/compiler';
 
 @Component({
   selector: 'app-ranking',
@@ -32,7 +33,7 @@ export class RankingComponent implements OnInit {
   config = {}
   displayedColumns: string[] = ['position', 'name', 'points'];
 
-  constructor(public dialog: MatDialog,private router: Router) {
+  constructor(public dialog: MatDialog, private router: Router) {
     const time = this.getTime()
     this.config = {
       leftTime: time,
@@ -42,7 +43,7 @@ export class RankingComponent implements OnInit {
 
     this.answers = utils.getAnswers();
     this.users = utils.getAll();
-    
+
   }
 
   ngOnInit() {
@@ -55,7 +56,7 @@ export class RankingComponent implements OnInit {
   }
 
   openDialog(): void {
-    if(sessionStorage.getItem("alreadyVisited")){
+    if (sessionStorage.getItem("alreadyVisited")) {
       return;
     }
     const dialogRef = this.dialog.open(AlertDialogComponent, {
@@ -63,11 +64,12 @@ export class RankingComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(res => {
-      sessionStorage.setItem("alreadyVisited","true");
-      if(res == false){
+      sessionStorage.setItem("alreadyVisited", "true");
+      if (res == false) {
         this.router.navigate(['imNightKing'])
       }
-      console.log(res)});
+      console.log(res)
+    });
   }
 
   getTime() {
@@ -81,15 +83,32 @@ export class RankingComponent implements OnInit {
     var res = {
       name: user.name,
       resultsCharactersQuestions: [],
+      resultsOtherCharactersQuestions: [],
       resultsPregantQuestions: [],
       resultsQuestions: [],
+      otherCharQuestion:[],
       totalPoints: 0
     }
 
-    user.responseCharacters.forEach(
+    const charResponse = _.filter(user.responseCharacters, x => x.name <= Types.Characters.NYMERIA)
+    const otherCharResponse = _.filter(user.responseCharacters, x => x.name > Types.Characters.NYMERIA)
+
+    charResponse.forEach(
       x => {
         var singleRes = calculateCharacter(x, this.getAnswerByChar(x.name, this.answers.responseCharacters));
         res.resultsCharactersQuestions.push({
+          questionName: gotMap.charMap.get(x.name),
+          userResponse: x,
+          results: singleRes
+        });
+
+        res.totalPoints += singleRes.points
+      }
+    )
+    otherCharResponse.forEach(
+      x => {
+        var singleRes = calculateCharacter(x, this.getAnswerByChar(x.name, this.answers.responseCharacters));
+        res.resultsOtherCharactersQuestions.push({
           questionName: gotMap.charMap.get(x.name),
           userResponse: x,
           results: singleRes
@@ -124,12 +143,28 @@ export class RankingComponent implements OnInit {
       }
     )
 
+    user.returnCharacters.forEach(x => {
+      var singleRes = this.getAnswerByOtherChar(x,this.answers.returnCharacters);
+      res.otherCharQuestion.push({
+        questionName:  gotMap.charMap.get(x),
+        userResponse: x,
+        results: singleRes
+      });
+      if(singleRes) res.totalPoints += 4;
+      else res.totalPoints -= 1;
+
+    });
+
     return res;
   }
 
 
   getAnswerByChar(char: Types.Characters, resp: ResponseCharacter[]) {
     return _.findWhere(resp, { name: char });
+  }
+
+  getAnswerByOtherChar(char: Types.Characters, resp: Types.Characters[]) {
+    return _.find(resp, x => x == char);
   }
 
   getAnswerPregnat(type: Types.Question, resp: ResponsePregnantQuestion[]) {

@@ -64,6 +64,12 @@ export class DetailAnswerComponent implements OnInit {
     return _.findWhere(resp, {type: type});
   }
 
+  getCharPoints(res, truth,valSucc,valErr){
+    if(res !== true && res !== false || truth !== true && truth !== false) return {val:'0',class:'unde'};
+    else if(res === truth ) return {val:valSucc,class:'success'};
+    else return {val:valErr,class:'error'};
+  }
+
 
 
 }

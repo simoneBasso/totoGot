@@ -69,7 +69,8 @@ export function getAnswers():User{
         responseQuestion: [
             createQuestionResponse(Types.Question.KillNightKing, Types.Characters.DAARIO),
             createQuestionResponse(Types.Question.KingOfThrone, Types.Characters.DAARIO),
-        ]
+        ],
+        returnCharacters:[]
     }
 }
 
@@ -158,7 +159,8 @@ const bassoRes =
             createQuestionResponse(Types.Question.KillNightKing, Types.Characters.DAARIO),
             createQuestionResponse(Types.Question.KingOfThrone, Types.Characters.DAARIO),
 
-        ]
+        ],
+        returnCharacters:[]
 }
 
 const terryRes = 
@@ -209,8 +211,8 @@ const terryRes =
         responseQuestion: [
             createQuestionResponse(Types.Question.KillNightKing, Types.Characters.DAARIO),
             createQuestionResponse(Types.Question.KingOfThrone, Types.Characters.DAARIO),
-
-        ]
+        ],
+        returnCharacters:[]
 }
 
 const pippoRes = 
@@ -262,5 +264,6 @@ const pippoRes =
             createQuestionResponse(Types.Question.KillNightKing, Types.Characters.DAENERYS_TARGARYEN),
             createQuestionResponse(Types.Question.KingOfThrone, Types.Characters.DAVOS_SEAWORTH),
 
-        ]
+        ],
+        returnCharacters:[]
 }
