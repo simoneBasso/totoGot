@@ -8,6 +8,7 @@ import { Types } from '../shared/enum/types';
 import { ResponseCharacter, ResponsePregnantQuestion, ResponseQuestion } from '../shared/models/response_characters.model';
 import _ from 'underscore';
 import { GotMaps } from '../shared/calculate/maps';
+import { TypeScriptEmitter } from '@angular/compiler';
 
 @Component({
   selector: 'app-detail-answer',
@@ -16,7 +17,7 @@ import { GotMaps } from '../shared/calculate/maps';
 })
 export class DetailAnswerComponent implements OnInit {
 
- 
+  imgSource = "assets/images/avatar/";
   answers: User;
   charactersRow: ResponseCharacter[] = [];
   selectedUser:string = 'Basso';
@@ -71,6 +72,18 @@ export class DetailAnswerComponent implements OnInit {
     else return {val:valErr,class:'error'};
   }
 
+  getKilledPoints(res:Types.Characters, truth:Types.Characters,valSucc,valErr){
+    if( (!res  || res == Types.Characters.UNDEFINED || res == Types.Characters.NOT_CLEAR) ||
+      (!res  || truth == Types.Characters.UNDEFINED || truth == Types.Characters.NOT_CLEAR)   )
+        return {val:'0',class:'unde'};
+        
+    else if(res === truth ) return {val:valSucc,class:'success'};
+    else return {val:valErr,class:'error'};
+  }
+
+  getImageName(char:Types.Characters){
+    return this.maps.charMap.get(char).replace(/ /g, '_');
+  }
 
 
 }

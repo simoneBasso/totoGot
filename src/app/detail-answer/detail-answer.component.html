@@ -7,7 +7,7 @@
 
 <div fxLayout="column" fxLayoutAlign="space-around stretch" fxLayoutGap="2%">
   <mat-card fxFlex="100%" fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="2%">
-    <mat-form-field fxFlex="30%">
+    <mat-form-field fxFlex="30%" fxFlex.xs="50%" fxFlex.sm="50%">
       <mat-label>Giocatore</mat-label>
       <mat-select [(ngModel)]="selectedUser" (selectionChange)="selectUser($event)">
         <mat-option *ngFor="let name of usersNameList" [value]="name" [ngStyle]="{'background':'#2f2e2e'}">
@@ -17,7 +17,9 @@
     </mat-form-field>
     <mat-checkbox fxFlex="20%" [(ngModel)]="showAnswers">Mostra corrette</mat-checkbox>
   </mat-card>
-  <table mat-table [dataSource]="charactersRow" class="mat-elevation-z8" fxFlex="100%">
+
+  <table mat-table [dataSource]="charactersRow" class="mat-elevation-z8" fxFlex="100%" fxShow.sm="false"
+    fxShow.xs="false">
 
     <!--- Note that these columns can be defined in any order.
                     The actual rendered columns are set as a property on the row definition" -->
@@ -26,7 +28,8 @@
     <ng-container matColumnDef="name">
       <th mat-header-cell *matHeaderCellDef> </th>
       <td mat-cell *matCellDef="let char">
-        {{getCharName(char.name)}}
+        <img [src]="imgSource + getImageName(char.name) + '.png'" class="image-avatar" alt="no img">
+        <span class="title-char">{{getCharName(char.name)}}</span>
       </td>
     </ng-container>
     <!--ALIVE/-->
@@ -74,7 +77,7 @@
         </div>
         <div [ngStyle]="{'padding.px':8}">
           <h1 [ngStyle]="{'marginTop.px':0}"
-            [class]="getCharPoints(userCharAnswer[i].becameNight,char.becameNight,'+1','-1').class">
+            [class]="getCharPoints(userCharAnswer[i].becameNight,char.becameNight,'+3','-1').class">
             {{getCharPoints(userCharAnswer[i].becameNight,char.becameNight,'+3','-1').val}}</h1>
         </div>
       </td>
@@ -101,8 +104,8 @@
         </div>
         <div [ngStyle]="{'padding.px':8}">
           <h1 [ngStyle]="{'marginTop.px':0}"
-            [class]="getCharPoints(userCharAnswer[i].killedBy,char.killedBy,'+3','-1').class">
-            {{getCharPoints(userCharAnswer[i].killedBy,char.killedBy,'+3','-1').val}}</h1>
+            [class]="getKilledPoints(userCharAnswer[i].killedBy,char.killedBy,'+3','-1').class">
+            {{getKilledPoints(userCharAnswer[i].killedBy,char.killedBy,'+3','-1').val}}</h1>
         </div>
       </td>
       <td mat-cell *matCellDef="let char" class="centred">
@@ -115,56 +118,163 @@
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
   </table>
 
+  <div fxLayout="column" fxFlex="100%" fxLayoutAlign="center center" fxLayoutGap="3%" fxShow.lg="false"
+    fxShow.md="false">
+    <mat-card fxFlex="100%" fxLayout="row wrap" fxLayoutAlign="center center"
+      *ngFor="let char of charactersRow,let i = index">
+      <div fxLayoutAlign="start center" fxFlex="100%">
+        <img [src]="imgSource + getImageName(char.name) + '.png'" class="image-avatar">
+        <span class="title-char">{{getCharName(char.name)}}</span>
+      </div>
+      <!--correct answer-->
+      <div fxLayout="row wrap" fxLayoutAlign="center center" fxFlex="100%" fxLayoutGap="1%">
+        <div fxFlex="32%" class="icon-table" fxLayoutAlign="center center">
+          <fa-icon icon="fist-raised" *ngIf="char.alive === true"></fa-icon>
+          <fa-icon icon="skull-crossbones" *ngIf="char.alive === false"></fa-icon>
+          <fa-icon icon="minus" *ngIf="char.alive !== false && char.alive !== true"></fa-icon>
+        </div>
+        <!--vivo answer-->
+        <div fxFlex="32%" class="icon-table" fxLayoutAlign="center center" [ngClass]="{ 'success' : char.alive === userCharAnswer[i].alive,
+                                  'error': char.alive !== userCharAnswer[i].alive,
+                                  'unde' : ( userCharAnswer[i].alive !== true && userCharAnswer[i].alive !== false) || 
+                (char.alive !== false && char.alive !== true)}">
+          <fa-icon icon="fist-raised" *ngIf="userCharAnswer[i].alive === true"></fa-icon>
+          <fa-icon icon="skull-crossbones" *ngIf="userCharAnswer[i].alive === false"></fa-icon>
+          <fa-icon icon="minus" *ngIf="userCharAnswer[i].alive !== true && userCharAnswer[i].alive !== false"></fa-icon>
+        </div>
+        <!--points-->
+        <div fxFlex="32%" class="icon-table" fxLayoutAlign="center center" [ngClass]="{ 'success' : char.alive === userCharAnswer[i].alive,
+                                  'error': char.alive !== userCharAnswer[i].alive,
+                                  'unde' : ( userCharAnswer[i].alive !== true && userCharAnswer[i].alive !== false) || 
+                (char.alive !== false && char.alive !== true)}">
+          <h2 [ngStyle]="{'marginTop.px':0}"
+            [class]="getCharPoints(userCharAnswer[i].alive,char.alive,'+1','-1').class">
+            {{getCharPoints(userCharAnswer[i].alive,char.alive,'+3','-1').val}}</h2>
+        </div>
+      </div>
+      <!--estraneo-->
+      <div fxLayout="row wrap" fxLayoutAlign="center center" fxFlex="100%" fxLayoutGap="1%">
+        <div fxFlex="32%" class="icon-table" fxLayoutAlign="center center">
+          <fa-icon icon="skull" *ngIf="char.becameNight === true"></fa-icon>
+          <fa-icon icon="cross" *ngIf="char.becameNight === false"></fa-icon>
+          <fa-icon icon="minus" *ngIf="char.becameNight !== false && char.becameNight !== true"></fa-icon>
+        </div>
+        <!--estraneo answer-->
+        <div fxFlex="32%" class="icon-table" fxLayoutAlign="center center" [ngClass]="{ 'success' : char.becameNight === userCharAnswer[i].becameNight,
+                                    'error': char.becameNight !== userCharAnswer[i].becameNight,
+                                    'unde' : ( userCharAnswer[i].becameNight !== true && userCharAnswer[i].becameNight !== false) || 
+                            (char.becameNight !== false && char.becameNight !== true)}">
+          <fa-icon icon="fist-raised" *ngIf="userCharAnswer[i].becameNight === true"></fa-icon>
+          <fa-icon icon="skull-crossbones" *ngIf="userCharAnswer[i].becameNight === false"></fa-icon>
+          <fa-icon icon="minus"
+            *ngIf="userCharAnswer[i].becameNight !== true && userCharAnswer[i].becameNight !== false"></fa-icon>
+        </div>
+        <!--points-->
+        <div fxFlex="32%" class="icon-table" fxLayoutAlign="center center" [ngClass]="{ 'success' : char.alive === userCharAnswer[i].alive,
+                                    'error': char.alive !== userCharAnswer[i].alive,
+                                    'unde' : ( userCharAnswer[i].alive !== true && userCharAnswer[i].alive !== false) || 
+                  (char.alive !== false && char.alive !== true)}">
+          <h2 [ngStyle]="{'marginTop.px':0}"
+            [class]="getCharPoints(userCharAnswer[i].becameNight,char.becameNight,'+3','-1').class">
+            {{getCharPoints(userCharAnswer[i].becameNight,char.becameNight,'+3','-1').val}}</h2>
+        </div>
+      </div>
+      <!--fine-->
+      <div fxFlex="80%" fxLayoutAlign="center center">
+        <div fxLayout="column" fxFlex="100%"fxLayoutAlign="center center">
+          <div fxFlex="100%">
+            <span *ngIf="char.killedBy">{{getCharName(char.killedBy)}}</span>
+            <span *ngIf="!char.killedBy" class="icon-table">
+              <fa-icon icon="minus"></fa-icon>
+            </span>
+          </div>
+          <div fxFlex="100%">
+            <span *ngIf="char.killedBy">{{getCharName(char.killedBy)}}</span>
+            <span *ngIf="!char.killedBy" class="icon-table">
+              <fa-icon icon="minus"></fa-icon>
+            </span>
+          </div>
+
+
+        </div>
+      </div>
+      <div fxFlex="20%" fxLayoutAlign="center center">
+        <h1>-4</h1>
+      </div>
+    </mat-card>
+  </div>
+
+
   <div fxLayout="row wrap" fxLayoutAlign="space-between center" fxLayoutGap="10">
     <mat-card fxLayoutAlign="space-between center" fxFlex="40" fxFlex.sm="100" fxFlex.xs="100">
-      <span fxFlex="10%" fxShow.sm="false" fxShow.xs="false">
+      <span fxFlex="17%" fxShow.sm="false" fxShow.xs="false">
         <img src="assets/images/avatar/DAENERYS_TARGARYEN.png" class="image-avatar" alt="no img">
       </span>
-      <span fxFlex="40%" fxFlex.sm="68%" fxFlex.xs="68%">Daenerys Targaryen è incinta?</span>
-      <span fxFlex="20%" fxFlex.sm="30%" fxFlex.xs="30%"
-      [class]="getCharPoints(userAnswer.responsePregnantQuestion[0].response,answers.responsePregnantQuestion[0].response,'+1','0').class">
+      <span fxFlex="50%" fxFlex.sm="68%" fxFlex.xs="68%">Daenerys Targaryen è incinta?</span>
+      <span fxFlex="10%" fxFlex.sm="30%" fxFlex.xs="30%" [ngClass]="'icon-table'"
+        [class]="getCharPoints(userAnswer.responsePregnantQuestion[0].response,answers.responsePregnantQuestion[0].response,'+1','0').class">
         <fa-icon *ngIf="userAnswer.responsePregnantQuestion[0].response" icon="thumbs-up"></fa-icon>
         <fa-icon *ngIf="!userAnswer.responsePregnantQuestion[0].response" icon="thumbs-down"></fa-icon>
-        {{getCharPoints(userAnswer.responsePregnantQuestion[0].response,answers.responsePregnantQuestion[0].response,'+1','0').val}}      
+      </span>
+      <span fxFlex="5%" fxFlex.sm="30%" fxFlex.xs="30%"
+        [class]="getCharPoints(userAnswer.responsePregnantQuestion[0].response,answers.responsePregnantQuestion[0].response,'+1','0').class">
+        <h3 class="my-h3">
+          {{getCharPoints(userAnswer.responsePregnantQuestion[0].response,answers.responsePregnantQuestion[0].response,'+1','0').val}}
+        </h3>
       </span>
     </mat-card>
 
     <mat-card fxLayoutAlign="space-between center" fxFlex="40%" fxFlex.sm="100%" fxFlex.xs="100%">
-      <span fxFlex="10%" fxShow.sm="false" fxShow.xs="false">
-        <img src="assets/images/avatar/CERSEI_LANNISTER.png"  class="image-avatar" alt="no img">
+      <span fxFlex="17%" fxShow.sm="false" fxShow.xs="false">
+        <img src="assets/images/avatar/CERSEI_LANNISTER.png" class="image-avatar" alt="no img">
       </span>
-      <span fxFlex="40%" fxFlex.sm="68%" fxFlex.xs="68%">Cersei Lannister è incinta?</span>
-      <span fxFlex="30%" fxFlex.sm="30%" fxFlex.xs="30%"
-      [class]="getCharPoints(userAnswer.responsePregnantQuestion[1].response,answers.responsePregnantQuestion[1].response,'+1','0').class">
+      <span fxFlex="50%" fxFlex.sm="68%" fxFlex.xs="68%">Cersei Lannister è incinta?</span>
+      <span fxFlex="10%" fxFlex.sm="30%" fxFlex.xs="30%" [ngClass]="'icon-table'"
+        [class]="getCharPoints(userAnswer.responsePregnantQuestion[1].response,answers.responsePregnantQuestion[1].response,'+1','0').class">
         <fa-icon *ngIf="userAnswer.responsePregnantQuestion[1].response" icon="thumbs-up"></fa-icon>
         <fa-icon *ngIf="!userAnswer.responsePregnantQuestion[1].response" icon="thumbs-down"></fa-icon>
-        {{getCharPoints(userAnswer.responsePregnantQuestion[1].response,answers.responsePregnantQuestion[1].response,'+1','0').val}}      
       </span>
-      
+      <span fxFlex="5%" fxFlex.sm="30%" fxFlex.xs="30%"
+        [class]="getCharPoints(userAnswer.responsePregnantQuestion[1].response,answers.responsePregnantQuestion[1].response,'+1','0').class">
+        <h3 class="my-h3">
+          {{getCharPoints(userAnswer.responsePregnantQuestion[1].response,answers.responsePregnantQuestion[1].response,'+1','0').val}}
+        </h3>
+      </span>
+
     </mat-card>
   </div>
 
   <div fxLayout="row wrap" fxLayoutAlign="space-between center" fxLayoutGap="10">
     <mat-card fxLayoutAlign="space-between center" fxFlex="40%" fxFlex.sm="100%" fxFlex.xs="100%">
-      <span fxFlex="10%" fxShow.sm="false" fxShow.xs="false">
-        <img src="assets/images/avatar/RE_DELLA_NOTTE.png"  class="image-avatar" alt="no img">
+      <span fxFlex="17%" fxShow.sm="false" fxShow.xs="false">
+        <img src="assets/images/avatar/RE_DELLA_NOTTE.png" class="image-avatar" alt="no img">
       </span>
-      <span fxFlex="40%" fxFlex.sm="68%" fxFlex.xs="68%">Chi ucciderà il Night King?</span>
+      <span fxFlex="30%" fxFlex.sm="68%" fxFlex.xs="68%">Chi ucciderà il Night King?</span>
       <span fxFlex="30%" fxFlex.sm="30%" fxFlex.xs="30%"
-      [class]="getCharPoints(userAnswer.responseQuestion[0].response,answers.responseQuestion[0].response,'+4','0').class">
-          {{getCharName(userAnswer.responseQuestion[0].response)}}&nbsp;&nbsp;&nbsp;
-          {{getCharPoints(userAnswer.responseQuestion[0].response,answers.responseQuestion[0].response,'+4','0').val}}
+        [class]="getKilledPoints(userAnswer.responseQuestion[0].response,answers.responseQuestion[0].response,'+4','0').class">
+        <h3 class="my-h3">{{getCharName(userAnswer.responseQuestion[0].response)}}</h3>
+      </span>
+      <span fxFlex="5%" fxFlex.sm="30%" fxFlex.xs="30%"
+        [class]="getKilledPoints(userAnswer.responseQuestion[0].response,answers.responseQuestion[0].response,'+4','0').class">
+        <h2 class="my-h3">
+          {{getKilledPoints(userAnswer.responseQuestion[0].response,answers.responseQuestion[0].response,'+4','0').val}}
+        </h2>
       </span>
     </mat-card>
     <mat-card fxLayoutAlign="space-between center" fxFlex="40%" fxFlex.sm="100%" fxFlex.xs="100%">
-      <span fxFlex="10%" fxShow.sm="false" fxShow.xs="false">
-          <img src="assets/images/TRONO_DI_SPADE.png"  class="image-avatar" alt="no img">
+      <span fxFlex="17%" fxShow.sm="false" fxShow.xs="false">
+        <img src="assets/images/TRONO_DI_SPADE.png" class="image-avatar" alt="no img">
       </span>
-      <span fxFlex="40%" fxFlex.sm="68%" fxFlex.xs="68%">Chi siederà sul trono di spade?</span>
-      <span fxFlex="20%" fxFlex.sm="30%" fxFlex.xs="30%"
-      [class]="getCharPoints(userAnswer.responseQuestion[1].response,answers.responseQuestion[1].response,'+6','0').class">
-      {{ getCharName(userAnswer.responseQuestion[1].response) }}&nbsp;&nbsp;&nbsp;
-      {{ getCharPoints(userAnswer.responseQuestion[1].response,answers.responseQuestion[1].response,'+6','0').val}}
+      <span fxFlex="30%" fxFlex.sm="68%" fxFlex.xs="68%">Chi siederà sul trono di spade?</span>
+      <span fxFlex="30%" fxFlex.sm="30%" fxFlex.xs="30%" [ngClass]="'icon-table'"
+        [class]="getKilledPoints(userAnswer.responseQuestion[1].response,answers.responseQuestion[1].response,'+6','0').class">
+        <h3 class="my-h3">{{ getCharName(userAnswer.responseQuestion[1].response) }}</h3>
+      </span>
+      <span fxFlex="5%" fxFlex.sm="30%" fxFlex.xs="30%" [ngClass]="'icon-table'"
+        [class]="getKilledPoints(userAnswer.responseQuestion[1].response,answers.responseQuestion[1].response,'+6','0').class">
+        <h2 class="my-h3">
+          {{ getKilledPoints(userAnswer.responseQuestion[1].response,answers.responseQuestion[1].response,'+6','0').val}}
+        </h2>
       </span>
     </mat-card>
   </div>

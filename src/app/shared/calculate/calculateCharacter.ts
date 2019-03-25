@@ -18,7 +18,7 @@ export function calculateCharacter(
         points : 0
     };
 
-    if (correctResponse.alive === undefined)
+    if (correctResponse.alive === undefined || userResponse.alive === undefined)
         return results;
 
     //ALIVE
