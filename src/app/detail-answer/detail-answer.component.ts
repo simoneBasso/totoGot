@@ -46,6 +46,7 @@ export class DetailAnswerComponent implements OnInit {
     console.log(event)
     this.userAnswer = _.findWhere(this.users, {name: this.selectedUser});
     this.userCharAnswer = _.sortBy(this.userAnswer.responseCharacters,x => x.name);
+    console.log(this.userAnswer)
   }
 
   getCharName(char:Types.Characters){

@@ -29,7 +29,7 @@
       [ngStyle]="{'margin-left.em':15}">
       <span class="house icon-got-house-lannister"> </span>
     </section>
-  
+
     <!--rigth-->
     <section fxHide.xs fxHide.sm class="stendardo mar" [ngStyle]="{'right':'0%'}">
       <span class="house icon-got-house-martell"></span>
@@ -67,6 +67,35 @@
           <div class="gradient">
             <div class="container">
               <mat-toolbar class=transparent>
+                <div fxLayout="row wrap" fxFlex="30%" fxFlex.sm="100%" fxFlex.xs="100%" fxLayoutAlign="center center"
+                  fxLayoutGap="3%">
+                  <div fxFlex="20%">
+                    <button color="primary" matTooltip="Classifica" mat-fab routerLink="ranking" class="menu-icon-button">
+                      <fa-icon icon="list-ol"></fa-icon>
+                    </button>
+                  </div>
+                  <div fxFlex="20%">
+                    <button color="primary" matTooltip="Tutte le risposte" mat-fab routerLink="details" class="menu-icon-button">
+                      <fa-icon icon="book-dead"></fa-icon>
+                    </button>
+                  </div>
+                  <div fxFlex="20%">
+                    <button color="primary" matTooltip="Statistiche" mat-fab routerLink="statistic" class="menu-icon-button">
+                      <fa-icon icon="chart-bar"></fa-icon>
+                    </button>
+                  </div>
+                  <div fxFlex="20%">
+                    <button color="primary" matTooltip="Regolamento" mat-fab routerLink="rules" class="menu-icon-button">
+                      <fa-icon icon="question-circle"></fa-icon>
+                    </button>
+                  </div>
+
+
+
+
+                </div>
+              </mat-toolbar>
+              <!--  <mat-toolbar class=transparent>
                 <button mat-icon-button routerLink="ranking" class="d-none d-sm-inline menu-button">
                   <fa-icon icon="list-ol"></fa-icon>
                 </button>
@@ -79,7 +108,7 @@
                 <button mat-icon-button routerLink="rules" class="d-none d-sm-inline menu-button">
                   <fa-icon icon="question-circle"></fa-icon>
                 </button>
-              </mat-toolbar>
+              </mat-toolbar> -->
               <router-outlet #o="outlet"></router-outlet>
             </div>
           </div>
@@ -117,8 +146,8 @@
 
 </div>
 <div id="medico" [ngStyle]="{'display':'none'}" class="medico">
-<h1>Buona visione!</h1>
-<h3>Ecco un consiglio per altre serie tv che possono soddisfare i tuoi gusti!</h3>
+  <h1>Buona visione!</h1>
+  <h3>Ecco un consiglio per altre serie tv che possono soddisfare i tuoi gusti!</h3>
   <img src="assets/images/medico.jpg">
-    <h6>Per tornare indietro, ricaricare la pagina...</h6>
+  <h6>Per tornare indietro, ricaricare la pagina...</h6>
 </div>

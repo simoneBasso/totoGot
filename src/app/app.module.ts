@@ -52,7 +52,9 @@ import {
   faQuestionCircle,
   faListOl,
   faPaperPlane,
-  faDownload
+  faDownload,
+  faThumbsUp,
+  faThumbsDown
 } from '@fortawesome/free-solid-svg-icons';
 import {
   faGithub,
@@ -91,7 +93,9 @@ library.add(
   faQuestionCircle,
   faListOl,
   faPaperPlane,
-  faDownload
+  faDownload,
+  faThumbsUp,
+  faThumbsDown
 );
 
 @NgModule({
