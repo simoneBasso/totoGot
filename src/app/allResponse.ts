@@ -112,7 +112,7 @@ function createPregnantResponse(type: Types.Question, response?: boolean): Respo
 
 const bassoRes = 
     {
-        name: "Basso",
+        name: "Giocatore 1",
         responseCharacters: [
             createCharResponse(Types.Characters.JON_SNOW, true, undefined, undefined),
             createCharResponse(Types.Characters.SANSA_STARK, true, undefined, undefined),
@@ -165,7 +165,7 @@ const bassoRes =
 
 const terryRes = 
     {
-        name: "Terry",
+        name: "Giocatore 4",
         responseCharacters: [
             createCharResponse(Types.Characters.JON_SNOW, true, undefined, undefined),
             createCharResponse(Types.Characters.SANSA_STARK, false, undefined, undefined),
@@ -217,7 +217,7 @@ const terryRes =
 
 const pippoRes = 
     {
-        name: "Pippo",
+        name: "Giocatore 56",
         responseCharacters: [
             createCharResponse(Types.Characters.JON_SNOW, true, undefined, undefined),
             createCharResponse(Types.Characters.SANSA_STARK, true, undefined, undefined),

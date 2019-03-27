@@ -35,12 +35,13 @@ export class DetailAnswerComponent implements OnInit {
     this.answers = utils.getAnswers();
     this.users = utils.getAll();
     this.usersNameList = _.sortBy(_.map(this.users, x => x.name),y => y);
+    this.selectedUser = this.users[0].name;
 
   }
 
   ngOnInit() {
     this.charactersRow = _.sortBy(this.answers.responseCharacters, x => x.name);
-    this.selectUser({})
+   this.selectUser({});
   }
 
   selectUser(event){
