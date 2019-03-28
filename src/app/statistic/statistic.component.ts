@@ -50,7 +50,8 @@ export class StatisticComponent implements OnInit {
 
 
 
-  view: any[] = [300, 300];
+  view: any[];
+  view2: any[];
   colorSchemeAlive = {
     domain: ['#8bc34a', '#f44336', '#9e9e9e', '#AAAAAA']
   };
@@ -70,7 +71,10 @@ export class StatisticComponent implements OnInit {
 
 
 
-  constructor() { }
+  constructor() { 
+    this.view = [innerWidth / 1.5, 300];
+    this.view2 = [innerWidth / 1.3, 300];
+  }
 
   ngOnInit() {
     this.users.forEach(x => this.usersCharsResponse.push({ user: x.name, response: x.responseCharacters }));
@@ -231,6 +235,9 @@ export class StatisticComponent implements OnInit {
     return this.getName().replace(/ /g, '_');
   }
 
+  calcPerc(model){
+    return Math.round((model.value/this.users.length) * 100);
+  }
 
 
 }
