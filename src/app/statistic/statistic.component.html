@@ -1,4 +1,4 @@
-<div fxLayout="row wrap" fxLayoutAlign="center stretch" fxLayoutGap="10%">
+<div fxLayout="row wrap" fxLayoutAlign="center stretch" fxLayoutGap="10% grid">
   <div fxFlex="100%" fxFlex.sm="100%">
     <h2>RISPOSTE</h2>
   </div>
@@ -20,7 +20,7 @@
 
   </mat-card>
 
-  <div fxFlex="100%" fxLayout="row wrap" fxLayoutAlign="space-between  stretch" fxLayoutGap="2%">
+  <div fxFlex="100%" fxLayout="row wrap" fxLayoutAlign="space-between  stretch" fxLayoutGap="2% grid">
     <div fxFlex="30%" fxFlex.sm="100%" fxFlex.xs="100%" fxShow.sm="false" fxShow.xs="false">
       <mat-card class="img-char-container">
         <img [src]="'assets/images/chars/' + getImageName() + '.png'" class="image-card">
@@ -129,52 +129,55 @@
   </div>
 
 
-  <div fxFlex="100%" fxLayout="row wrap" fxLayoutAlign="center" fxLayoutGap="2% ">
-    <mat-card fxFlex="100%" fxLayoutGap="2%" fxFlex.sm="100%" fxFlex.xs="100%">
-      <div fxLayout="column" fxLayoutAlign="center" fxLayoutGap="2%">
-        <mat-card-title class="panel-title">
-          <h4>Ucciso da</h4>
-        </mat-card-title>
-        <div fxFlex="100%" fxLayoutAlign="center">
-          <ngx-charts-pie-grid [view]="view2" [results]="dataGraph.killedByData" (select)="onSelect($event)">
-            <ng-template #tooltipTemplate let-model="model">
-              <br>
-              <h3>{{ model.name }}</h3>
-              <h2>{{ calcPerc(model) }} % </h2>
-            </ng-template>
-          </ngx-charts-pie-grid>
-        </div>
-        <div fxFlex="100%">
-          <mat-expansion-panel fxFlex="100%">
-            <mat-expansion-panel-header>
-              <mat-panel-title class="panel-title">
-                <h4>Dettagli</h4>
-              </mat-panel-title>
-            </mat-expansion-panel-header>
-            <div>
-              <div>
-                <span *ngFor="let res of killedByDescri">
-                  <span class="panel-title">{{res.name}}: &nbsp;&nbsp;</span>
-                  <span *ngFor="let us of res.value">{{us.user}},&nbsp; </span>
-                  <br><br>
-                </span>
-              </div>
+
+  <div fxFlex="100%" fxLayout="row wrap" fxLayoutAlign="center" fxLayoutGap="2% grid">
+      <div fxFlex="100%" fxLayoutGap="2%" fxFlex.sm="100%" fxFlex.xs="100%">
+        <mat-card>
+          <div fxLayout="column" fxLayoutAlign="center" fxLayoutGap="2%">
+            <mat-card-title class="panel-title">
+              <h4>Ucciso da </h4>
+            </mat-card-title>
+            <div fxFlex="100%" fxLayoutAlign="center">
+              <ngx-charts-pie-grid [view]="view2" [results]="dataGraph.killedByData">
+                <ng-template #tooltipTemplate let-model="model">
+                  <br>
+                  <h3>{{ model.name }}</h3>
+                  <h2>{{ calcPerc(model) }} % </h2>
+                </ng-template>
+              </ngx-charts-pie-grid>
             </div>
-          </mat-expansion-panel>
-        </div>
+            <div fxFlex="100%">
+              <mat-expansion-panel fxFlex="100%">
+                <mat-expansion-panel-header>
+                  <mat-panel-title class="panel-title">
+                    <h4>Dettagli</h4>
+                  </mat-panel-title>
+                </mat-expansion-panel-header>
+                <div>
+                    <div>
+                        <span *ngFor="let res of killedByDescri">
+                          <span class="panel-title">{{res.name}}: &nbsp;&nbsp;</span>
+                          <span *ngFor="let us of res.value">{{us.user}},&nbsp; </span>
+                          <br><br>
+                        </span>
+                      </div>
+                </div>
+              </mat-expansion-panel>
+            </div>
+          </div>
+  
+  
+  
+  
+        </mat-card>
       </div>
+    </div>
 
-
-
-
-    </mat-card>
-
-  </div>
 </div>
 
 <h3>GENERALI</h3>
-<div fxLayout="column" fxLayoutAlign="space-between stretch" fxLayoutGap="2%">
-  <div fxFlex="100%" fxLayout="row wrap" fxLayoutAlign="space-between  stretch" fxLayoutGap="2%">
+<div fxLayout="column" fxLayoutAlign="space-between stretch" fxLayoutGap="2% grid">
+  <div fxFlex="100%" fxLayout="row wrap" fxLayoutAlign="space-between  stretch" fxLayoutGap="2% grid">
     <div fxFlex="45%" fxFlex.sm="100%" fxFlex.xs="100%">
       <mat-card>
         <div fxLayout="column" fxLayoutAlign="center">
@@ -274,87 +277,89 @@
   </div>
 
 
-  <div fxFlex="100%" fxLayout="row wrap" fxLayoutAlign="center" fxLayoutGap="2% ">
-    <mat-card fxFlex="100%" fxLayoutGap="2%" fxFlex.sm="100%" fxFlex.xs="100%">
-      <div fxLayout="column" fxLayoutAlign="center" fxLayoutGap="2%">
-        <mat-card-title class="panel-title">
-          <h4>Night King ucciso da </h4>
-        </mat-card-title>
-        <div fxFlex="100%" fxLayoutAlign="center">
-          <ngx-charts-pie-grid [view]="view2" [results]="dataGraph.killKing">
-            <ng-template #tooltipTemplate let-model="model">
-              <br>
-              <h3>{{ model.name }}</h3>
-              <h2>{{ calcPerc(model) }} % </h2>
-            </ng-template>
-          </ngx-charts-pie-grid>
-        </div>
-        <div fxFlex="100%">
-          <mat-expansion-panel fxFlex="100%">
-            <mat-expansion-panel-header>
-              <mat-panel-title class="panel-title">
-                <h4>Dettagli</h4>
-              </mat-panel-title>
-            </mat-expansion-panel-header>
-            <div>
+  <div fxFlex="100%" fxLayout="row wrap" fxLayoutAlign="center" fxLayoutGap="2% grid">
+    <div fxFlex="100%" fxLayoutGap="2%" fxFlex.sm="100%" fxFlex.xs="100%">
+      <mat-card>
+        <div fxLayout="column" fxLayoutAlign="center" fxLayoutGap="2%">
+          <mat-card-title class="panel-title">
+            <h4>Night King ucciso da </h4>
+          </mat-card-title>
+          <div fxFlex="100%" fxLayoutAlign="center">
+            <ngx-charts-pie-grid [view]="view2" [results]="dataGraph.killKing">
+              <ng-template #tooltipTemplate let-model="model">
+                <br>
+                <h3>{{ model.name }}</h3>
+                <h2>{{ calcPerc(model) }} % </h2>
+              </ng-template>
+            </ngx-charts-pie-grid>
+          </div>
+          <div fxFlex="100%">
+            <mat-expansion-panel fxFlex="100%">
+              <mat-expansion-panel-header>
+                <mat-panel-title class="panel-title">
+                  <h4>Dettagli</h4>
+                </mat-panel-title>
+              </mat-expansion-panel-header>
               <div>
-                <span *ngFor="let res of killKingByDescri">
-                  <span class="panel-title">{{res.name}}: &nbsp;&nbsp;</span>
-                  <span *ngFor="let us of res.value">{{us.user}},&nbsp; </span>
-                  <br><br>
-                </span>
+                <div>
+                  <span *ngFor="let res of killKingByDescri">
+                    <span class="panel-title">{{res.name}}: &nbsp;&nbsp;</span>
+                    <span *ngFor="let us of res.value">{{us.user}},&nbsp; </span>
+                    <br><br>
+                  </span>
+                </div>
               </div>
-            </div>
-          </mat-expansion-panel>
+            </mat-expansion-panel>
+          </div>
         </div>
-      </div>
 
 
 
 
-    </mat-card>
-
+      </mat-card>
+    </div>
   </div>
 
-  <div fxFlex="100%" fxLayout="row wrap" fxLayoutAlign="center" fxLayoutGap="2% ">
-    <mat-card fxFlex="100%" fxLayoutGap="2%" fxFlex.sm="100%" fxFlex.xs="100%">
-      <div fxLayout="column" fxLayoutAlign="center" fxLayoutGap="2%">
-        <mat-card-title class="panel-title">
-          <h4>Futuro Re dei Sette regni</h4>
-        </mat-card-title>
-        <div fxFlex="100%" fxLayoutAlign="center">
-          <ngx-charts-pie-grid [view]="view2" [results]="dataGraph.becameKing">
-            <ng-template #tooltipTemplate let-model="model">
-              <br>
-              <h3>{{ model.name }}</h3>
-              <h2>{{ calcPerc(model) }} % </h2>
-            </ng-template>
-          </ngx-charts-pie-grid>
-        </div>
-        <div fxFlex="100%">
-          <mat-expansion-panel fxFlex="100%">
-            <mat-expansion-panel-header>
-              <mat-panel-title class="panel-title">
-                <h4>Dettagli</h4>
-              </mat-panel-title>
-            </mat-expansion-panel-header>
-            <div>
+  <div fxFlex="100%" fxLayout="row wrap" fxLayoutAlign="center" fxLayoutGap="2 grid ">
+    <div fxFlex="100%" fxLayoutGap="2%" fxFlex.sm="100%" fxFlex.xs="100%">
+      <mat-card>
+        <div fxLayout="column" fxLayoutAlign="center" fxLayoutGap="2%">
+          <mat-card-title class="panel-title">
+            <h4>Futuro Re dei Sette regni</h4>
+          </mat-card-title>
+          <div fxFlex="100%" fxLayoutAlign="center">
+            <ngx-charts-pie-grid [view]="view2" [results]="dataGraph.becameKing">
+              <ng-template #tooltipTemplate let-model="model">
+                <br>
+                <h3>{{ model.name }}</h3>
+                <h2>{{ calcPerc(model) }} % </h2>
+              </ng-template>
+            </ngx-charts-pie-grid>
+          </div>
+          <div fxFlex="100%">
+            <mat-expansion-panel fxFlex="100%">
+              <mat-expansion-panel-header>
+                <mat-panel-title class="panel-title">
+                  <h4>Dettagli</h4>
+                </mat-panel-title>
+              </mat-expansion-panel-header>
               <div>
-                <span *ngFor="let res of newKingByDescri">
-                  <span class="panel-title">{{res.name}}: &nbsp;&nbsp;</span>
-                  <span *ngFor="let us of res.value">{{us.user}},&nbsp; </span>
-                  <br><br>
-                </span>
+                <div>
+                  <span *ngFor="let res of newKingByDescri">
+                    <span class="panel-title">{{res.name}}: &nbsp;&nbsp;</span>
+                    <span *ngFor="let us of res.value">{{us.user}},&nbsp; </span>
+                    <br><br>
+                  </span>
+                </div>
               </div>
-            </div>
-          </mat-expansion-panel>
+            </mat-expansion-panel>
+          </div>
         </div>
-      </div>
 
 
 
 
-    </mat-card>
-
+      </mat-card>
+    </div>
   </div>
 </div>

@@ -53,7 +53,7 @@ export function calculateCharacter(
     
     switch (isSame(userResponse.killedBy, correctResponse.killedBy)) {
         case Types.ResponseValues.CORRECT:
-         results.points += 3;
+         results.points += 4;
          results.isKilledBy = true;
             break;
         case Types.ResponseValues.INCORRECT:
@@ -95,7 +95,7 @@ export function calculateQuestion(
     correctResponse: ResponseQuestion
     ) : ResultsQuestion {
 
-    const winPoints = correctResponse.type == Types.Question.KillNightKing ?  4:6;
+    const winPoints = correctResponse.type == Types.Question.KillNightKing ?  7:8;
 
     var results: ResultsQuestion = {
         isCorrect : undefined,

@@ -127,7 +127,7 @@
       *ngFor="let char of charactersRow,let i = index">
       <div fxLayoutAlign="start center" fxFlex="100%">
         <img [src]="imgSource + getImageName(char.name) + '.png'" class="image-avatar">
-        <span class="title-char">{{getCharName(char.name)}}</span>
+        <span class="title-char" [ngStyle.sm]="{'top':' 0px;'}" [ngStyle.xs]="{'top':' 0px;'}">{{getCharName(char.name)}}</span>
       </div>
       <!--correct answer-->
       <div fxLayout="row wrap" fxLayoutAlign="center center" fxFlex="100%" fxLayoutGap="1%">
@@ -150,9 +150,8 @@
                                   'error': char.alive !== userCharAnswer[i].alive,
                                   'unde' : ( userCharAnswer[i].alive !== true && userCharAnswer[i].alive !== false) || 
                 (char.alive !== false && char.alive !== true)}">
-          <h1 [ngStyle]="{'marginTop.px':0}"
-            [class]="getCharPoints(userCharAnswer[i].alive,char.alive,'+1','-1').class">
-            {{getCharPoints(userCharAnswer[i].alive,char.alive,'+3','-1').val}}</h1>
+          <h1 [class]="getCharPoints(userCharAnswer[i].alive,char.alive,'+1','-1').class">
+             {{getCharPoints(userCharAnswer[i].alive,char.alive,'+3','-1').val}}</h1>
         </div>
       </div>
       <!--estraneo-->
@@ -177,11 +176,15 @@
                                     'error': char.alive !== userCharAnswer[i].alive,
                                     'unde' : ( userCharAnswer[i].alive !== true && userCharAnswer[i].alive !== false) || 
                   (char.alive !== false && char.alive !== true)}">
-          <h1 [ngStyle]="{'marginTop.px':0}" 
-            [class]="getCharPoints(userCharAnswer[i].becameNight,char.becameNight,'+3','-1').class">
+          <h1 [class]="getCharPoints(userCharAnswer[i].becameNight,char.becameNight,'+3','-1').class">
             {{getCharPoints(userCharAnswer[i].becameNight,char.becameNight,'+3','-1').val}}</h1>
         </div>
       </div>
+
+      <div fxLayout="row wrap" fxLayoutAlign="center center" fxFlex="100%" fxLayoutGap="1%">
+        <h3 [ngStyle]="{'font-family':'gotFont'}">Ucciso da</h3>
+        </div>
+
       <!--fine-->
       <div fxFlex="80%" fxLayoutAlign="center center">
         <div fxLayout="column" fxFlex="100%"fxLayoutAlign="center center">
@@ -203,7 +206,7 @@
       </div>
       <div fxFlex="20%" fxLayoutAlign="center center">
         <h1 [class]="getKilledPoints(userCharAnswer[i].killedBy,char.killedBy,'+3','-1').class">
-          {{getKilledPoints(userCharAnswer[i].killedBy,char.killedBy,'+3','-1').val}}</h1>
+          {{getKilledPoints(userCharAnswer[i].killedBy,char.killedBy,'+4','-1').val}}</h1>
       </div>
     </mat-card>
   </div>
@@ -259,9 +262,9 @@
         <h3 class="my-h3">{{getCharName(userAnswer.responseQuestion[0].response)}}</h3>
       </span>
       <span fxFlex="5%" fxFlex.sm="8%" fxFlex.xs="8%"
-        [class]="getKilledPoints(userAnswer.responseQuestion[0].response,answers.responseQuestion[0].response,'+4','0').class">
+        [class]="getKilledPoints(userAnswer.responseQuestion[0].response,answers.responseQuestion[0].response,'+7','0').class">
         <h2 class="my-h3">
-          {{getKilledPoints(userAnswer.responseQuestion[0].response,answers.responseQuestion[0].response,'+4','0').val}}
+          {{getKilledPoints(userAnswer.responseQuestion[0].response,answers.responseQuestion[0].response,'+7','0').val}}
         </h2>
       </span>
     </mat-card>
@@ -271,13 +274,13 @@
       </span>
       <span fxFlex="30%" fxFlex.sm="42%" fxFlex.xs="42%">Chi siederà sul trono di spade?</span>
       <span fxFlex="30%" fxFlex.sm="50%" fxFlex.xs="50%" [ngClass]="'icon-table'"
-        [class]="getKilledPoints(userAnswer.responseQuestion[1].response,answers.responseQuestion[1].response,'+6','0').class">
+        [class]="getKilledPoints(userAnswer.responseQuestion[1].response,answers.responseQuestion[1].response,'+8','0').class">
         <h3 class="my-h3">{{ getCharName(userAnswer.responseQuestion[1].response) }}</h3>
       </span>
       <span fxFlex="5%" fxFlex.sm="8%" fxFlex.xs="8%" [ngClass]="'icon-table'"
-        [class]="getKilledPoints(userAnswer.responseQuestion[1].response,answers.responseQuestion[1].response,'+6','0').class">
+        [class]="getKilledPoints(userAnswer.responseQuestion[1].response,answers.responseQuestion[1].response,'+8','0').class">
         <h2 class="my-h3">
-          {{ getKilledPoints(userAnswer.responseQuestion[1].response,answers.responseQuestion[1].response,'+6','0').val}}
+          {{ getKilledPoints(userAnswer.responseQuestion[1].response,answers.responseQuestion[1].response,'+8','0').val}}
         </h2>
       </span>
     </mat-card>

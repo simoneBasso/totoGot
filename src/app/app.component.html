@@ -129,14 +129,22 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-12 signature">
-            &#169; <span class="year" data-testid="footer-year">2019</span> - puntata 8x01
+          <div class="col-12 signature" [ngStyle]="{'font-family':'monospace'}">
+            &#169; <span class="year" data-testid="footer-year">2019</span> - Basso
             <br class="d-block d-sm-none">
+            
             <a href="https://www.hbo.com/game-of-thrones" target="_blank">
-              <fa-icon icon="rocket"></fa-icon>
-              <span>totoGoto</span>
+              
+              <span class="span-bottom">Game of throne  è una serie <img src="assets/images/hbo.png" class="hbo" width="50px"></span>
             </a>
           </div>
+          <div class="col-12" [ngStyle]="{'font-family':'monospace'}">
+              Immagini
+              <a href="https://twitter.com" [ngStyle]="{'color':'white'}">Twitter</a>,
+              <a href="http://www.jerryliustudio.com" [ngStyle]="{'color':'white'}">Jerry Studio</a>
+              
+              <br class="d-block d-sm-none">
+            </div>
         </div>
       </div>
 

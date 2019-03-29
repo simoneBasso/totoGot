@@ -150,7 +150,7 @@ export class RankingComponent implements OnInit {
         userResponse: x,
         results: singleRes
       });
-      if(singleRes) res.totalPoints += 4;
+      if(singleRes) res.totalPoints += 5;
       else res.totalPoints -= 1;
 
     });
