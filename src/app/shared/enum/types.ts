@@ -22,7 +22,7 @@ export module Types {
         DAVOS_SEAWORTH,
         BRONN,
         PODRICK_PAYNE,
-        TORNMUND,
+        TORMUND,
         VERME_GRIGIO,
         GENDRY,
         MISSANDEI,
