@@ -27,7 +27,7 @@ export class RankingComponent implements OnInit {
   allResults: ResultCalculatedResponse[] = [];
   maps: GotMaps = new GotMaps();
   a = new Date();
-  b = new Date('2019-04-19');
+  b = new Date('2019-04-14');
   panelOpenState = true;
 
   config = {}
@@ -56,7 +56,7 @@ export class RankingComponent implements OnInit {
   }
 
   openDialog(): void {
-    if (sessionStorage.getItem("alreadyVisited")) {
+    if (sessionStorage.getItem("alreadyVisited") == "true") {
       return;
     }
     const dialogRef = this.dialog.open(AlertDialogComponent, {
@@ -64,18 +64,17 @@ export class RankingComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(res => {
-      sessionStorage.setItem("alreadyVisited", "true");
+      sessionStorage.setItem("alreadyVisited", res);
       if (res == false) {
         this.router.navigate(['imNightKing'])
       }
-      console.log(res)
     });
   }
 
   getTime() {
     this.openDialog();
     const a = new Date();
-    const b = new Date('2019-04-19');
+    const b = new Date('2019-04-14');
     return (+b - +a) / 1000;
   }
 

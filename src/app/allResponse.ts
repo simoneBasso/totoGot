@@ -11,7 +11,7 @@ export function getListChar(){
     const keys = Object.keys(Types.Characters).filter(k => typeof Types.Characters[k as any] === "number");
     var t =  keys.map(k => Types.Characters[k as any]);
     _.values(t).forEach(char => {
-        if(char != 34)
+        if(char < 36)
         res.push({
             name:map.get(char),
             value:char
@@ -39,7 +39,7 @@ export function getAnswers():User{
             createCharResponse(Types.Characters.JORAH_MORMONT, true, undefined, undefined),
             createCharResponse(Types.Characters.IL_MASTINO, true, undefined, undefined),
             createCharResponse(Types.Characters.LA_MONTAGNA, true, undefined, undefined),
-            createCharResponse(Types.Characters.SAMWELL_TARLEY, true, undefined, undefined),
+            createCharResponse(Types.Characters.SAMWELL_TARLY, true, undefined, undefined),
             createCharResponse(Types.Characters.GILLY, true, undefined, undefined),
             createCharResponse(Types.Characters.SAM_LITTLE, true, undefined, undefined),
             createCharResponse(Types.Characters.LORD_VARYS, true, undefined, undefined),
@@ -56,7 +56,7 @@ export function getAnswers():User{
             createCharResponse(Types.Characters.JAQUEN_H_GHAR, true, undefined, undefined),
             createCharResponse(Types.Characters.QUIBURN, true, undefined, undefined),
             createCharResponse(Types.Characters.DAARIO, true, undefined, undefined),
-            createCharResponse(Types.Characters.DROGONO, true, undefined, undefined),
+            createCharResponse(Types.Characters.DROGON, true, undefined, undefined),
             createCharResponse(Types.Characters.VISERION, true, undefined, undefined),
             createCharResponse(Types.Characters.RHAEGAL, true, undefined, undefined),
             createCharResponse(Types.Characters.GHOST, true, undefined, undefined),
@@ -128,7 +128,7 @@ const bassoRes =
             createCharResponse(Types.Characters.JORAH_MORMONT, true, undefined, undefined),
             createCharResponse(Types.Characters.IL_MASTINO, true, undefined, undefined),
             createCharResponse(Types.Characters.LA_MONTAGNA, true, undefined, undefined),
-            createCharResponse(Types.Characters.SAMWELL_TARLEY, true, undefined, undefined),
+            createCharResponse(Types.Characters.SAMWELL_TARLY, true, undefined, undefined),
             createCharResponse(Types.Characters.GILLY, true, undefined, undefined),
             createCharResponse(Types.Characters.SAM_LITTLE, true, undefined, undefined),
             createCharResponse(Types.Characters.LORD_VARYS, true, undefined, undefined),
@@ -145,7 +145,7 @@ const bassoRes =
             createCharResponse(Types.Characters.JAQUEN_H_GHAR, true, undefined, undefined),
             createCharResponse(Types.Characters.QUIBURN, true, undefined, undefined),
             createCharResponse(Types.Characters.DAARIO, true, undefined, undefined),
-            createCharResponse(Types.Characters.DROGONO, true, undefined, undefined),
+            createCharResponse(Types.Characters.DROGON, true, undefined, undefined),
             createCharResponse(Types.Characters.VISERION, true, undefined, undefined),
             createCharResponse(Types.Characters.RHAEGAL, true, undefined, undefined),
             createCharResponse(Types.Characters.GHOST, true, undefined, undefined),
@@ -181,7 +181,7 @@ const terryRes =
             createCharResponse(Types.Characters.JORAH_MORMONT, true, undefined, undefined),
             createCharResponse(Types.Characters.IL_MASTINO, true, undefined, undefined),
             createCharResponse(Types.Characters.LA_MONTAGNA, true, undefined, undefined),
-            createCharResponse(Types.Characters.SAMWELL_TARLEY, true, undefined, undefined),
+            createCharResponse(Types.Characters.SAMWELL_TARLY, true, undefined, undefined),
             createCharResponse(Types.Characters.GILLY, true, undefined, undefined),
             createCharResponse(Types.Characters.SAM_LITTLE, true, undefined, undefined),
             createCharResponse(Types.Characters.LORD_VARYS, true, undefined, undefined),
@@ -198,7 +198,7 @@ const terryRes =
             createCharResponse(Types.Characters.JAQUEN_H_GHAR, true, undefined, undefined),
             createCharResponse(Types.Characters.QUIBURN, true, undefined, undefined),
             createCharResponse(Types.Characters.DAARIO, true, undefined, undefined),
-            createCharResponse(Types.Characters.DROGONO, true, undefined, undefined),
+            createCharResponse(Types.Characters.DROGON, true, undefined, undefined),
             createCharResponse(Types.Characters.VISERION, true, undefined, undefined),
             createCharResponse(Types.Characters.RHAEGAL, true, undefined, undefined),
             createCharResponse(Types.Characters.GHOST, true, undefined, undefined),
@@ -233,7 +233,7 @@ const pippoRes =
             createCharResponse(Types.Characters.JORAH_MORMONT, true, undefined, undefined),
             createCharResponse(Types.Characters.IL_MASTINO, true, undefined, undefined),
             createCharResponse(Types.Characters.LA_MONTAGNA, true, undefined, undefined),
-            createCharResponse(Types.Characters.SAMWELL_TARLEY, true, undefined, undefined),
+            createCharResponse(Types.Characters.SAMWELL_TARLY, true, undefined, undefined),
             createCharResponse(Types.Characters.GILLY, true, undefined, undefined),
             createCharResponse(Types.Characters.SAM_LITTLE, true, undefined, undefined),
             createCharResponse(Types.Characters.LORD_VARYS, true, undefined, undefined),
@@ -250,7 +250,7 @@ const pippoRes =
             createCharResponse(Types.Characters.JAQUEN_H_GHAR, true, undefined, undefined),
             createCharResponse(Types.Characters.QUIBURN, true, undefined, undefined),
             createCharResponse(Types.Characters.DAARIO, true, undefined, undefined),
-            createCharResponse(Types.Characters.DROGONO, true, undefined, undefined),
+            createCharResponse(Types.Characters.DROGON, true, undefined, undefined),
             createCharResponse(Types.Characters.VISERION, true, undefined, undefined),
             createCharResponse(Types.Characters.RHAEGAL, true, undefined, undefined),
             createCharResponse(Types.Characters.GHOST, true, undefined, undefined),
