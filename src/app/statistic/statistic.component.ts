@@ -82,6 +82,8 @@ export class StatisticComponent implements OnInit {
 
   }
   selectedNewChar(event) {
+    console.log(event);
+    console.log(this.selectedChar);
     this.popoluteData();
   }
   onSelect(event) {
@@ -97,14 +99,15 @@ export class StatisticComponent implements OnInit {
     this.dataGraph.killKing = [];
     this.dataGraph.becameKing = [];
     this.restartArray();
+    console.log("re pop");
 
 
     this.usersCharsResponse.forEach(x => {
       let responses = x.response;
-      const response = _.findWhere(responses, res => res.name == this.selectedChar);
+      let response = _.find(responses, res => res.name == this.selectedChar);
       if (response) {
         this.setDataInArray('alive', response.alive, x.user);
-        this.setDataInArray('became', response.became, x.user);
+        this.setDataInArray('became', response.becameNight, x.user);
         this.setDataInArrayKilled(response.killedBy, x.user);
       };
     });
@@ -142,9 +145,10 @@ export class StatisticComponent implements OnInit {
     ];
     this.dataGraph.becameData = [
       { "name": "Si", "value": this.becameTrueUserAnswer.length },
-      { "name": "Morto", "value": this.becameFalseUserAnswer.length },
+      { "name": "No", "value": this.becameFalseUserAnswer.length },
       { "name": "Nessuna risposta", "value": this.becameUndefinedUserAnswer.length },
     ];
+    console.log(this.dataGraph.becameData);
 
     let killedMapp =_ .map( _.groupBy(this.killedByAnswer, x => x.charac), (arr, who) => this.createInfoGeneric(who,arr));
     this.killedByDescri = killedMapp;
@@ -181,12 +185,12 @@ export class StatisticComponent implements OnInit {
   }
 
   setDataInArrayKilled(chara, user) {
-    if (!chara) this.killedByAnswer.push({ user: user, charac: Types.Characters.UNDEFINED })
+    if (!chara && chara != 0) this.killedByAnswer.push({ user: user, charac: Types.Characters.UNDEFINED })
     else this.killedByAnswer.push({ user: user, charac: chara })
   }
 
   setDataInArrayChar(chara, user, array: any[]) {
-    if (!chara) array.push({ user: user, charac: Types.Characters.UNDEFINED })
+    if (!chara && chara != 0) array.push({ user: user, charac: Types.Characters.UNDEFINED })
     else array.push({ user: user, charac: chara })
   }
 

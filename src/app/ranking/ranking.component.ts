@@ -51,7 +51,8 @@ export class RankingComponent implements OnInit {
     this.users.forEach(x => this.allResults.push(
       this.calculateUser(x, this.maps))
     );
-    this.allResults = _.sortBy(this.allResults, x => x.points);
+    this.allResults = _.sortBy(this.allResults, x => x.totalPoints).reverse();
+    console.log(this.allResults)
 
   }
 
@@ -90,7 +91,7 @@ export class RankingComponent implements OnInit {
     }
 
     const charResponse = _.filter(user.responseCharacters, x => x.name <= Types.Characters.NYMERIA)
-    const otherCharResponse = _.filter(user.responseCharacters, x => x.name > Types.Characters.NYMERIA)
+    // const otherCharResponse = _.filter(user.responseCharacters, x => x.name > Types.Characters.NYMERIA)
 
     charResponse.forEach(
       x => {
@@ -104,9 +105,9 @@ export class RankingComponent implements OnInit {
         res.totalPoints += singleRes.points
       }
     )
-    otherCharResponse.forEach(
+    user.responseCharactersBonus.forEach(
       x => {
-        var singleRes = calculateCharacter(x, this.getAnswerByChar(x.name, this.answers.responseCharacters));
+        var singleRes = calculateCharacter(x, this.getAnswerByChar(x.name, this.answers.responseCharactersBonus));
         res.resultsOtherCharactersQuestions.push({
           questionName: gotMap.charMap.get(x.name),
           userResponse: x,
@@ -154,6 +155,7 @@ export class RankingComponent implements OnInit {
 
     });
 
+    console.log(res);
     return res;
   }
 

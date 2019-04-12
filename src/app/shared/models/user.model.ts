@@ -8,6 +8,7 @@ export class User
 {
     name:string;
     responseCharacters:ResponseCharacter[];
+    responseCharactersBonus:ResponseCharacter[];
     responsePregnantQuestion:ResponsePregnantQuestion[];
     responseQuestion:ResponseQuestion[];
     returnCharacters:Types.Characters[];

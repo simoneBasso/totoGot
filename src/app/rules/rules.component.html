@@ -121,6 +121,24 @@
         <br>
         Non sono stati maltrattati schiavi, dothraki o Bran.
       </p>
+      <hr>
+      <br>
+      <br>
+      <a [ngStyle]="{'color': 'white'}">
+          <fa-icon [ngStyle]="{'font-size.px': 30,'padding-right.px':30}" icon="users"></fa-icon>
+          <h2 class="inline title-got">Partecipanti: {{users}} </h2>
+        </a>
+        <br>
+        <a [ngStyle]="{'color': 'white'}">
+            <fa-icon [ngStyle]="{'font-size.px': 30,'padding-right.px':30}" icon="money-bill-wave"></fa-icon>
+            <h2 class="inline title-got">Montepremi: {{montepremi}} €</h2>
+          </a>
+          <br>
+          <a [ngStyle]="{'color': 'white'}">
+              <fa-icon [ngStyle]="{'font-size.px': 30,'padding-right.px':30}" icon="calendar-check"></fa-icon>
+              <h2 class="inline title-got">Update: {{upDate}}</h2>
+            </a>
+            <br>
     </mat-card>
   </div>
 </div>

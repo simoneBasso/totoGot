@@ -1,5 +1,5 @@
 
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ɵConsole } from '@angular/core';
 import { User } from '../shared/models/user.model';
 import * as utils from '../allResponse';
 import { calculateCharacter, calculatePregnantQuestion, calculateQuestion } from '../shared/calculate/calculateCharacter';
@@ -20,6 +20,8 @@ export class DetailAnswerComponent implements OnInit {
   imgSource = "assets/images/avatar/";
   answers: User;
   charactersRow: ResponseCharacter[] = [];
+  userCharactersRow: ResponseCharacter[] = [];
+  usersReturns: Types.Characters[];
   selectedUser:string = 'Basso';
   userAnswer:User;
   userCharAnswer:User;
@@ -48,7 +50,10 @@ export class DetailAnswerComponent implements OnInit {
     console.log(event)
     this.userAnswer = _.findWhere(this.users, {name: this.selectedUser});
     this.userCharAnswer = _.sortBy(this.userAnswer.responseCharacters,x => x.name);
-    console.log(this.userAnswer)
+    this.userCharactersRow = this.userAnswer.responseCharactersBonus;
+    this.usersReturns = this.userAnswer.returnCharacters;
+    console.log(this.usersReturns);
+    
   }
 
   getCharName(char:Types.Characters){
@@ -67,15 +72,32 @@ export class DetailAnswerComponent implements OnInit {
     return _.findWhere(resp, {type: type});
   }
 
+  getBonusAnswer(bonusCharRespos: ResponseCharacter){
+    let found = _.findWhere(this.answers.responseCharactersBonus, {name: bonusCharRespos.name});
+    if(!found) found = {
+      name:bonusCharRespos.name,
+      alive:undefined,
+      becameNight:undefined,
+      killedBy: undefined
+    }
+    return found;
+  }
+
+
   getCharPoints(res, truth,valSucc,valErr){
     if(res !== true && res !== false || truth !== true && truth !== false) return {val:'0',class:'unde'};
     else if(res === truth ) return {val:valSucc,class:'success'};
     else return {val:valErr,class:'error'};
   }
+  getCharBecamePoints(res, truth,valSucc,valErr){
+    if(res !== true && res !== false) return {val:'0',class:'unde'};
+    else if(res === truth ) return {val:valSucc,class:'success'};
+    else return {val:valErr,class:'error'};
+  }
 
   getKilledPoints(res:Types.Characters, truth:Types.Characters,valSucc,valErr){
-    if( (!res  || res == Types.Characters.UNDEFINED || res == Types.Characters.NOT_CLEAR) ||
-      (!res  || truth == Types.Characters.UNDEFINED || truth == Types.Characters.NOT_CLEAR)   )
+    if( (res === undefined  || res == Types.Characters.UNDEFINED || res == Types.Characters.NOT_CLEAR) ||
+      (res === undefined  || truth == Types.Characters.UNDEFINED || truth == Types.Characters.NOT_CLEAR)   )
         return {val:'0',class:'unde'};
         
     else if(res === truth ) return {val:valSucc,class:'success'};
@@ -86,5 +108,10 @@ export class DetailAnswerComponent implements OnInit {
     return this.maps.charMap.get(char).replace(/ /g, '_');
   }
 
+  getReturnPoints(res:Types.Characters){
+    var found = _.find(this.answers.returnCharacters, function(c){ return c  == res; });
+    if(found)  return {val:'5',class:'success'};
+    else return {val:'-1',class:'error' }
+  }
 
 }

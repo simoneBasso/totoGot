@@ -36,6 +36,21 @@ export module Types {
         RHAEGAL,
         GHOST,
         NYMERIA,
+        //OTHER
+        RE_DELLA_NOTTE,
+        KARSI,
+        EDDISON_TOLLET,
+        LORD_BAELISH,
+        BENJEN_STARK,
+        ELLARIA_SAND,
+        LYANNA_MORMONT,
+        KHAL_DROGO,
+        ESTRANEI,
+        ESERCITO_LANNISTER,
+        STANNIS_BARATHEON,
+        DISTRUTTO,
+        SANSA_AND_TYRION,
+        NOBODY,
         UNDEFINED,
         NOT_CLEAR
     }

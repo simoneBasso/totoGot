@@ -37,19 +37,19 @@ export function calculateCharacter(
     }
 
 
-    switch (isSame(userResponse.becameNight, correctResponse.becameNight)) {
-        case Types.ResponseValues.CORRECT:
-         results.points++;
-         results.isBecameNight = true;
-            break;
-        case Types.ResponseValues.INCORRECT:
-        results.points--;
+    if(userResponse.becameNight){
+        if(correctResponse.becameNight === userResponse.becameNight){
+            results.points++;
+            results.isBecameNight = true;
+        }
+        else{
+            results.points--;
         results.isBecameNight = false;
-            break;
-        default:
+        }
     }
 
-    if(userResponse.killedBy === undefined) return results;
+
+    if(userResponse.killedBy === undefined || correctResponse.killedBy === undefined) return results;
     
     switch (isSame(userResponse.killedBy, correctResponse.killedBy)) {
         case Types.ResponseValues.CORRECT:

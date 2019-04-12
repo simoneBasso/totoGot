@@ -42,6 +42,25 @@ charMap.set(CHAR.VERME_GRIGIO, "VERME GRIGIO");
 charMap.set(CHAR.VISERION, "VISERION");
 charMap.set(CHAR.YARA_GREYJOY, "YARA GREYJOY");
 
+//OTHER
+
+charMap.set(CHAR.RE_DELLA_NOTTE, "Re della notte");
+charMap.set(CHAR.KARSI, "Karsi");
+charMap.set(CHAR.EDDISON_TOLLET, "Eddison Tollet");
+charMap.set(CHAR.LORD_BAELISH, "Lord Baelish");
+charMap.set(CHAR.BENJEN_STARK, "Benjen Stark");
+charMap.set(CHAR.ELLARIA_SAND, "Ellaria Sand");
+charMap.set(CHAR.LYANNA_MORMONT,"Lyanna Mormont");
+charMap.set(CHAR.KHAL_DROGO,"Khal Drogo");
+
+charMap.set(CHAR.ESTRANEI, "Estranei");
+charMap.set(CHAR.ESERCITO_LANNISTER, "Esercito Lannister");
+charMap.set(CHAR.STANNIS_BARATHEON, "Stannis Baratheon");
+charMap.set(CHAR.DISTRUTTO, "Trono Distrutto");
+charMap.set(CHAR.SANSA_AND_TYRION, "Sansa e Tyrion");
+charMap.set(CHAR.NOBODY, "Nessuno");
+
+
 charMap.set(CHAR.UNDEFINED, "Non definito");
 charMap.set(CHAR.NOT_CLEAR, "Non chiaro");
 
