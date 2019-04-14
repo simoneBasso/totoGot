@@ -18,6 +18,12 @@ export function calculateCharacter(
         points : 0
     };
 
+    if(!correctResponse){
+        console.log("NON ESISTE");
+        console.log(userResponse);
+        console.log(Types.Characters)
+    }
+
     if (correctResponse.alive === undefined || userResponse.alive === undefined)
         return results;
 

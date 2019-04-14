@@ -52,13 +52,27 @@ charMap.set(CHAR.BENJEN_STARK, "Benjen Stark");
 charMap.set(CHAR.ELLARIA_SAND, "Ellaria Sand");
 charMap.set(CHAR.LYANNA_MORMONT,"Lyanna Mormont");
 charMap.set(CHAR.KHAL_DROGO,"Khal Drogo");
+charMap.set(CHAR.RICKON,"Rickon Stark");
+charMap.set(CHAR.CATELYN_TULLY,"Catelyn Tully in Stark");
+charMap.set(CHAR.ROBIN_ARRYN,"Robin Arryn");
+charMap.set(CHAR.HARRY_STRICKLAND,"Harry Strickland");
+charMap.set(CHAR.FRITTELLA,"Frittella");
+charMap.set(CHAR.MEERA_REED,"Meera Reed");
+
 
 charMap.set(CHAR.ESTRANEI, "Estranei");
 charMap.set(CHAR.ESERCITO_LANNISTER, "Esercito Lannister");
 charMap.set(CHAR.STANNIS_BARATHEON, "Stannis Baratheon");
 charMap.set(CHAR.DISTRUTTO, "Trono Distrutto");
 charMap.set(CHAR.SANSA_AND_TYRION, "Sansa e Tyrion");
+charMap.set(CHAR.MASTINO_AND_ARYA, "Il Mastino e Arya");
+charMap.set(CHAR.FIGLIO_DI_JON_AND_DAENERYS,"Il figlio di Jon e Daenerys");
+charMap.set(CHAR.RAGNI_GHIACCIO,"Ragni di ghiaccio");
+charMap.set(CHAR.ILYN_PAYNE,"Ilyn Payne");
+charMap.set(CHAR.OLENNA_TYRELL,"Olenna Tyrell");
+charMap.set(CHAR.BRYNDEN_TULLY,"Brynden Tully")
 charMap.set(CHAR.NOBODY, "Nessuno");
+charMap.set(CHAR.PARTO,"di parto");
 
 
 charMap.set(CHAR.UNDEFINED, "Non definito");

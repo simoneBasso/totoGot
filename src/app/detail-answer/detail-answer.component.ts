@@ -32,7 +32,7 @@ export class DetailAnswerComponent implements OnInit {
   maps:GotMaps = new GotMaps();
   showAnswers = true;
   
-  displayedColumns: string[] = ['name', 'situation', 'became', 'killedBy'];
+  displayedColumns: string[] = ['name', 'info','situation', 'became', 'killedBy'];
   constructor() { 
     this.answers = utils.getAnswers();
     this.users = utils.getAll();

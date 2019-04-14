@@ -27,7 +27,7 @@ export class RankingComponent implements OnInit {
   allResults: ResultCalculatedResponse[] = [];
   maps: GotMaps = new GotMaps();
   a = new Date();
-  b = new Date('2019-04-14');
+  b = new Date('2019-04-15T03:00');
   panelOpenState = true;
 
   config = {}
@@ -75,7 +75,7 @@ export class RankingComponent implements OnInit {
   getTime() {
     this.openDialog();
     const a = new Date();
-    const b = new Date('2019-04-14');
+    const b = new Date('2019-04-15T03:00');
     return (+b - +a) / 1000;
   }
 
