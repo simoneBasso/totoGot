@@ -103,8 +103,8 @@ const answer01 = {
         createCharResponse(Types.Characters.NYMERIA, true, undefined, undefined)
     ],
     responsePregnantQuestion: [
-        createPregnantResponse(Types.Question.DarnerysPregnant, true),
-        createPregnantResponse(Types.Question.CerseiPregnant, false)
+        createPregnantResponse(Types.Question.DarnerysPregnant, false),
+        createPregnantResponse(Types.Question.CerseiPregnant, true)
     ],
     responseQuestion: [
         createQuestionResponse(Types.Question.KillNightKing, Types.Characters.DAARIO),

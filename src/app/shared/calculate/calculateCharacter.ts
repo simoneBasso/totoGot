@@ -35,7 +35,6 @@ export function calculateCharacter(
          results.isDead = false;
             break;
         case Types.ResponseValues.INCORRECT:
-        results.points--;
         results.isDead = true;
         results.isAlive = false;
             break;
@@ -55,7 +54,8 @@ export function calculateCharacter(
     }
 
 
-    if(userResponse.killedBy === undefined || correctResponse.killedBy === undefined) return results;
+    if(userResponse.killedBy === undefined ) return results;
+    
     
     switch (isSame(userResponse.killedBy, correctResponse.killedBy)) {
         case Types.ResponseValues.CORRECT:
