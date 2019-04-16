@@ -2275,7 +2275,7 @@ const ila = {
         createCharResponse(Types.Characters.BRONN, false, undefined, Types.Characters.LA_MONTAGNA),
         createCharResponse(Types.Characters.PODRICK_PAYNE, true, undefined, undefined),
         createCharResponse(Types.Characters.TORMUND, false, true, Types.Characters.ESTRANEI),
-        createCharResponse(Types.Characters.VERME_GRIGIO, true, undefined, undefined),
+        createCharResponse(Types.Characters.VERME_GRIGIO, false, undefined, Types.Characters.ESERCITO_LANNISTER),
         createCharResponse(Types.Characters.GENDRY, true, undefined, undefined),
         createCharResponse(Types.Characters.MISSANDEI, true, undefined, undefined),
         createCharResponse(Types.Characters.BERIC_DONDARRION, true, undefined, undefined),
