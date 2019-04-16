@@ -1,4 +1,4 @@
-<div class="timer-container" *ngIf="showTimer && readyTime" fxHide.xs fxHide.sm>
+<!--<div class="timer-container" [hidden]="showTimer && readyTime" fxHide.xs fxHide.sm>
   <img src="assets/images/timer.png">
   <countdown [config]="config" (finished)="isTheTime()">
     <div class="time">$!d!
@@ -15,10 +15,9 @@
     </div>
 
   </countdown>
-  <!-- <countdown (reached)="isTheTime($event)" [text]="text" units="Days | Hours | Minutes | Seconds"  end="April 14, 2019"></countdown> -->
 </div>
 
-<div class="timer-container-xs" *ngIf="showTimer && readyTime" fxHide.lg fxHide.md>
+<div class="timer-container-xs" [hidden]="showTimer && readyTime" fxHide.lg fxHide.md>
     <countdown [config]="config" (finished)="isTheTime()">
       <div class="time">$!d!
         <div class="label">GIORNI</div>
@@ -34,8 +33,7 @@
       </div>
   
     </countdown>
-    <!-- <countdown (reached)="isTheTime($event)" [text]="text" units="Days | Hours | Minutes | Seconds"  end="April 14, 2019"></countdown> -->
-  </div>
+  </div> -->
 
 <div fxLayout="row wrap" fxLayoutAlign="center stretch" fxLayoutGap="3%">
   <div fxFlex="100%" fxFlex.sm="100%" fxFlex.xs="100%" fxLayoutAlign="end center">

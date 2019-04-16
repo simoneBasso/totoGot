@@ -62,6 +62,7 @@ export module Types {
         DISTRUTTO,
         SANSA_AND_TYRION,
         MASTINO_AND_ARYA,
+        SE_RE_DELLA_NOTTE,
         PARTO,
         NOBODY,
         UNDEFINED,

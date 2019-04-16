@@ -87,7 +87,7 @@ const answer01 = {
         createCharResponse(Types.Characters.DAVOS_SEAWORTH, true, undefined, undefined),
         createCharResponse(Types.Characters.BRONN, true, undefined, undefined),
         createCharResponse(Types.Characters.PODRICK_PAYNE, true, undefined, undefined),
-        createCharResponse(Types.Characters.TORMUND, true, undefined, undefined),
+        createCharResponse(Types.Characters.TORMUND, true, true, undefined),
         createCharResponse(Types.Characters.VERME_GRIGIO, true, undefined, undefined),
         createCharResponse(Types.Characters.GENDRY, true, undefined, undefined),
         createCharResponse(Types.Characters.MISSANDEI, true, undefined, undefined),
@@ -113,12 +113,12 @@ const answer01 = {
     returnCharacters:[],
     responseCharactersBonus:[
         createCharResponse(Types.Characters.KARSI, undefined, undefined, undefined),
-        createCharResponse(Types.Characters.EDDISON_TOLLET, undefined, undefined,undefined),
+        createCharResponse(Types.Characters.EDDISON_TOLLET, true, undefined,undefined),
         createCharResponse(Types.Characters.LYANNA_MORMONT, true, undefined,undefined),
         createCharResponse(Types.Characters.ELLARIA_SAND, undefined, undefined, undefined),
         createCharResponse(Types.Characters.MEERA_REED, undefined, undefined, undefined),
         createCharResponse(Types.Characters.RE_DELLA_NOTTE, true, undefined, undefined),
-        createCharResponse(Types.Characters.HARRY_STRICKLAND, undefined, undefined, undefined),
+        createCharResponse(Types.Characters.HARRY_STRICKLAND, true, undefined, undefined),
         createCharResponse(Types.Characters.FRITTELLA, undefined, undefined,undefined),
         createCharResponse(Types.Characters.ROBIN_ARRYN, undefined, undefined, undefined),
         createCharResponse(Types.Characters.ILYN_PAYNE, undefined, undefined, undefined)
@@ -218,7 +218,7 @@ const pilla =
             createCharResponse(Types.Characters.GENDRY, true, undefined, undefined),
             createCharResponse(Types.Characters.MISSANDEI, true, undefined, undefined),
             createCharResponse(Types.Characters.BERIC_DONDARRION, false, undefined, undefined),
-            createCharResponse(Types.Characters.EURON_GREYJOY, false, undefined, Types.Characters.THEON_GREYJOY),
+            createCharResponse(Types.Characters.EURON_GREYJOY, false, undefined, undefined),
             createCharResponse(Types.Characters.JAQUEN_H_GHAR, true, undefined, undefined),
             createCharResponse(Types.Characters.QUIBURN, false, undefined, undefined),
             createCharResponse(Types.Characters.DAARIO, true, undefined, undefined),
@@ -426,7 +426,7 @@ const robbi =
             createCharResponse(Types.Characters.SAM_LITTLE, true, undefined, undefined),
             createCharResponse(Types.Characters.LORD_VARYS, true, undefined, undefined),
             createCharResponse(Types.Characters.BRIENNE_DI_TARTH, false, undefined, Types.Characters.ESERCITO_LANNISTER),
-            createCharResponse(Types.Characters.DAVOS_SEAWORTH, true, undefined, Types.Characters.ESTRANEI),
+            createCharResponse(Types.Characters.DAVOS_SEAWORTH, true, undefined, undefined),
             createCharResponse(Types.Characters.BRONN, true, undefined, undefined),
             createCharResponse(Types.Characters.PODRICK_PAYNE, true, undefined, undefined),
             createCharResponse(Types.Characters.TORMUND, true, true, undefined),
@@ -1028,7 +1028,7 @@ const simo = {
         createCharResponse(Types.Characters.QUIBURN, false, undefined, undefined),
         createCharResponse(Types.Characters.DAARIO, true, undefined, undefined),
         createCharResponse(Types.Characters.DROGON, false, undefined, undefined),
-        createCharResponse(Types.Characters.VISERION, false, undefined, undefined),
+        createCharResponse(Types.Characters.VISERION, false, undefined, Types.Characters.SE_RE_DELLA_NOTTE),
         createCharResponse(Types.Characters.RHAEGAL, false, undefined, undefined),
         createCharResponse(Types.Characters.GHOST, false, undefined, undefined),
         createCharResponse(Types.Characters.NYMERIA, false, undefined,  Types.Characters.ESTRANEI)
@@ -1588,7 +1588,7 @@ const bore = {
         createCharResponse(Types.Characters.DAVOS_SEAWORTH, true, undefined, undefined),
         createCharResponse(Types.Characters.BRONN, true, undefined, undefined),
         createCharResponse(Types.Characters.PODRICK_PAYNE, true, undefined, undefined),
-        createCharResponse(Types.Characters.TORMUND, false, false, undefined),
+        createCharResponse(Types.Characters.TORMUND, false, undefined, undefined),
         createCharResponse(Types.Characters.VERME_GRIGIO, false, undefined, undefined),
         createCharResponse(Types.Characters.GENDRY, true, undefined, undefined),
         createCharResponse(Types.Characters.MISSANDEI, false, true, undefined),
@@ -1670,7 +1670,7 @@ const feids = {
 };
 
 const dodo = {
-    name: "DODO",
+    name: "Dodo",
     responseCharacters: [
         createCharResponse(Types.Characters.JON_SNOW, true, undefined, undefined),
         createCharResponse(Types.Characters.SANSA_STARK, true, undefined, undefined),
@@ -2197,6 +2197,108 @@ const pasqua = {
     responseCharactersBonus:[
         createCharResponse(Types.Characters.LYANNA_MORMONT, false, undefined,undefined)
     ]
+};
+const pie = {
+    name: "Pedrone",
+    responseCharacters: [
+        createCharResponse(Types.Characters.JON_SNOW, false, true, undefined),
+        createCharResponse(Types.Characters.SANSA_STARK, false, undefined, undefined),
+        createCharResponse(Types.Characters.ARYA_STARK, false, undefined, undefined),
+        createCharResponse(Types.Characters.BRAN_STRAK, false, true, undefined),
+        createCharResponse(Types.Characters.CERSEI_LANNISTER, false, undefined, undefined),
+        createCharResponse(Types.Characters.JAIME_LANNISTER, false, true, undefined),
+        createCharResponse(Types.Characters.TYRION_LANNISTER, false, undefined, undefined),
+        createCharResponse(Types.Characters.DAENERYS_TARGARYEN, false, true, undefined),
+        createCharResponse(Types.Characters.YARA_GREYJOY, false, undefined, undefined),
+        createCharResponse(Types.Characters.THEON_GREYJOY, false, undefined, undefined),
+        createCharResponse(Types.Characters.MELISANDRE, false, true, undefined),
+        createCharResponse(Types.Characters.JORAH_MORMONT, false, undefined, undefined),
+        createCharResponse(Types.Characters.IL_MASTINO, false, undefined, undefined),
+        createCharResponse(Types.Characters.LA_MONTAGNA, false, true, undefined),
+        createCharResponse(Types.Characters.SAMWELL_TARLY, false, undefined, undefined),
+        createCharResponse(Types.Characters.GILLY, false, undefined, undefined),
+        createCharResponse(Types.Characters.SAM_LITTLE, false, undefined, undefined),
+        createCharResponse(Types.Characters.LORD_VARYS, false, undefined, undefined),
+        createCharResponse(Types.Characters.BRIENNE_DI_TARTH, false, undefined, undefined),
+        createCharResponse(Types.Characters.DAVOS_SEAWORTH, false, undefined, undefined),
+        createCharResponse(Types.Characters.BRONN, false, true, undefined),
+        createCharResponse(Types.Characters.PODRICK_PAYNE, false, true, undefined),
+        createCharResponse(Types.Characters.TORMUND, false, true, undefined),
+        createCharResponse(Types.Characters.VERME_GRIGIO, false, true, undefined),
+        createCharResponse(Types.Characters.GENDRY, false, undefined, undefined),
+        createCharResponse(Types.Characters.MISSANDEI, false, undefined, undefined),
+        createCharResponse(Types.Characters.BERIC_DONDARRION, false, undefined, undefined),
+        createCharResponse(Types.Characters.EURON_GREYJOY, false, undefined, undefined),
+        createCharResponse(Types.Characters.JAQUEN_H_GHAR, true, undefined, undefined),
+        createCharResponse(Types.Characters.QUIBURN, false, undefined, undefined),
+        createCharResponse(Types.Characters.DAARIO, false, undefined, undefined),
+        createCharResponse(Types.Characters.DROGON, true, undefined, undefined),
+        createCharResponse(Types.Characters.VISERION, true, undefined, undefined),
+        createCharResponse(Types.Characters.RHAEGAL, true, undefined, undefined),
+        createCharResponse(Types.Characters.GHOST, true, undefined, undefined),
+        createCharResponse(Types.Characters.NYMERIA, true, undefined, undefined)
+    ],
+    responsePregnantQuestion: [
+        createPregnantResponse(Types.Question.DarnerysPregnant, true),
+        createPregnantResponse(Types.Question.CerseiPregnant, true)
+    ],
+    responseQuestion: [
+        createQuestionResponse(Types.Question.KillNightKing, Types.Characters.NOBODY),
+        createQuestionResponse(Types.Question.KingOfThrone, Types.Characters.RE_DELLA_NOTTE),
+    ],
+    returnCharacters:[],
+    responseCharactersBonus:[ ]
+};
+const ila = {
+    name: "Ila",
+    responseCharacters: [
+        createCharResponse(Types.Characters.JON_SNOW, true, undefined, undefined),
+        createCharResponse(Types.Characters.SANSA_STARK, true, undefined, undefined),
+        createCharResponse(Types.Characters.ARYA_STARK, true, undefined, undefined),
+        createCharResponse(Types.Characters.BRAN_STRAK, false, true, undefined),
+        createCharResponse(Types.Characters.CERSEI_LANNISTER, true, undefined, undefined),
+        createCharResponse(Types.Characters.JAIME_LANNISTER, false, undefined, Types.Characters.ESTRANEI),
+        createCharResponse(Types.Characters.TYRION_LANNISTER, true, undefined, undefined),
+        createCharResponse(Types.Characters.DAENERYS_TARGARYEN, true, undefined, undefined),
+        createCharResponse(Types.Characters.YARA_GREYJOY, false, undefined, Types.Characters.EURON_GREYJOY),
+        createCharResponse(Types.Characters.THEON_GREYJOY, true, undefined, undefined),
+        createCharResponse(Types.Characters.MELISANDRE, true, undefined, undefined),
+        createCharResponse(Types.Characters.JORAH_MORMONT, false, undefined, undefined),
+        createCharResponse(Types.Characters.IL_MASTINO, true, undefined, undefined),
+        createCharResponse(Types.Characters.LA_MONTAGNA, true, undefined, undefined),
+        createCharResponse(Types.Characters.SAMWELL_TARLY, true, undefined, undefined),
+        createCharResponse(Types.Characters.GILLY, true, undefined, undefined),
+        createCharResponse(Types.Characters.SAM_LITTLE, true, undefined, undefined),
+        createCharResponse(Types.Characters.LORD_VARYS, true, undefined, undefined),
+        createCharResponse(Types.Characters.BRIENNE_DI_TARTH, false, undefined, undefined),
+        createCharResponse(Types.Characters.DAVOS_SEAWORTH, true, undefined, undefined),
+        createCharResponse(Types.Characters.BRONN, false, undefined, Types.Characters.LA_MONTAGNA),
+        createCharResponse(Types.Characters.PODRICK_PAYNE, true, undefined, undefined),
+        createCharResponse(Types.Characters.TORMUND, false, true, Types.Characters.ESTRANEI),
+        createCharResponse(Types.Characters.VERME_GRIGIO, true, undefined, undefined),
+        createCharResponse(Types.Characters.GENDRY, true, undefined, undefined),
+        createCharResponse(Types.Characters.MISSANDEI, true, undefined, undefined),
+        createCharResponse(Types.Characters.BERIC_DONDARRION, true, undefined, undefined),
+        createCharResponse(Types.Characters.EURON_GREYJOY, false, undefined, Types.Characters.THEON_GREYJOY),
+        createCharResponse(Types.Characters.JAQUEN_H_GHAR, true, undefined, undefined),
+        createCharResponse(Types.Characters.QUIBURN, false, undefined, Types.Characters.JON_SNOW),
+        createCharResponse(Types.Characters.DAARIO, true, undefined, undefined),
+        createCharResponse(Types.Characters.DROGON, true, undefined, undefined),
+        createCharResponse(Types.Characters.VISERION, false, undefined, undefined),
+        createCharResponse(Types.Characters.RHAEGAL, true, undefined, undefined),
+        createCharResponse(Types.Characters.GHOST, true, undefined, undefined),
+        createCharResponse(Types.Characters.NYMERIA, true, undefined, undefined)
+    ],
+    responsePregnantQuestion: [
+        createPregnantResponse(Types.Question.DarnerysPregnant, true),
+        createPregnantResponse(Types.Question.CerseiPregnant, true)
+    ],
+    responseQuestion: [
+        createQuestionResponse(Types.Question.KillNightKing, Types.Characters.JON_SNOW),
+        createQuestionResponse(Types.Question.KingOfThrone, Types.Characters.SANSA_STARK),
+    ],
+    returnCharacters:[Types.Characters.KHAL_DROGO],
+    responseCharactersBonus:[ ]
 }
 
 const users = [];
@@ -2242,4 +2344,6 @@ const users = [];
     users.push(mazzio);
     users.push(chiara);
     users.push(pasqua);
+    users.push(pie);
+    users.push(ila);
     
