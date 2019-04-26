@@ -21,6 +21,8 @@ import { TypeScriptEmitter } from '@angular/compiler';
 export class RankingComponent implements OnInit {
 
   readyTime = false;
+  puntate = utils.getNumberOfAnswers();
+  puntataSelected:number;
   answers: User;
   users: User[];
   showTimer = true;
@@ -40,8 +42,8 @@ export class RankingComponent implements OnInit {
       template: "$!d! $!h! $!m! $!s! "
     }
 
-
-    this.answers = utils.getAnswers();
+    this.puntataSelected = this.puntate;
+    this.answers = utils.getAnswersByPuntata(this.puntataSelected);
     this.users = utils.getAll();
 
   }
@@ -52,7 +54,7 @@ export class RankingComponent implements OnInit {
       this.calculateUser(x, this.maps))
     );
     this.allResults = _.sortBy(this.allResults, x => x.totalPoints).reverse();
-    console.log(this.allResults)
+    // console.log(this.allResults)
 
   }
 
@@ -78,6 +80,29 @@ export class RankingComponent implements OnInit {
     const b = new Date('2019-04-15T03:00');
     return (+b - +a) / 1000;
   }
+
+
+  getNextPuntata(){
+    this.allResults=[];
+    this.puntataSelected = this.puntataSelected + 1;
+    this.answers = utils.getAnswersByPuntata(this.puntataSelected);
+    this.users.forEach(x => this.allResults.push(
+      this.calculateUser(x, this.maps))
+    );
+    this.allResults = _.sortBy(this.allResults, x => x.totalPoints).reverse();
+  }
+
+  getPreviousPuntata(){
+    this.allResults = [];
+    this.puntataSelected = this.puntataSelected -1;
+    this.answers = utils.getAnswersByPuntata(this.puntataSelected);
+    this.users.forEach(x => this.allResults.push(
+      this.calculateUser(x, this.maps))
+    );
+    this.allResults = _.sortBy(this.allResults, x => x.totalPoints).reverse();
+  }
+
+
 
   calculateUser(user: User, gotMap: GotMaps): ResultCalculatedResponse {
     var res = {
@@ -155,7 +180,7 @@ export class RankingComponent implements OnInit {
 
     });
 
-    console.log(res);
+   // console.log(res);
     return res;
   }
 

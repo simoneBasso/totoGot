@@ -57,7 +57,11 @@ import {
   faThumbsDown,
   faMoneyBillWave,
   faUsers,
-  faCalendarCheck
+  faCalendarCheck,
+  faArrowAltCircleLeft,
+  faArrowAltCircleRight,
+  faCaretLeft,
+  faCaretRight
 } from '@fortawesome/free-solid-svg-icons';
 import {
   faGithub,
@@ -101,7 +105,11 @@ library.add(
   faThumbsDown,
   faMoneyBillWave,
   faUsers,
-  faCalendarCheck
+  faCalendarCheck,
+  faArrowAltCircleLeft,
+  faArrowAltCircleRight,
+  faCaretLeft,
+  faCaretRight
 );
 
 @NgModule({

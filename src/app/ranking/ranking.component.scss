@@ -129,3 +129,16 @@ countdown {
     }
     }
   }
+
+.buttonPuntata{
+  position: relative;
+  cursor: pointer;
+  font-size: 20px;
+
+  &.next{
+    padding-left: 8px;
+  }
+  &.previous{
+    padding-right: 8px;
+  }
+}

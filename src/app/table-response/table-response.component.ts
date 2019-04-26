@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { Types } from '../shared/enum/types'
 import { User } from '../shared/models/user.model';
 import { ResponseCharacter } from '../shared/models/response_characters.model';
@@ -10,7 +10,8 @@ import { _ } from 'underscore';
   templateUrl: './table-response.component.html',
   styleUrls: ['./table-response.component.scss']
 })
-export class TableResponseComponent implements OnInit {
+export class TableResponseComponent implements OnInit, OnChanges {
+  
 
   @Input()
   answers: User;
@@ -26,7 +27,12 @@ export class TableResponseComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    
+    console.log("change1")  
+    this.charactersRow = _.sortBy(_.filter(this.answers.responseCharacters, x => x.name <= Types.Characters.NYMERIA), x => x.name);
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    console.log("change1")  
     this.charactersRow = _.sortBy(_.filter(this.answers.responseCharacters, x => x.name <= Types.Characters.NYMERIA), x => x.name);
   }
 

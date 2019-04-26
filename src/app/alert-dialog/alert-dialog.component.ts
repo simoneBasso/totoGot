@@ -1,5 +1,6 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA}  from '@angular/material';
+import * as utils from '../allResponse';
 
 @Component({
   selector: 'app-alert-dialog',
@@ -12,6 +13,9 @@ export class AlertDialogComponent {
     public dialogRef: MatDialogRef<AlertDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data) {}
 
+
+  puntate = utils.getNumberOfAnswers();
+  
   onNoClick(): void {
     this.dialogRef.close(false);
   }
