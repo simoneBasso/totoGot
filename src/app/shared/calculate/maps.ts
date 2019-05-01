@@ -72,8 +72,9 @@ charMap.set(CHAR.ILYN_PAYNE,"Ilyn Payne");
 charMap.set(CHAR.OLENNA_TYRELL,"Olenna Tyrell");
 charMap.set(CHAR.BRYNDEN_TULLY,"Brynden Tully")
 charMap.set(CHAR.NOBODY, "Nessuno");
-charMap.set(CHAR.PARTO,"di parto");
+charMap.set(CHAR.PARTO,"Di parto");
 charMap.set(CHAR.SE_RE_DELLA_NOTTE,"Quando sparisce il NK");
+charMap.set(CHAR.SUICIDIO,"Suicidio");
 
 
 charMap.set(CHAR.UNDEFINED, "Non definito");

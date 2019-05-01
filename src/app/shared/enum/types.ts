@@ -64,6 +64,7 @@ export module Types {
         MASTINO_AND_ARYA,
         SE_RE_DELLA_NOTTE,
         PARTO,
+        SUICIDIO,
         NOBODY,
         UNDEFINED,
         NOT_CLEAR
