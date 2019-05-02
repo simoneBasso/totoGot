@@ -75,6 +75,7 @@ import { DetailAnswerComponent } from './detail-answer/detail-answer.component';
 import { StatisticComponent } from './statistic/statistic.component';
 import { RulesComponent } from './rules/rules.component';
 import { AlertDialogComponent } from './alert-dialog/alert-dialog.component';
+import { EdonioDialogComponent } from './edonio-alert/edonio-dialog.component';
 import { ImNightKingComponent } from './im-night-king/im-night-king.component';
 
 library.add(
@@ -121,7 +122,8 @@ library.add(
     StatisticComponent,
     RulesComponent,
     AlertDialogComponent,
-    ImNightKingComponent
+    ImNightKingComponent,
+    EdonioDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -153,7 +155,7 @@ library.add(
     FlexLayoutModule,
     AppRoutingModule
   ],
-  entryComponents: [AlertDialogComponent],
+  entryComponents: [AlertDialogComponent,EdonioDialogComponent],
   providers: [],
   bootstrap: [AppComponent]
   

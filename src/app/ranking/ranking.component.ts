@@ -11,6 +11,7 @@ import { MatDialog } from '@angular/material';
 import { AlertDialogComponent } from '../alert-dialog/alert-dialog.component';
 import { Router } from '@angular/router';
 import { TypeScriptEmitter } from '@angular/compiler';
+import { EdonioDialogComponent } from '../edonio-alert/edonio-dialog.component';
 
 @Component({
   selector: 'app-ranking',
@@ -60,6 +61,7 @@ export class RankingComponent implements OnInit {
 
   openDialog(): void {
     if (sessionStorage.getItem("alreadyVisited") == "true") {
+      this.openEdonioDialog();
       return;
     }
     const dialogRef = this.dialog.open(AlertDialogComponent, {
@@ -71,8 +73,19 @@ export class RankingComponent implements OnInit {
       if (res == false) {
         this.router.navigate(['imNightKing'])
       }
+      else{
+        this.openEdonioDialog();
+      }
     });
   }
+
+openEdonioDialog():void {
+  const dialogedonioRef = this.dialog.open(EdonioDialogComponent, {
+    width: '500px'
+  });
+
+  dialogedonioRef.afterClosed().subscribe( _ => {});
+}
 
   getTime() {
     this.openDialog();

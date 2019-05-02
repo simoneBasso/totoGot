@@ -857,8 +857,8 @@ const ludo = {
     ],
     returnCharacters:[Types.Characters.KHAL_DROGO],
     responseCharactersBonus:[
-        createCharResponse(Types.Characters.ELLARIA_SAND, false, undefined, Types.Characters.LA_MONTAGNA),
-        createCharResponse(Types.Characters.RE_DELLA_NOTTE, false, undefined, Types.Characters.BRAN_STRAK)
+        createCharResponse(Types.Characters.ELLARIA_SAND, false, undefined, Types.Characters.LA_MONTAGNA)
+        
     ]
 }
 
