@@ -75,6 +75,9 @@ charMap.set(CHAR.NOBODY, "Nessuno");
 charMap.set(CHAR.PARTO,"Di parto");
 charMap.set(CHAR.SE_RE_DELLA_NOTTE,"Quando sparisce il NK");
 charMap.set(CHAR.SUICIDIO,"Suicidio");
+charMap.set(CHAR.CROLLO,"Crollo di palazzi");
+charMap.set(CHAR.ESERCITO_NORD,"Esercito del nord");
+charMap.set(CHAR.DOTHRAKI,"Dothraki");
 
 
 charMap.set(CHAR.UNDEFINED, "Non definito");

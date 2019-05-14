@@ -65,6 +65,9 @@ export module Types {
         SE_RE_DELLA_NOTTE,
         PARTO,
         SUICIDIO,
+        CROLLO,
+        ESERCITO_NORD,
+        DOTHRAKI,
         NOBODY,
         UNDEFINED,
         NOT_CLEAR
