@@ -111,8 +111,8 @@ const answer01 = {
         createPregnantResponse(Types.Question.CerseiPregnant, true)
     ],
     responseQuestion: [
-        createQuestionResponse(Types.Question.KillNightKing, Types.Characters.DAARIO),
-        createQuestionResponse(Types.Question.KingOfThrone, Types.Characters.DAARIO),
+        createQuestionResponse(Types.Question.KillNightKing, Types.Characters.UNDEFINED),
+        createQuestionResponse(Types.Question.KingOfThrone, Types.Characters.UNDEFINED),
     ],
     returnCharacters:[],
     responseCharactersBonus:[
@@ -174,8 +174,8 @@ const answer02 = {
         createPregnantResponse(Types.Question.CerseiPregnant, true)
     ],
     responseQuestion: [
-        createQuestionResponse(Types.Question.KillNightKing, Types.Characters.DAARIO),
-        createQuestionResponse(Types.Question.KingOfThrone, Types.Characters.DAARIO),
+        createQuestionResponse(Types.Question.KillNightKing, Types.Characters.UNDEFINED),
+        createQuestionResponse(Types.Question.KingOfThrone, Types.Characters.UNDEFINED),
     ],
     returnCharacters:[],
     responseCharactersBonus:[
@@ -239,7 +239,7 @@ const answer03 = {
     ],
     responseQuestion: [
         createQuestionResponse(Types.Question.KillNightKing, Types.Characters.ARYA_STARK),
-        createQuestionResponse(Types.Question.KingOfThrone, Types.Characters.DAARIO),
+        createQuestionResponse(Types.Question.KingOfThrone, Types.Characters.UNDEFINED),
     ],
     returnCharacters:[],
     responseCharactersBonus:[
@@ -303,7 +303,7 @@ const answer04 = {
     ],
     responseQuestion: [
         createQuestionResponse(Types.Question.KillNightKing, Types.Characters.ARYA_STARK),
-        createQuestionResponse(Types.Question.KingOfThrone, Types.Characters.DAARIO),
+        createQuestionResponse(Types.Question.KingOfThrone, Types.Characters.UNDEFINED),
     ],
     returnCharacters:[],
     responseCharactersBonus:[
@@ -367,7 +367,7 @@ const answer05 = {
     ],
     responseQuestion: [
         createQuestionResponse(Types.Question.KillNightKing, Types.Characters.ARYA_STARK),
-        createQuestionResponse(Types.Question.KingOfThrone, Types.Characters.DAARIO),
+        createQuestionResponse(Types.Question.KingOfThrone, Types.Characters.UNDEFINED),
     ],
     returnCharacters:[],
     responseCharactersBonus:[
@@ -385,7 +385,71 @@ const answer05 = {
     ]
 }
 
-const allAnswer = [answer01,answer02,answer03,answer04,answer05]
+const answer06 = {
+    name: "06",
+    responseCharacters: [
+        createCharResponse(Types.Characters.JON_SNOW, true, undefined, undefined),
+        createCharResponse(Types.Characters.SANSA_STARK, true, undefined, undefined),
+        createCharResponse(Types.Characters.ARYA_STARK, true, undefined, undefined),
+        createCharResponse(Types.Characters.BRAN_STRAK, true, undefined, undefined),
+        createCharResponse(Types.Characters.CERSEI_LANNISTER, false, undefined, Types.Characters.CROLLO),
+        createCharResponse(Types.Characters.JAIME_LANNISTER, false, undefined, Types.Characters.CROLLO),
+        createCharResponse(Types.Characters.TYRION_LANNISTER, true, undefined, undefined),
+        createCharResponse(Types.Characters.DAENERYS_TARGARYEN, false, undefined, Types.Characters.JON_SNOW),
+        createCharResponse(Types.Characters.YARA_GREYJOY, true, undefined, undefined),
+        createCharResponse(Types.Characters.THEON_GREYJOY, false, undefined, Types.Characters.RE_DELLA_NOTTE),
+        createCharResponse(Types.Characters.MELISANDRE, false, undefined, Types.Characters.SUICIDIO),
+        createCharResponse(Types.Characters.JORAH_MORMONT, false, undefined, Types.Characters.ESTRANEI),
+        createCharResponse(Types.Characters.IL_MASTINO, false, undefined, Types.Characters.SUICIDIO),
+        createCharResponse(Types.Characters.LA_MONTAGNA, false, undefined, Types.Characters.IL_MASTINO),
+        createCharResponse(Types.Characters.SAMWELL_TARLY, true, undefined, undefined),
+        createCharResponse(Types.Characters.GILLY, true, undefined, undefined),
+        createCharResponse(Types.Characters.SAM_LITTLE, true, undefined, undefined),
+        createCharResponse(Types.Characters.LORD_VARYS, false, undefined, Types.Characters.DROGON),
+        createCharResponse(Types.Characters.BRIENNE_DI_TARTH, true, undefined, undefined),
+        createCharResponse(Types.Characters.DAVOS_SEAWORTH, true, undefined, undefined),
+        createCharResponse(Types.Characters.BRONN, true, undefined, undefined),
+        createCharResponse(Types.Characters.PODRICK_PAYNE, true, undefined, undefined),
+        createCharResponse(Types.Characters.TORMUND, true, undefined, undefined),
+        createCharResponse(Types.Characters.VERME_GRIGIO, true, undefined, undefined),
+        createCharResponse(Types.Characters.GENDRY, true, undefined, undefined),
+        createCharResponse(Types.Characters.MISSANDEI, false, undefined, Types.Characters.LA_MONTAGNA),
+        createCharResponse(Types.Characters.BERIC_DONDARRION, false, undefined, Types.Characters.ESTRANEI),
+        createCharResponse(Types.Characters.EURON_GREYJOY, false, undefined, Types.Characters.JAIME_LANNISTER),
+        createCharResponse(Types.Characters.JAQUEN_H_GHAR, undefined, undefined, Types.Characters.NOT_IN_SERIES),
+        createCharResponse(Types.Characters.QUIBURN, false, undefined, Types.Characters.LA_MONTAGNA),
+        createCharResponse(Types.Characters.DAARIO, undefined, undefined, Types.Characters.NOT_IN_SERIES),
+        createCharResponse(Types.Characters.DROGON, true, undefined, undefined),
+        createCharResponse(Types.Characters.VISERION, false, undefined, Types.Characters.SE_RE_DELLA_NOTTE),
+        createCharResponse(Types.Characters.RHAEGAL, false, undefined, Types.Characters.EURON_GREYJOY),
+        createCharResponse(Types.Characters.GHOST, true, undefined, undefined),
+        createCharResponse(Types.Characters.NYMERIA, undefined, undefined, Types.Characters.NOT_IN_SERIES)
+    ],
+    responsePregnantQuestion: [
+        createPregnantResponse(Types.Question.DarnerysPregnant, false),
+        createPregnantResponse(Types.Question.CerseiPregnant, true)
+    ],
+    responseQuestion: [
+        createQuestionResponse(Types.Question.KillNightKing, Types.Characters.ARYA_STARK),
+        createQuestionResponse(Types.Question.KingOfThrone, Types.Characters.TRONO_CORRECT),
+    ],
+    returnCharacters:[],
+    responseCharactersBonus:[
+        createCharResponse(Types.Characters.KARSI, undefined, undefined, Types.Characters.NOT_IN_SERIES),
+        createCharResponse(Types.Characters.EDDISON_TOLLET, false, true,Types.Characters.ESTRANEI),
+        createCharResponse(Types.Characters.LYANNA_MORMONT, false, true,Types.Characters.ESTRANEI),
+        createCharResponse(Types.Characters.ELLARIA_SAND, undefined, undefined, Types.Characters.NOT_IN_SERIES),
+        createCharResponse(Types.Characters.MEERA_REED, undefined, undefined, Types.Characters.NOT_IN_SERIES),
+        createCharResponse(Types.Characters.RE_DELLA_NOTTE, false, undefined, Types.Characters.ARYA_STARK),
+        createCharResponse(Types.Characters.HARRY_STRICKLAND, false, undefined, Types.Characters.DOTHRAKI),
+        createCharResponse(Types.Characters.FRITTELLA, undefined, undefined,Types.Characters.NOT_IN_SERIES),
+        createCharResponse(Types.Characters.ROBIN_ARRYN, true, undefined, Types.Characters.NOT_IN_SERIES),
+        createCharResponse(Types.Characters.ILYN_PAYNE, undefined, undefined, Types.Characters.NOT_IN_SERIES)
+
+    ]
+}
+
+const allAnswer = [answer01,answer02,answer03,answer04,answer05,answer06]
 
 //userResponse
 
@@ -601,7 +665,7 @@ const bucca =
         ],
         responseQuestion: [
             createQuestionResponse(Types.Question.KillNightKing, Types.Characters.BRAN_STRAK),
-            createQuestionResponse(Types.Question.KingOfThrone, Types.Characters.DISTRUTTO),
+            createQuestionResponse(Types.Question.KingOfThrone, Types.Characters.DISTRUTTO_BY_DRAGO),
 
         ],
         returnCharacters:[Types.Characters.STANNIS_BARATHEON,Types.Characters.LORD_BAELISH],
@@ -709,7 +773,7 @@ const robbi =
         ],
         responseQuestion: [
             createQuestionResponse(Types.Question.KillNightKing, Types.Characters.NOBODY),
-            createQuestionResponse(Types.Question.KingOfThrone, Types.Characters.NOBODY),
+            createQuestionResponse(Types.Question.KingOfThrone, Types.Characters.NESSUNO_TUTTILIBERI),
 
         ],
         returnCharacters:[],
@@ -1276,7 +1340,7 @@ const simo = {
         createCharResponse(Types.Characters.BRIENNE_DI_TARTH, false, undefined,  Types.Characters.ESTRANEI),
         createCharResponse(Types.Characters.DAVOS_SEAWORTH, true, undefined, undefined),
         createCharResponse(Types.Characters.BRONN, true, undefined, undefined),
-        createCharResponse(Types.Characters.PODRICK_PAYNE, true, undefined, Types.Characters.ESTRANEI),
+        createCharResponse(Types.Characters.PODRICK_PAYNE, true, undefined, undefined),
         createCharResponse(Types.Characters.TORMUND, false, undefined,  Types.Characters.ESTRANEI),
         createCharResponse(Types.Characters.VERME_GRIGIO, false, undefined, undefined),
         createCharResponse(Types.Characters.GENDRY, true, undefined, undefined),

@@ -527,9 +527,9 @@
         <h3 class="my-h3">{{ getCharName(userAnswer.responseQuestion[1].response) }}</h3>
       </span>
       <span fxFlex="5%" fxFlex.sm="8%" fxFlex.xs="8%" [ngClass]="'icon-table'"
-        [class]="getKilledPoints(userAnswer.responseQuestion[1].response,answers.responseQuestion[1].response,'+8','0').class">
+        [class]="getThronesRes(userAnswer.responseQuestion[1].response,answers.responseQuestion[1].response).class">
         <h2 class="my-h3">
-          {{ getKilledPoints(userAnswer.responseQuestion[1].response,answers.responseQuestion[1].response,'+8','0').val}}
+          {{ getThronesRes(userAnswer.responseQuestion[1].response,answers.responseQuestion[1].response).val}}
         </h2>
       </span>
     </mat-card>

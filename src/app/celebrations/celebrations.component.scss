@@ -1,0 +1,31 @@
+.fire{
+    // background-color: black;
+    height: 500px;
+
+    canvas{
+        min-height: 500px;
+    }
+}
+
+.imgContainer{
+    text-align: center;
+    .trono{ 
+        bottom: 400px;
+        position: relative;
+        opacity: 0.7;
+        height: 300px;
+    }
+    .hand{ 
+        bottom: 200px;
+        position: relative;
+        opacity: 0.7;
+        height: 300px;
+    }
+    .guard{ 
+        bottom: 0px;
+        position: relative;
+        opacity: 0.7;
+        height: 300px;
+    }
+
+}

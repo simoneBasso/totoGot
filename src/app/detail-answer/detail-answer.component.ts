@@ -52,7 +52,6 @@ export class DetailAnswerComponent implements OnInit {
     this.userCharAnswer = _.sortBy(this.userAnswer.responseCharacters,x => x.name);
     this.userCharactersRow = this.userAnswer.responseCharactersBonus;
     this.usersReturns = this.userAnswer.returnCharacters;
-    console.log(this.usersReturns);
     
   }
 
@@ -112,6 +111,20 @@ export class DetailAnswerComponent implements OnInit {
     var found = _.find(this.answers.returnCharacters, function(c){ return c  == res; });
     if(found)  return {val:'5',class:'success'};
     else return {val:'-1',class:'error' }
+  }
+
+  getThronesRes(res:Types.Characters, truth:Types.Characters){
+    
+    if( (res === undefined  || res == Types.Characters.UNDEFINED || res == Types.Characters.NOT_CLEAR) ||
+      (res === undefined  || truth == Types.Characters.UNDEFINED || truth == Types.Characters.NOT_CLEAR)   )
+      return {val:'0',class:'unde'};
+    
+    if(res === Types.Characters.DISTRUTTO_BY_DRAGO ) return {val:12,class:'success'};
+    if(res === Types.Characters.DISTRUTTO ) return {val:10,class:'success'};
+    if(res === Types.Characters.BRAN_STRAK ) return {val:8,class:'success'};
+    if(res === Types.Characters.NOBODY ) return {val:8,class:'success'};
+    if(res === Types.Characters.NESSUNO_TUTTILIBERI ) return {val:2,class:'success'};
+    else return {val:'0',class:'error'};
   }
 
 }

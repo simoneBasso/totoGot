@@ -108,8 +108,40 @@ export function calculateQuestion(
         points:0
     };
 
-    if (correctResponse.response === undefined)
+    
+
+    if (correctResponse.response === Types.Characters.UNDEFINED)
         return results;
+
+    else if(userResponse.type == Types.Question.KingOfThrone){
+        console.log(userResponse);
+            if(userResponse.response == Types.Characters.DISTRUTTO_BY_DRAGO)
+            return {
+                isCorrect : true,
+                points:12
+            };
+            if(userResponse.response == Types.Characters.DISTRUTTO)
+            return {
+                isCorrect : true,
+                points:10
+            };
+            if(userResponse.response == Types.Characters.NOBODY)
+            return {
+                isCorrect : true,
+                points:8
+            };
+            if(userResponse.response == Types.Characters.NESSUNO_TUTTILIBERI)
+            return {
+                isCorrect : true,
+                points:2
+            };
+            if(userResponse.response == Types.Characters.BRAN_STRAK)
+            return {
+                isCorrect : true,
+                points:8
+            };
+        };
+
 
     if(isSame(userResponse.response,correctResponse.response) == Types.ResponseValues.CORRECT){
         results.isCorrect = true;
@@ -122,6 +154,8 @@ export function calculateQuestion(
     return results;
 
 }
+
+
 
 
 

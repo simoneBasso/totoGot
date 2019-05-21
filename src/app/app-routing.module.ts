@@ -5,6 +5,7 @@ import { DetailAnswerComponent } from './detail-answer/detail-answer.component';
 import { StatisticComponent } from './statistic/statistic.component';
 import { RulesComponent } from './rules/rules.component';
 import { ImNightKingComponent } from './im-night-king/im-night-king.component';
+import { CelebrationsComponent } from './celebrations/celebrations.component';
 
 const appRoutes: Routes = [
   { path: 'ranking', component: RankingComponent },
@@ -12,6 +13,7 @@ const appRoutes: Routes = [
   { path: 'statistic', component: StatisticComponent },
   { path: 'rules', component: RulesComponent },
   { path: 'imNightKing', component: ImNightKingComponent },
+  { path: 'celebration', component: CelebrationsComponent },
   { path: '',
     redirectTo: '/ranking',
     pathMatch: 'full'

@@ -70,7 +70,11 @@ export module Types {
         DOTHRAKI,
         NOBODY,
         UNDEFINED,
-        NOT_CLEAR
+        DISTRUTTO_BY_DRAGO,
+        NOT_IN_SERIES,
+        NOT_CLEAR,
+        TRONO_CORRECT,
+        NESSUNO_TUTTILIBERI
     }
     export enum CharactersResponse {
         ALIVE,

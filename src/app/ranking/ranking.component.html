@@ -35,6 +35,8 @@
     </countdown>
   </div> -->
 
+  <app-celebrations></app-celebrations>
+
 <div fxLayout="row wrap" fxLayoutAlign="center stretch" fxLayoutGap="3%">
   <div fxFlex="100%" fxFlex.sm="100%" fxFlex.xs="100%" fxLayoutAlign="end center">
     <mat-accordion class="legend">
@@ -169,7 +171,7 @@
     </table>
   </div>
   <div fxFlex="60%" fxFlex.sm="100%" fxFlex.xs="100%">
-    <h2>SITUAZIONE ATTUALE</h2>
+    <h2>{{title}}</h2>
     <app-table-response [answers]="answers"></app-table-response>
   </div>
 </div>

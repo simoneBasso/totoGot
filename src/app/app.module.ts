@@ -77,6 +77,7 @@ import { RulesComponent } from './rules/rules.component';
 import { AlertDialogComponent } from './alert-dialog/alert-dialog.component';
 import { EdonioDialogComponent } from './edonio-alert/edonio-dialog.component';
 import { ImNightKingComponent } from './im-night-king/im-night-king.component';
+import { CelebrationsComponent } from './celebrations/celebrations.component';
 
 library.add(
   faBars,
@@ -123,7 +124,8 @@ library.add(
     RulesComponent,
     AlertDialogComponent,
     ImNightKingComponent,
-    EdonioDialogComponent
+    EdonioDialogComponent,
+    CelebrationsComponent
   ],
   imports: [
     BrowserModule,

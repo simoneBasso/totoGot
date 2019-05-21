@@ -78,6 +78,10 @@ charMap.set(CHAR.SUICIDIO,"Suicidio");
 charMap.set(CHAR.CROLLO,"Crollo di palazzi");
 charMap.set(CHAR.ESERCITO_NORD,"Esercito del nord");
 charMap.set(CHAR.DOTHRAKI,"Dothraki");
+charMap.set(CHAR.NOT_IN_SERIES,"Non presente");
+charMap.set(CHAR.DISTRUTTO_BY_DRAGO,"Distrutto da un drago");
+charMap.set(CHAR.TRONO_CORRECT,"Distrutto da Drogon | Bran regna");
+charMap.set(CHAR.NESSUNO_TUTTILIBERI,"Nessuno, Daenerys libera tutti");
 
 
 charMap.set(CHAR.UNDEFINED, "Non definito");

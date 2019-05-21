@@ -20,7 +20,7 @@ import { EdonioDialogComponent } from '../edonio-alert/edonio-dialog.component';
   encapsulation: ViewEncapsulation.None
 })
 export class RankingComponent implements OnInit {
-
+  title = 'Situazione finale'; 
   readyTime = false;
   puntate = utils.getNumberOfAnswers();
   puntataSelected:number;
@@ -44,6 +44,7 @@ export class RankingComponent implements OnInit {
     }
 
     this.puntataSelected = this.puntate;
+    
     this.answers = utils.getAnswersByPuntata(this.puntataSelected);
     this.users = utils.getAll();
 
@@ -98,6 +99,7 @@ openEdonioDialog():void {
   getNextPuntata(){
     this.allResults=[];
     this.puntataSelected = this.puntataSelected + 1;
+    this.title = this.puntataSelected == 6 ? 'Situazione finale' : 'Situazione attuale'; 
     this.answers = utils.getAnswersByPuntata(this.puntataSelected);
     this.users.forEach(x => this.allResults.push(
       this.calculateUser(x, this.maps))
@@ -108,6 +110,7 @@ openEdonioDialog():void {
   getPreviousPuntata(){
     this.allResults = [];
     this.puntataSelected = this.puntataSelected -1;
+    this.title = this.puntataSelected == 6 ? 'Situazione finale' : 'Situazione attuale'; 
     this.answers = utils.getAnswersByPuntata(this.puntataSelected);
     this.users.forEach(x => this.allResults.push(
       this.calculateUser(x, this.maps))
